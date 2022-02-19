@@ -41,7 +41,7 @@ namespace PixupGames.Infrastracture.Game
         {
             if (_gameBehaviorTree.Status == BehaviorNodeStatus.Idle)
             {
-                _gameBehaviorTree.Execute(1);
+                _gameBehaviorTree.Execute(Time.deltaTime);
             }
         }
     }

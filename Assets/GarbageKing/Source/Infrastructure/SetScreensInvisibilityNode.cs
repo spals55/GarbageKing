@@ -11,10 +11,8 @@ namespace PixupGames.Infrastracture.Game
             _screens = screens;
         }
 
-        public override BehaviorNodeStatus OnExecute(long time)
+        public override BehaviorNodeStatus OnExecute(float time)
         {
-            Debug.Log("hide");
-
             foreach (var screen in _screens)
                 screen.Hide();
 

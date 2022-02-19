@@ -14,7 +14,7 @@ namespace PixupGames.Infrastracture.Game
             _screen = screen;
         }
 
-        public override BehaviorNodeStatus OnExecute(long time)
+        public override BehaviorNodeStatus OnExecute(float time)
         {
             Debug.Log("Showed");
             _screen.Show();
@@ -22,30 +22,18 @@ namespace PixupGames.Infrastracture.Game
         }
     }
 
-    public class WaitStartGameButtonClick : BehaviorNode, IDisposable
+    public class WaitStartGameButtonClick : BehaviorNode
     {
         private readonly IGameStartButton _button;
 
         public WaitStartGameButtonClick(IGameStartButton button)
         {
             _button = button;
-
-            _button.GameStartButtonClick += OnGameStartButtonClick;
         }
 
-        public override BehaviorNodeStatus OnExecute(long time)
+        public override BehaviorNodeStatus OnExecute(float time)
         {
             return BehaviorNodeStatus.Running;
-        }
-
-        private void OnGameStartButtonClick()
-        {
-            Status = BehaviorNodeStatus.Success;
-        }
-
-        public void Dispose()
-        {
-            _button.GameStartButtonClick -= OnGameStartButtonClick;
         }
     }
 

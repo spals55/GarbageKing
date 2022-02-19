@@ -3,18 +3,11 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(CharacterMovement))]
-public class Character : MonoBehaviour, ICharacter
+[RequireComponent(typeof(CharacterMovement), typeof(CharacterAnimation))]
+public class Character : MonoBehaviour, ICharacter, IControlledCharacter
 {
     [SerializeField] private CharacterMovement _movement;
     [SerializeField] private CharacterAnimation _animation;
-
-    private IGameSaves<PlayerProgress> _saves;
-
-    public void Init(IGameSaves<PlayerProgress> saves)
-    {
-        _saves = saves;
-    }
 
     private void Update()
     {

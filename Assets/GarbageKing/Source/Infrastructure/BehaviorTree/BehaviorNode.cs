@@ -7,13 +7,13 @@
 
         public bool Started => Status != BehaviorNodeStatus.Idle;
 
-        public BehaviorNodeStatus Execute(long time)
+        public BehaviorNodeStatus Execute(float time)
         {
             Status = OnExecute(time);
             return Status;
         }
 
-        public abstract BehaviorNodeStatus OnExecute(long time);
+        public abstract BehaviorNodeStatus OnExecute(float time);
 
         public virtual void Reset()
         {

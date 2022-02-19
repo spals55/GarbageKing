@@ -1,7 +1,7 @@
 
     public interface IBehaviorNode : IReadOnlyBehaviorNode
     {
-        BehaviorNodeStatus Execute(long time);
+        BehaviorNodeStatus Execute(float time);
 
         void Reset();
     }

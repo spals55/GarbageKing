@@ -16,7 +16,7 @@ public abstract class SequentialCompositeNode : BehaviorNode
     protected int RunningChildIndex => Array.FindIndex(_childNodes,
         (childNode) => childNode.Status == BehaviorNodeStatus.Running);
 
-    public override BehaviorNodeStatus OnExecute(long time)
+    public override BehaviorNodeStatus OnExecute(float time)
     {
         int runningChildIndex = RunningChildIndex;
 
