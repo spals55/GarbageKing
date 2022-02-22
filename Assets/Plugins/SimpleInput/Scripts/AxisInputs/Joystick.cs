@@ -206,21 +206,21 @@ namespace SimpleInputNamespace
 			if( !isDynamicJoystick )
 				return;
 
-			//if( joystickHeld )
-			//	opacity = Mathf.Min( 1f, opacity + Time.unscaledDeltaTime * 4f );
-			//else
-			//	opacity = Mathf.Max( 0f, opacity - Time.unscaledDeltaTime * 4f );
+            if (joystickHeld)
+                opacity = Mathf.Min(1f, opacity + Time.unscaledDeltaTime * 4f);
+            else
+                opacity = Mathf.Max(0f, opacity - Time.unscaledDeltaTime * 4f);
 
-			//Color c = thumb.color;
-			//c.a = opacity;
-			//thumb.color = c;
+            Color c = thumb.color;
+            c.a = opacity;
+            thumb.color = c;
 
-			//if( background )
-			//{
-			//	c = background.color;
-			//	c.a = opacity;
-			//	background.color = c;
-			//}
-		}
+            if (background)
+            {
+                c = background.color;
+                c.a = opacity;
+                background.color = c;
+            }
+        }
 	}
 }
