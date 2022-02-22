@@ -112,16 +112,16 @@ Material:
     - _OutlineMaxWidth: 1
     - _OutlineMinWidth: 1
     - _OutlinePixelSizeType: 0
-    - _OutlineTextureLOD: 5
+    - _OutlineTextureLOD: 4.25
     - _OutlineTextureType: 0
-    - _OutlineWidth: 5
+    - _OutlineWidth: 4.77
     - _Parallax: 0.02
     - _RampBands: 5
     - _RampBandsSmoothing: 0.1
     - _RampOffset: 0
     - _RampScale: 1
-    - _RampSmoothing: 0.05
-    - _RampThreshold: 0.5
+    - _RampSmoothing: 0.245
+    - _RampThreshold: 0.758
     - _RampType: 0
     - _ReceiveShadowsOff: 1
     - _ReflectionMapType: 0
@@ -156,7 +156,7 @@ Material:
     - _UseSpecular: 1
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
+    - _BaseColor: {r: 0.8773585, g: 0.8773585, b: 0.8773585, a: 1}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0.7075472, g: 0.47058564, b: 0.47058564, a: 1}
     - _HColor: {r: 1, g: 1, b: 1, a: 1}
