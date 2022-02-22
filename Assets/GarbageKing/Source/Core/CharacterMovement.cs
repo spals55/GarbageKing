@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-public class CharacterMovement : MonoBehaviour, IControlledCharacter
+public class CharacterMovement : MonoBehaviour, IControlledTarget
 {
     [SerializeField] private CharacterController _characterController;
     [SerializeField] private float _speed = 10f;

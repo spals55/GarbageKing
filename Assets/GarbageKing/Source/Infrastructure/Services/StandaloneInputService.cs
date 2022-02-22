@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 
-public class StandaloneInputService : InputService
+public class StandaloneInputService : Input
 {
     public override Vector2 Axis => UnityInputAxis();
 
     private Vector2 UnityInputAxis() =>
-        new Vector2(Input.GetAxis(Horizontal), Input.GetAxis(Horizontal));
+        new Vector2(UnityEngine.Input.GetAxis(Horizontal), UnityEngine.Input.GetAxis(Horizontal));
 }

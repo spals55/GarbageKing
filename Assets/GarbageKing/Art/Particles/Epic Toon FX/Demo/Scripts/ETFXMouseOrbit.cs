@@ -35,10 +35,10 @@ public class ETFXMouseOrbit : MonoBehaviour
     {
         if (target)
         {
-            if (Input.GetMouseButton(1))
+            if (UnityEngine.Input.GetMouseButton(1))
             {
-                velocityX += xSpeed * Input.GetAxis("Mouse X") * distance * 0.02f;
-                velocityY += ySpeed * Input.GetAxis("Mouse Y") * 0.02f;
+                    velocityX += xSpeed * UnityEngine.Input.GetAxis("Mouse X") * distance * 0.02f;
+                    velocityY += ySpeed * UnityEngine.Input.GetAxis("Mouse Y") * 0.02f;
             }
             rotationYAxis += velocityX;
             rotationXAxis -= velocityY;
@@ -47,7 +47,7 @@ public class ETFXMouseOrbit : MonoBehaviour
             Quaternion toRotation = Quaternion.Euler(rotationXAxis, rotationYAxis, 0);
             Quaternion rotation = toRotation;
 
-            distance = Mathf.Clamp(distance - Input.GetAxis("Mouse ScrollWheel") * 5, distanceMin, distanceMax);
+                distance = Mathf.Clamp(distance - UnityEngine.Input.GetAxis("Mouse ScrollWheel") * 5, distanceMin, distanceMax);
             RaycastHit hit;
             if (Physics.Linecast(target.position, transform.position, out hit))
             {

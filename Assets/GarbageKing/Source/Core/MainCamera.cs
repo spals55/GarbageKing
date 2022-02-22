@@ -6,20 +6,25 @@ using UnityEngine;
 public class MainCamera : MonoBehaviour, ICamera
 {
     [SerializeField] private Vector3 _offset;
-    [SerializeField] [Range(0, 1)] private float _smooth = 0.5f;
     [SerializeField] private float _forwardOffsetMultiplier = 10f;
+    [SerializeField] [Range(0, 1)] private float _smooth = 0.5f;
 
-    private IControlledCharacter _target;
+    private ICameraTarget _target;
 
-    public void FixedUpdateLogic(float tick)
+    private void FixedUpdate()
     {
-        //var targetPosition = (_target.transform.forward * _forwardOffsetMultiplier) + _target.transform.position + _offset;
-        //transform.position = Vector3.Lerp(transform.position, targetPosition, _smooth);
+        Follow();
     }
 
-    public void SetTarget(IControlledCharacter target)
+    public void SetTarget(ICameraTarget target)
     {
         _target = target;
-        //_offset = transform.position - _target.transform.position;
+        _offset = transform.position - _target.transform.position;
+    }
+
+    public void Follow()
+    {
+        var targetPosition = (_target.transform.forward * _forwardOffsetMultiplier) + _target.transform.position + _offset;
+        transform.position = Vector3.Lerp(transform.position, targetPosition, _smooth);
     }
 }

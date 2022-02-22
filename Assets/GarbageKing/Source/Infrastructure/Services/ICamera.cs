@@ -2,6 +2,7 @@
 {
     public interface ICamera
     {
-        void SetTarget(IControlledCharacter target);
+        void Follow();
+        void SetTarget(ICameraTarget target);
     }
 }
