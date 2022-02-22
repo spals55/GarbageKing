@@ -4,5 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/GarbageKing/Scenes/World.unity
+    guid: bb19e880b517c4a43820d7bbc081b434
   m_configObjects: {}

@@ -91,7 +91,7 @@ public class GarbageCollector : MonoBehaviour
         Vector3 lineA = DirectionFromAngle(-_angle / 2, false);
         Vector3 lineB = DirectionFromAngle(_angle / 2, false);
 
-        Gizmos.color = Color.white;
+        Gizmos.color = Color.black;
         Gizmos.DrawLine(_mouth.transform.position, _mouth.transform.position + lineA * _distance);
         Gizmos.DrawLine(_mouth.transform.position, _mouth.transform.position + lineB * _distance);
     }
