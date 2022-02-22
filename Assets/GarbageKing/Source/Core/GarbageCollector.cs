@@ -75,6 +75,7 @@ public class GarbageCollector : MonoBehaviour
             yield return null;
         }
 
+        Taptic.Selection();
         _bag.Add(trash);
     }
 
