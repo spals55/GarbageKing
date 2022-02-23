@@ -43,7 +43,7 @@ public class GarbageCollector : MonoBehaviour
                 {
                     if (trashInView[i].TryGetComponent(out ITrash trash))
                     {
-                        if (trash.CanCollect)
+                        if (trash.CanCollect && _bag.CanAdd(trash.Weight))
                             return trash;
                     }
                 }
@@ -76,8 +76,8 @@ public class GarbageCollector : MonoBehaviour
         }
 
         Taptic.Selection();
-        trash.Hide();
-        _bag.Add(trash.Type);
+
+        _bag.Add(trash);
     }
 
     private Vector3 DirectionFromAngle(float angle, bool isGlobal)

@@ -5,7 +5,11 @@ using UnityEngine;
 public class Trash : MonoBehaviour, ITrash
 {
     [SerializeField] private TrashType _type;
+    [SerializeField] private int _weight;
+
     public TrashType Type => _type;
+
+    public int Weight => _weight;
 
     public bool CanCollect { get; private set; } = true;
 
