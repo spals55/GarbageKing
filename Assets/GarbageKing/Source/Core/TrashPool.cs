@@ -4,5 +4,8 @@ using UnityEngine;
 
 public class TrashPool : MonoBehaviour
 {
-
+    public ITrash Get(TrashType type)
+    {
+        return null;
+    }
 }

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class Trash : MonoBehaviour, ITrash
 {
+    [SerializeField] private TrashType _type;
+    public TrashType Type => _type;
+
     public bool CanCollect { get; private set; } = true;
 
     public void Collect() => CanCollect = false;
@@ -14,7 +17,7 @@ public class Trash : MonoBehaviour, ITrash
 
     public void Release()
     {
-        CanCollect = true;
-        Show();
+        CanCollect = false;
+        Hide();
     }
 }

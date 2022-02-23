@@ -76,7 +76,8 @@ public class GarbageCollector : MonoBehaviour
         }
 
         Taptic.Selection();
-        _bag.Add(trash);
+        trash.Hide();
+        _bag.Add(trash.Type);
     }
 
     private Vector3 DirectionFromAngle(float angle, bool isGlobal)
