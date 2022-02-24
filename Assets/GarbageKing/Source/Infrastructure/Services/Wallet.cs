@@ -8,7 +8,7 @@ namespace PixupGames.Infrastracture.Services
         public int MaxCoins { get; private set; } = 9999;
         public int Coins { get; private set; }
 
-        public event Action CoinsChanged;
+        public event Action BalanceChanged;
 
         public void AddCoins(int amount)
         {
@@ -16,8 +16,7 @@ namespace PixupGames.Infrastracture.Services
                 Coins = MaxCoins;
 
             Coins += amount;
-
-            CoinsChanged?.Invoke();
+            BalanceChanged?.Invoke();
         }
 
         public void Spend(int amount)
@@ -26,8 +25,7 @@ namespace PixupGames.Infrastracture.Services
                 throw new InvalidOperationException();
 
             Coins -= amount;
-
-            CoinsChanged?.Invoke();
+            BalanceChanged?.Invoke();
         }
     }
 }

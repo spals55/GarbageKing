@@ -1,13 +1,15 @@
 ﻿using System;
 using UnityEngine;
 
-public class CharacterMovement : MonoBehaviour, IControlledTarget
+public class CharacterMovement : MonoBehaviour, IControlledTarget, IMovement
 {
-    [SerializeField] private CharacterController _characterController;
+    [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _speed = 10f;
     [SerializeField] private float _rotationSpeed = 10f;
 
-    public float Velocity => _characterController.velocity.magnitude;
+    public float Velocity => _rigidbody.velocity.magnitude;
+
+    public bool Stopped => Velocity < 0.1f;
 
     public void ChangeSpeed(int speed)
     {
@@ -18,7 +20,7 @@ public class CharacterMovement : MonoBehaviour, IControlledTarget
     public void Move(Vector3 direction)
     {
         MoveRotation(direction);
-        _characterController.Move(direction * Time.deltaTime * _speed);
+        _rigidbody.velocity = direction * _speed;
     }
 
     private void MoveRotation(Vector3 direction)

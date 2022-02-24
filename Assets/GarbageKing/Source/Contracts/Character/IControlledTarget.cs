@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public interface IControlledTarget
+public interface IControlledTarget : IMovement
 {
-    void Move(Vector3 direction);
+
 }

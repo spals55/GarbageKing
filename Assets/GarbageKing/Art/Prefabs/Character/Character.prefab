@@ -1147,7 +1147,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6849412470779560496}
   - component: {fileID: 6849412470779560502}
-  - component: {fileID: 6849412470779560497}
+  - component: {fileID: 8158660175083926785}
+  - component: {fileID: 5776137079526091637}
   - component: {fileID: 6849412470779560503}
   - component: {fileID: 6849412470779560500}
   - component: {fileID: 6849412470779560501}
@@ -1193,8 +1194,8 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!143 &6849412470779560497
-CharacterController:
+--- !u!136 &8158660175083926785
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1203,14 +1204,26 @@ CharacterController:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
+--- !u!54 &5776137079526091637
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6849412470779560490}
   serializedVersion: 2
-  m_Height: 2.03
-  m_Radius: 0.33
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 1.05, z: 0}
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
 --- !u!114 &6849412470779560503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1238,7 +1251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7b5198bbf04f15f4f8a57a4b94db9b95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _characterController: {fileID: 6849412470779560497}
+  _rigidbody: {fileID: 5776137079526091637}
   _speed: 5
   _rotationSpeed: 10
 --- !u!114 &6849412470779560501
@@ -1410,15 +1423,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8369802081104691538, guid: 6e512151b1e3dd949aecc6f71c03f0b0, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.005012151
+      value: -0.003
       objectReference: {fileID: 0}
     - target: {fileID: 8369802081104691538, guid: 6e512151b1e3dd949aecc6f71c03f0b0, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.93134046
+      value: -0.837
       objectReference: {fileID: 0}
     - target: {fileID: 8369802081104691538, guid: 6e512151b1e3dd949aecc6f71c03f0b0, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.0013816066
+      value: -0.001
       objectReference: {fileID: 0}
     - target: {fileID: 8369802081104691538, guid: 6e512151b1e3dd949aecc6f71c03f0b0, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1454,14 +1467,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e512151b1e3dd949aecc6f71c03f0b0, type: 3}
---- !u!4 &3110161052643567044 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8369802081104691538, guid: 6e512151b1e3dd949aecc6f71c03f0b0, type: 3}
-  m_PrefabInstance: {fileID: 6849412470050727062}
-  m_PrefabAsset: {fileID: 0}
 --- !u!137 &7399073641076808253 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 4152541079232052907, guid: 6e512151b1e3dd949aecc6f71c03f0b0, type: 3}
+  m_PrefabInstance: {fileID: 6849412470050727062}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3110161052643567044 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8369802081104691538, guid: 6e512151b1e3dd949aecc6f71c03f0b0, type: 3}
   m_PrefabInstance: {fileID: 6849412470050727062}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6849412470770358627
