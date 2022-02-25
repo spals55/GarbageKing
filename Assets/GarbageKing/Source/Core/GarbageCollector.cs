@@ -72,7 +72,7 @@ public class GarbageCollector : MonoBehaviour
         while (trash.transform.position != _mouth.transform.position)
         {
             trash.transform.position = Vector3.MoveTowards(trash.transform.position, _mouth.transform.position, _power * Time.deltaTime);
-            trash.transform.localScale = Vector3.MoveTowards(trash.transform.localScale, Vector3.zero, _power * Time.deltaTime);
+            trash.transform.localScale = Vector3.MoveTowards(trash.transform.localScale, Vector3.zero, _power / 2 * Time.deltaTime);
 
             yield return null;
         }

@@ -7,6 +7,8 @@ using UnityEngine;
 public class TrashRecycler : Commodity, ITrashRecycler
 {
     [SerializeField] private DropTrigger _dropTrigger;
+    [SerializeField] private Transform _trashContainer;
+    [SerializeField] private Transform _box;
 
     private Coroutine _tryCollectTrash;
 
@@ -36,6 +38,8 @@ public class TrashRecycler : Commodity, ITrashRecycler
 
     private void OnDropTriggerEntered(ICharacter character)
     {
+        _box.DOShakeScale(2.5f, 20f);
+
         if (_tryCollectTrash != null)
             StopCoroutine(_tryCollectTrash);
 
@@ -53,10 +57,16 @@ public class TrashRecycler : Commodity, ITrashRecycler
         {
             if (bag.HasTrash)
             {
-               var trash = bag.Get();             
+                var trash = bag.Get();
+                trash.transform.DOScale(Vector3.zero, 4f);
+                trash.transform.DOJump(_trashContainer.transform.position, 4f, 1, 1.5f)
+                    .OnComplete(() =>
+                    {
+                        trash.Release();
+                    });               
             }
 
-            yield return null;
+            yield return new WaitForSeconds(0.3f);
         }
     }
 }

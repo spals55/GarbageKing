@@ -17,7 +17,11 @@ public class Trash : MonoBehaviour, ITrash
 
     public void Hide() => gameObject.SetActive(false);
 
-    public void Show() => gameObject.SetActive(true);
+    public void Show()
+    {
+        transform.localScale = Vector3.one;
+        gameObject.SetActive(true);
+    }
 
     public void Release()
     {

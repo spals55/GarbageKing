@@ -1131,7 +1131,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6849412470705732074}
   m_LocalRotation: {x: -0, y: -0, z: -5.04871e-29, w: 1}
-  m_LocalPosition: {x: 0.36399996, y: 0.6789999, z: 1.0669999}
+  m_LocalPosition: {x: 0.421, y: 0.6789999, z: 1.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6849412471874087301}
@@ -1377,7 +1377,7 @@ MonoBehaviour:
   _power: 10
   _distance: 3
   _radius: 359.6
-  _angle: 147.42
+  _angle: 123.65
   _mouth: {fileID: 6849412470705732085}
   _bag: {fileID: 6849412471874087300}
   _trashLayer:

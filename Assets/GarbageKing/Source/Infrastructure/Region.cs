@@ -7,12 +7,9 @@ namespace PixupGames.Infrastracture.Game
     public class Region : MonoBehaviour, IRegion
     {
         [SerializeField] private int _id;
-        [SerializeField] private string _name;
         [SerializeField] private List<BuyZone> _buyZones;
 
         private IDataPersistence _persistence;
-
-        public string Name => _name;
 
         public int Id => _id;
 
