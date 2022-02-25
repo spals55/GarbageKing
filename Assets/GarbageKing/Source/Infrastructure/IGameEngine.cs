@@ -1,30 +1,13 @@
-﻿namespace PixupGames.Infrastracture.Game
+﻿using System.Collections;
+using UnityEngine;
+
+namespace PixupGames.Infrastracture.Game
 {
-    public interface IViewport
+    public interface IGameEngine
     {
-        IStartGameWindow GetStartGameWindow();
-        IPlayGameWindow GetPlayGameWindow();
-    }
-
-    public interface IWindow
-    {
-        void Show();
-        void Hide();
-    }
-
-    public interface IStartGameWindow : IWindow
-    {
-        public IButton GetStartGameButton();
-    }
-
-    public interface IPlayGameWindow : IWindow
-    {
-
-    }
-
-    public interface IButton
-    {
-        void Press();
-        void Release();
+        IInputDevice GetInputDevice();
+        IViewport GetViewport();
+        Coroutine StartCoroutine(IEnumerator corutine);
+        void StopCoroutine(Coroutine coroutine);
     }
 }

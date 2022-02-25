@@ -31,7 +31,7 @@ public class GarbageBag : MonoBehaviour, IGarbageBag
         _currentCapacity -= trash.Weight;
         ChangeWeight(_currentCapacity);
 
-        return _pool.Get(trash.Type);
+        return /*_pool.Get(trash.Type)*/ null;
     }
 
     private void ChangeWeight(int currentCapacity)

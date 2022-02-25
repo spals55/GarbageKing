@@ -14,6 +14,8 @@ public class GarbageCollector : MonoBehaviour
 
     private bool _work = true;
 
+    public IGarbageBag Bag => _bag;
+
     private void FixedUpdate()
     {
         if (_work)

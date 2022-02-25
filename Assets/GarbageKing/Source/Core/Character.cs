@@ -14,6 +14,7 @@ public class Character : MonoBehaviour, ICharacter
 
     public IWallet Wallet => _wallet;
     public IMovement Movement => _movement;
+    public IGarbageBag Bag => _garbageCollector.Bag;
 
     public bool Alive => true;
 

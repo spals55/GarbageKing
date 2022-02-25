@@ -23,11 +23,11 @@ public class World : MonoBehaviour, IWorld
 
     public ICamera CreateCamera() => _camera;
 
-    public void UnlockRegion(string regionName)
+    public void UnlockRegion(int id)
     {
         foreach (var region in _regions)
         {
-            if (region.Name == regionName)
+            if (region.Id == id)
             {
                 region.Unlock();
             }

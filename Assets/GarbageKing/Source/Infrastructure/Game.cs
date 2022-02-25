@@ -51,7 +51,7 @@ namespace PixupGames.Infrastracture.Game
             {
                 if (region.IsOpen)
                 {
-                    _world.UnlockRegion(region.Name);
+                    _world.UnlockRegion(region.Id);
                 }
             }
         }

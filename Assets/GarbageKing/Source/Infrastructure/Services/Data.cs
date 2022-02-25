@@ -50,12 +50,12 @@ namespace PixupGames.Persitence.Models
     [System.Serializable]
     public class Region
     {
-        public string Name;
+        public int Id;
         public bool IsOpen;
 
-        public Region(string name, bool isOpen)
+        public Region(int id, bool isOpen)
         {
-            Name = name;
+            Id = id;
             IsOpen = isOpen;
         }
     }

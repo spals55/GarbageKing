@@ -1,6 +1,6 @@
 ﻿public interface IRegion
 {
-    string Name { get; }
+    int Id { get; }
 
     void Unlock();
 }

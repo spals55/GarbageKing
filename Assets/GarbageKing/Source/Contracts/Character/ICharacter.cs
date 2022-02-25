@@ -9,6 +9,7 @@ public interface ICharacter : ICameraTarget
     bool Alive { get; }
     IWallet Wallet { get; }
     IMovement Movement { get; }
+    IGarbageBag Bag { get; }
 
     void Move(Vector3 direction);
 }

@@ -2,8 +2,9 @@
 
 public interface IBuyZone
 {
-    event Action Unlocked;
+    int Id { get; }
 
     void Show();
     void Hide();
+    void UnlockCommodity(bool animate);
 }

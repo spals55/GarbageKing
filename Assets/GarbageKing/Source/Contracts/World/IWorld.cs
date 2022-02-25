@@ -6,5 +6,5 @@ public interface IWorld
     void Init(IAssetsFactory assetsFactory, IDataPersistence dataPersistence);
     ICharacter CreateCharacter();
     ICamera CreateCamera();
-    void UnlockRegion(string regionName);
+    void UnlockRegion(int id);
 }

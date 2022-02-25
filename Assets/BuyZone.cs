@@ -7,13 +7,12 @@ using UnityEngine;
 
 public class BuyZone : MonoBehaviour, IBuyZone
 {
+    [SerializeField] private int _id;
     [SerializeField] private int _totalCost = 100;
-    [SerializeField] private float _iteractionDelay;
+    [SerializeField] private Commodity _template;
     [SerializeField] private TMP_Text _totalCostLabel;
     [SerializeField] private BuyZoneTrigger _trigger;
  
-    public event Action Unlocked;
-
     private Coroutine _tryBuyCoroutine;
 
 #if UNITY_EDITOR
@@ -35,7 +34,9 @@ public class BuyZone : MonoBehaviour, IBuyZone
         _trigger.Exit -= OnExit;
     }
 
-    public void Hide() => gameObject.SetActive(false);
+    public int Id => _id;
+
+    public void Hide() => Destroy(gameObject);
 
     public void Show() => gameObject.SetActive(true);
 
@@ -54,7 +55,7 @@ public class BuyZone : MonoBehaviour, IBuyZone
 
     private IEnumerator TryBuy(IWallet wallet, IMovement movement)
     {
-        const int IterationMultiplier = 25;
+        const int IterationMultiplier = 15;
         var iteration = 0;
 
         while (true)
@@ -72,24 +73,24 @@ public class BuyZone : MonoBehaviour, IBuyZone
                 _totalCost -= multiplierCoefficient;
                 _totalCostLabel.text = _totalCost.ToString();
 
-                TryBought(_totalCost);
+                if (_totalCost < 1)
+                    UnlockCommodity(true);
             }
 
             iteration++;
-            yield return Yielder.WaitForSeconds(_iteractionDelay);
+            yield return null;
         }
     }
 
-    private void TryBought(int totalCost)
+    public void UnlockCommodity(bool animate)
     {
-        if (totalCost < 1)
-            Bought();
-    }
+        if (_tryBuyCoroutine != null)
+            StopCoroutine(_tryBuyCoroutine);
 
-    private void Bought()
-    {
-        Unlocked?.Invoke();
-        StopCoroutine(_tryBuyCoroutine);
+
+        var commodity = Instantiate(_template, transform.position, transform.rotation);
+        commodity.Show(animate);
+
         Hide();
     }
 }
