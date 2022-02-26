@@ -4,10 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface ICharacter : ICameraTarget
+public interface ICharacter
 {
-    bool Alive { get; }
-    IWallet Wallet { get; }
     IMovement Movement { get; }
     IGarbageBag Bag { get; }
 

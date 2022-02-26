@@ -5,10 +5,10 @@ namespace PixupGames.Infrastracture.Services
     public interface IWallet 
     {
         event Action BalanceChanged;
-        int Coins { get; }
-        int MaxCoins { get; }
+        int Money { get; }
+        int MaxMoney { get; }
 
         void Spend(int amount);
-        void AddCoins(int amount);
+        void Add(int amount);
     }
 }

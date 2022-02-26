@@ -4,7 +4,7 @@ using PixupGames.Infrastracture.Services;
 public interface IWorld
 {
     void Init(IAssetsFactory assetsFactory, IDataPersistence dataPersistence);
-    ICharacter CreateCharacter();
+    IPlayer CreatePlayer();
     ICamera CreateCamera();
     void UnlockRegion(int id);
 }

@@ -5,26 +5,31 @@ namespace PixupGames.Infrastracture.Services
 {
     public class Wallet : IWallet
     {
-        public int MaxCoins { get; private set; } = 9999;
-        public int Coins { get; private set; }
+        public Wallet(int money)
+        {
+            Money = money;
+        }
+
+        public int MaxMoney { get; private set; } = 9999;
+        public int Money { get; private set; }
 
         public event Action BalanceChanged;
 
-        public void AddCoins(int amount)
+        public void Add(int amount)
         {
-            if (amount + 1 > MaxCoins)
-                Coins = MaxCoins;
+            if (amount + 1 > MaxMoney)
+                Money = MaxMoney;
 
-            Coins += amount;
+            Money += amount;
             BalanceChanged?.Invoke();
         }
 
         public void Spend(int amount)
         {
-            if (amount > Coins)
+            if (amount > Money)
                 throw new InvalidOperationException();
 
-            Coins -= amount;
+            Money -= amount;
             BalanceChanged?.Invoke();
         }
     }

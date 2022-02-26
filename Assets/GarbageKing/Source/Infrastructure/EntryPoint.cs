@@ -9,7 +9,6 @@ namespace PixupGames.Infrastracture.Game
         [SerializeField] private string _saveKey = "PixupDevelopment";
         [SerializeField] private UnityGameEngine _gameEngine;
         [SerializeField] private World _world;
-        [SerializeField] private Player _player;
 
         private void Awake()
         {
@@ -19,7 +18,7 @@ namespace PixupGames.Infrastracture.Game
             _gameEngine.Init(dataPersistence);
             _world.Init(assetsFactory, dataPersistence);
 
-            var game = new Game(dataPersistence, _world, _gameEngine, _player);
+            var game = new Game(dataPersistence, _world, _gameEngine, assetsFactory);
             game.Run();
         }
     }

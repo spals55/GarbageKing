@@ -7,7 +7,7 @@ using UnityEngine;
 public class World : MonoBehaviour, IWorld
 {
     [SerializeField] private MainCamera _camera;
-    [SerializeField] private Character _character;
+    [SerializeField] private Player _player;
     [SerializeField] private List<Region> _regions;
 
     private IAssetsFactory _assetsFactory;
@@ -19,7 +19,7 @@ public class World : MonoBehaviour, IWorld
         _dataPersistence = dataPersistence;
     }
 
-    public ICharacter CreateCharacter() => _character;
+    public IPlayer CreatePlayer() => _player;
 
     public ICamera CreateCamera() => _camera;
 

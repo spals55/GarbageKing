@@ -41,17 +41,17 @@ public class BuyZone : MonoBehaviour, IBuyZone
 
     public void Show() => gameObject.SetActive(true);
 
-    private void OnExit(ICharacter character)
+    private void OnExit(IPlayer player)
     {
         StopCoroutine(_tryBuyCoroutine);
     }
 
-    private void OnEntered(ICharacter character)
+    private void OnEntered(IPlayer player)
     {
         if (_tryBuyCoroutine != null)
             StopCoroutine(_tryBuyCoroutine);
 
-        _tryBuyCoroutine = StartCoroutine(TryBuy(character.Wallet, character.Movement));
+        _tryBuyCoroutine = StartCoroutine(TryBuy(player.Wallet, player.Character.Movement));
     }
 
     private IEnumerator TryBuy(IWallet wallet, IMovement movement)
@@ -61,14 +61,14 @@ public class BuyZone : MonoBehaviour, IBuyZone
 
         while (true)
         {
-            if (movement.Stopped && wallet.Coins > 0)
+            if (movement.Stopped && wallet.Money > 0)
             {
                 var multiplierCoefficient = iteration / IterationMultiplier;
 
                 if (_totalCost < multiplierCoefficient)
                     multiplierCoefficient = _totalCost;
 
-                multiplierCoefficient = Mathf.Clamp(multiplierCoefficient, 1, wallet.Coins);
+                multiplierCoefficient = Mathf.Clamp(multiplierCoefficient, 1, wallet.Money);
 
                 wallet.Spend(multiplierCoefficient);
                 _totalCost -= multiplierCoefficient;

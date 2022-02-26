@@ -31,12 +31,14 @@ namespace PixupGames.Persitence.Models
     [System.Serializable]
     public class Character
     {
+        public int Money;
         public Bag Bag;
         public Vector3 LastPosition;
 
-        public Character(Bag bag, Vector3 lastPosition)
+        public Character(int money, Bag bag, Vector3 lastPosition)
         {
             Bag = bag;
+            Money = money;
             LastPosition = lastPosition;
         }
     }

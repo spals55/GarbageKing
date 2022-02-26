@@ -63,6 +63,7 @@ public class TrashRecycler : Commodity, ITrashRecycler
                     .OnComplete(() =>
                     {
                         trash.Release();
+                        trash.transform.DOComplete(true);
                     });               
             }
 
