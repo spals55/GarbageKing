@@ -33,6 +33,13 @@ public class Player : MonoBehaviour, IPlayer
         _playGameWindow = playGameWindow;
         _inputDevice = inputDevice;
         _wallet = wallet;
+
+        _wallet.BalanceChanged += OnBalanceChanged;
+    }
+
+    private void OnBalanceChanged()
+    {
+        _playGameWindow.RenderMoney(_wallet.Money);
     }
 
     private void FixedUpdate()
