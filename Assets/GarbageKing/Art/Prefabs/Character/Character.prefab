@@ -6193,10 +6193,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765495aa367ac9849b192520071fd14d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _power: 10
-  _distance: 3
+  _power: 12
+  _distance: 4
   _radius: 359.6
-  _angle: 123.65
+  _angle: 135.08
   _mouth: {fileID: 6849412470705732085}
   _bag: {fileID: 6849412471874087300}
   _trashLayer:
