@@ -2,13 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
+using System;
 
-public class TrashBlockStack : MonoBehaviour
+public class TrashBlockStack : MonoBehaviour, ITrashBlockStack
 {
     [SerializeField] private int _capacity;
     [SerializeField] private Vector3 _offset;
     [SerializeField] private Vector3Int _countStack;
     [SerializeField] private Transform _stackContainer;
+    [SerializeField] private float _jumpPower = 1f;
+    [SerializeField] private float _jumpDuraction = 1f;
 
     private List<Transform> _transforms = new List<Transform>();
     private Stack<ITrashBlock> _trashBlocks = new Stack<ITrashBlock>();
@@ -22,20 +25,25 @@ public class TrashBlockStack : MonoBehaviour
         Vector3 endPosition = CalculateAddEndPosition(_stackContainer.transform, block.transform);
         block.transform.DOPunchScale(Vector3.one * 0.3f, 1f);
         block.transform.parent = _stackContainer;
-        block.transform.DOLocalJump(endPosition, 1, 1, 1f);
+        block.transform.DOLocalJump(endPosition, _jumpPower, 1, _jumpDuraction);
 
         _trashBlocks.Push(block);
     }
 
-    public void Remove()
+    public ITrashBlock Get()
     {
+        if (_trashBlocks.Count < 1)
+            throw new NullReferenceException("No blocks in stack");
+
         var block = _trashBlocks.Pop();
 
         block.transform.DOComplete(true);
         block.transform.parent = null;
 
-        int removedIndex = _transforms.IndexOf(block.transform);
-        _transforms.RemoveAt(removedIndex);
+        //int removedIndex = _transforms.IndexOf(block.transform);
+        //_transforms.RemoveAt(removedIndex);
+
+        return block;
     }
 
     private void RecalculatePosition()
@@ -93,4 +101,9 @@ public class TrashBlockStack : MonoBehaviour
 
         return endPosition;
     }
+}
+
+public interface ITrashBlockStack
+{
+    ITrashBlock Get();
 }
