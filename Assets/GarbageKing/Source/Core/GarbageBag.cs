@@ -6,15 +6,23 @@ public class GarbageBag : MonoBehaviour, IGarbageBag
 {
     [SerializeField] private TrashPool _pool;
     [SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
-    [SerializeField] private int _maxCapacity;
+    [SerializeField] private int _maxWeight = 100;
 
     private const string CapacityShapeName = "Key 1";
 
     private Queue<ITrash> _trash = new Queue<ITrash>();
     private int _currentCapacity;
 
-    public bool CanAdd(int weight) => _currentCapacity + weight < _maxCapacity;
+    public event Action WeightChanged;
+
     public bool HasTrash => _currentCapacity > 0;
+
+    public int MaxWeight => _maxWeight;
+
+    public int Weight => _currentCapacity;
+
+    public bool CanAdd(int weight) =>
+        _currentCapacity + weight <= _maxWeight;
 
     public void Add(ITrash trash)
     {
@@ -38,5 +46,6 @@ public class GarbageBag : MonoBehaviour, IGarbageBag
     {
         var blendShapeIndex = _skinnedMeshRenderer.sharedMesh.GetBlendShapeIndex(CapacityShapeName);
         _skinnedMeshRenderer.SetBlendShapeWeight(blendShapeIndex, currentCapacity);
+        WeightChanged?.Invoke();
     }
 }

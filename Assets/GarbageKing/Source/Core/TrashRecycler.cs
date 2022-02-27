@@ -7,6 +7,7 @@ using UnityEngine;
 public class TrashRecycler : Commodity, ITrashRecycler
 {
     [SerializeField] private Timer _timer;
+    [SerializeField] private int _trashToCreateBlock;
     [SerializeField] private TrashBlock _trashBlockTemplate;
     [SerializeField] private TrashConveyor _conveyor;
     [SerializeField] private TrashRecyclerSkin _skin;
@@ -15,6 +16,7 @@ public class TrashRecycler : Commodity, ITrashRecycler
 
     private Queue<ITrash> _trash = new Queue<ITrash>();
     private Coroutine _tryCollectTrash;
+    private int _currentBlockSize;
 
     private void OnEnable()
     {
@@ -88,9 +90,16 @@ public class TrashRecycler : Commodity, ITrashRecycler
             yield return new WaitUntil(() => _trash.Count > 0);
 
             var trash = _trash.Dequeue();
-            _timer.Begin(Duration);
+            _currentBlockSize += trash.Weight;
+            
+            if (_currentBlockSize > _trashToCreateBlock)
+            {
+                _currentBlockSize = 0;
+                _timer.Begin(Duration);
+                yield return new WaitForSeconds(Duration);
+            }
 
-            yield return new WaitForSeconds(Duration);
+            yield return null;
         }
     }
 

@@ -28,12 +28,30 @@ public class Player : MonoBehaviour, IPlayer
         }
     }
 
+    private void OnEnable()
+    {
+        _controlledCharacter.Bag.WeightChanged += OnBagCapacityChanged;
+    }
+
+    private void OnBagCapacityChanged()
+    {
+        _playGameWindow.ChangeCapacity(_controlledCharacter.Bag.Weight, _controlledCharacter.Bag.MaxWeight);
+        _wallet.BalanceChanged -= OnBalanceChanged;
+    }
+
+    private void OnDisable()
+    {
+        _controlledCharacter.Bag.WeightChanged -= OnBagCapacityChanged;
+    }
+
     public void Init(IInputDevice inputDevice, IPlayGameWindow playGameWindow, IWallet wallet)
     {
         _playGameWindow = playGameWindow;
         _inputDevice = inputDevice;
         _wallet = wallet;
 
+        _playGameWindow.ChangeCapacity(_controlledCharacter.Bag.Weight, _controlledCharacter.Bag.MaxWeight);
+        _playGameWindow.RenderMoney(_wallet.Money);
         _wallet.BalanceChanged += OnBalanceChanged;
     }
 

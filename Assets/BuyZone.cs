@@ -10,6 +10,7 @@ public class BuyZone : MonoBehaviour, IBuyZone
     [SerializeField] private int _id;
     [SerializeField] private int _totalCost = 100;
     [SerializeField] private Commodity _template;
+    [SerializeField] private Transform _spawnPoint;
     [SerializeField] private TMP_Text _totalCostLabel;
     [SerializeField] private BuyZoneTrigger _trigger;
     [SerializeField] private ParticleSystem _unlockEffect;
@@ -88,10 +89,10 @@ public class BuyZone : MonoBehaviour, IBuyZone
         if (_tryBuyCoroutine != null)
             StopCoroutine(_tryBuyCoroutine);
 
-        var particle = Instantiate(_unlockEffect, transform.position, Quaternion.identity);
+        var particle = Instantiate(_unlockEffect, _spawnPoint.position, Quaternion.identity);
         particle.Play();
 
-        var commodity = Instantiate(_template, transform.position, transform.rotation);
+        var commodity = Instantiate(_template, _spawnPoint.position, transform.rotation);
         commodity.Show(animate);
 
         Hide();
