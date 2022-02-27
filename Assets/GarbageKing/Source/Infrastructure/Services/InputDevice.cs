@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public abstract class Input : IInputDevice
+public abstract class InputDevice : IInputDevice
 {
     protected const string Horizontal = nameof(Horizontal);
     protected const string Vertical = nameof(Vertical);

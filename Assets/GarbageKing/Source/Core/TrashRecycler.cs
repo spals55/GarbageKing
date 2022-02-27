@@ -6,40 +6,47 @@ using UnityEngine;
 
 public class TrashRecycler : Commodity, ITrashRecycler
 {
+    [SerializeField] private Timer _timer;
+    [SerializeField] private TrashBlock _trashBlockTemplate;
+    [SerializeField] private TrashConveyor _conveyor;
+    [SerializeField] private TrashRecyclerSkin _skin;
     [SerializeField] private DropTrigger _dropTrigger;
     [SerializeField] private Transform _trashContainer;
-    [SerializeField] private Transform _box;
 
+    private Queue<ITrash> _trash = new Queue<ITrash>();
     private Coroutine _tryCollectTrash;
 
     private void OnEnable()
     {
+        _timer.Completed += OnTimerCompleted;
         _dropTrigger.Entered += OnDropTriggerEntered;
         _dropTrigger.Exit += OnDropTriggerExit;
     }
 
+    private void OnTimerCompleted()
+    {
+        CreateBlock();
+    }
 
     private void OnDisable()
     {
+        _timer.Completed -= OnTimerCompleted;
         _dropTrigger.Entered -= OnDropTriggerEntered;
         _dropTrigger.Exit -= OnDropTriggerExit;
     }
 
+    private void Start()
+    {
+        StartCoroutine(RecyclingProcess());
+    }
+
     public override void Show(bool animate)
     {
-        gameObject.SetActive(true);
-
-        if (animate)
-        {
-            transform.localScale = Vector3.zero;
-            transform.DOScale(1f, 1f);
-        }
+        _skin.Show(animate);
     }
 
     private void OnDropTriggerEntered(ICharacter character)
     {
-        _box.DOShakeScale(2.5f, 20f);
-
         if (_tryCollectTrash != null)
             StopCoroutine(_tryCollectTrash);
 
@@ -64,10 +71,34 @@ public class TrashRecycler : Commodity, ITrashRecycler
                     {
                         trash.Release();
                         trash.transform.DOComplete(true);
+                        _trash.Enqueue(trash);
                     });               
             }
 
-            yield return new WaitForSeconds(0.3f);
+            yield return Yielder.WaitForSeconds(0.3f);
         }
+    }
+
+    private IEnumerator RecyclingProcess()
+    {
+        const float Duration = 3f;
+
+        while (true)
+        {
+            yield return new WaitUntil(() => _trash.Count > 0);
+
+            var trash = _trash.Dequeue();
+            _timer.Begin(Duration);
+
+            yield return new WaitForSeconds(Duration);
+        }
+    }
+
+    private void CreateBlock()
+    {
+        _skin.ShakeBox(2.5f);
+
+        ITrashBlock block = Instantiate(_trashBlockTemplate, transform.position, Quaternion.identity);
+        _conveyor.Add(block);
     }
 }

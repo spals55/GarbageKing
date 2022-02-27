@@ -11,6 +11,7 @@ public class GarbageCollector : MonoBehaviour
     [SerializeField] private Transform _mouth;
     [SerializeField] private GarbageBag _bag;
     [SerializeField] private LayerMask _trashLayer;
+    [SerializeField] private ParticleSystem _suckEffect;
 
     private bool _work = true;
 
@@ -68,6 +69,7 @@ public class GarbageCollector : MonoBehaviour
     private IEnumerator Suck(ITrash trash)
     {
         trash.Collect();
+        _suckEffect.Play();
 
         while (trash.transform.position != _mouth.transform.position)
         {
@@ -79,6 +81,7 @@ public class GarbageCollector : MonoBehaviour
 
         Taptic.Selection();
 
+        _suckEffect.Stop();
         _bag.Add(trash);
     }
 

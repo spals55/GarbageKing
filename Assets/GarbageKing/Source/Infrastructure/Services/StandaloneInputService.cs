@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class StandaloneInputService : Input
+public class StandaloneInputService : InputDevice
 {
     public override Vector2 Axis => UnityInputAxis();
 

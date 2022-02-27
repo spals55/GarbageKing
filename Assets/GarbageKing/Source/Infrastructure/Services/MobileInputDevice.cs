@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-public class MobileInputDevice : Input
+public class MobileInputDevice : InputDevice
 {
     public override Vector2 Axis => SimpleInputAxis();
 
