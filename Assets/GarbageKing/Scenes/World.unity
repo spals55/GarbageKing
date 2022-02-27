@@ -16938,32 +16938,32 @@ Transform:
   - {fileID: 167823133}
   - {fileID: 1940205501}
   - {fileID: 504712541}
+  - {fileID: 959145800}
   - {fileID: 1712907829}
   - {fileID: 982079750}
-  - {fileID: 1724376234}
   - {fileID: 593657641}
   - {fileID: 1933387118}
-  - {fileID: 1628441798}
   - {fileID: 349842839}
   - {fileID: 394737664}
-  - {fileID: 50111351}
   - {fileID: 1276240919}
+  - {fileID: 50111351}
   - {fileID: 752082281}
-  - {fileID: 43349511}
-  - {fileID: 1886908504}
   - {fileID: 1449517196}
-  - {fileID: 406146614}
+  - {fileID: 1886908504}
+  - {fileID: 1724376234}
+  - {fileID: 1628441798}
   - {fileID: 202806471}
   - {fileID: 1948725468}
-  - {fileID: 670932595}
-  - {fileID: 681099157}
+  - {fileID: 406146614}
+  - {fileID: 43349511}
   - {fileID: 183259726}
+  - {fileID: 670932595}
   - {fileID: 1608916639}
-  - {fileID: 959145800}
   - {fileID: 1786784673}
   - {fileID: 562664876}
   - {fileID: 1484775294}
   - {fileID: 618269005}
+  - {fileID: 681099157}
   - {fileID: 1055276086}
   - {fileID: 128287883}
   - {fileID: 1284848752}
@@ -17366,17 +17366,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1093da2b134a65e44b0cb16f24de4b22, type: 3}
---- !u!114 &1221266029 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6849412470779560503, guid: c329bec6eeb405148a8d94be5b0ff415, type: 3}
-  m_PrefabInstance: {fileID: 1529779536}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 30621479bd073634db73c9eb8a983532, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &1223364102
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -22151,10 +22140,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 893691203311241418, guid: c329bec6eeb405148a8d94be5b0ff415, type: 3}
-      propertyPath: _controlledCharacter
-      value: 
-      objectReference: {fileID: 1221266029}
     - target: {fileID: 6849412470779560490, guid: c329bec6eeb405148a8d94be5b0ff415, type: 3}
       propertyPath: m_Name
       value: Character
@@ -34396,6 +34381,10 @@ PrefabInstance:
     - target: {fileID: 7365818844199331171, guid: a7a2438abfa97814bb9351d7f4f534dc, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7365818844199331175, guid: a7a2438abfa97814bb9351d7f4f534dc, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a7a2438abfa97814bb9351d7f4f534dc, type: 3}

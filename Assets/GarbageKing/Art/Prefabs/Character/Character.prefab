@@ -6071,7 +6071,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 5776137079526091637}
-  _speed: 5
+  _speed: 6
   _rotationSpeed: 10
 --- !u!114 &6849412470779560501
 MonoBehaviour:
