@@ -15,13 +15,13 @@ MonoBehaviour:
   prefabs:
   - gameObject: {fileID: 187236, guid: a94d614f979e04e48a3c1291a989b4bc, type: 3}
     settings:
-      m_Strength: 49.999996
+      m_Strength: 53.561855
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 0.02527079}
       m_ScaleRangeMax: {x: 1, y: 1, z: 0.13357386}
-      m_UniformScale: {x: 1, y: 1}
-      m_UniformBool: 0
+      m_UniformScale: {x: 0.94382024, y: 1.224719}
+      m_UniformBool: 1
       m_XRotationBool: 0
       m_YRotationBool: 0
       m_ZRotationBool: 0
@@ -36,8 +36,8 @@ MonoBehaviour:
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 0.02527076}
       m_ScaleRangeMax: {x: 1, y: 1, z: 0.16967487}
-      m_UniformScale: {x: 1, y: 1}
-      m_UniformBool: 0
+      m_UniformScale: {x: 0.66292137, y: 1.1685393}
+      m_UniformBool: 1
       m_XRotationBool: 0
       m_YRotationBool: 0
       m_ZRotationBool: 0
@@ -47,13 +47,13 @@ MonoBehaviour:
     name: palm-big
   - gameObject: {fileID: 176248, guid: 0256878ad343319489251dbd127fa5b6, type: 3}
     settings:
-      m_Strength: 51.259796
+      m_Strength: 45.396908
       m_RotationRangeMin: {x: 0, y: 0, z: 0}
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
-      m_ScaleRangeMin: {x: 1, y: 1, z: 0.025270805}
+      m_ScaleRangeMin: {x: 0.5471698, y: 1, z: 0.025270805}
       m_ScaleRangeMax: {x: 1, y: 1, z: 0.09747289}
-      m_UniformScale: {x: 1, y: 1}
-      m_UniformBool: 0
+      m_UniformScale: {x: 0.9438202, y: 1.1123594}
+      m_UniformBool: 1
       m_XRotationBool: 0
       m_YRotationBool: 0
       m_ZRotationBool: 0
@@ -68,8 +68,8 @@ MonoBehaviour:
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
       m_ScaleRangeMax: {x: 1, y: 1, z: 1}
-      m_UniformScale: {x: 1, y: 1}
-      m_UniformBool: 0
+      m_UniformScale: {x: 0.32584262, y: 0.60674155}
+      m_UniformBool: 1
       m_XRotationBool: 0
       m_YRotationBool: 0
       m_ZRotationBool: 0
@@ -340,7 +340,7 @@ MonoBehaviour:
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
       m_ScaleRangeMax: {x: 1, y: 1, z: 1}
-      m_UniformScale: {x: 1, y: 1.5617979}
+      m_UniformScale: {x: 0.32584268, y: 0.8876407}
       m_UniformBool: 1
       m_XRotationBool: 0
       m_YRotationBool: 0
@@ -356,7 +356,7 @@ MonoBehaviour:
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
       m_ScaleRangeMax: {x: 1, y: 1, z: 1}
-      m_UniformScale: {x: 1, y: 1.6741574}
+      m_UniformScale: {x: 0.26966292, y: 0.9438205}
       m_UniformBool: 1
       m_XRotationBool: 0
       m_YRotationBool: 0
@@ -372,7 +372,7 @@ MonoBehaviour:
       m_RotationRangeMax: {x: 0, y: 0, z: 0}
       m_ScaleRangeMin: {x: 1, y: 1, z: 1}
       m_ScaleRangeMax: {x: 1, y: 1, z: 1}
-      m_UniformScale: {x: 1, y: 1.224719}
+      m_UniformScale: {x: 0.38202244, y: 0.60674155}
       m_UniformBool: 1
       m_XRotationBool: 0
       m_YRotationBool: 0
@@ -381,3 +381,115 @@ MonoBehaviour:
       m_YScaleBool: 0
       m_ZScaleBool: 0
     name: stone-flat
+  - gameObject: {fileID: 5937401946653607123, guid: cc5db2b5b3a223f4f94a711904930cff, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 1
+      m_XRotationBool: 0
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: grass
+  - gameObject: {fileID: 5326626950349094277, guid: eb447367cfa94b348a847ea5549adeba, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 8.150944, z: 0}
+      m_RotationRangeMax: {x: 0, y: 148.07547, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 1}
+      m_UniformBool: 1
+      m_XRotationBool: 0
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: palm1
+  - gameObject: {fileID: 4648788989474544484, guid: 8d3a87eb9cfdb7f4da89946053d47c75, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 1, y: 1.3370786}
+      m_UniformBool: 1
+      m_XRotationBool: 0
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: palm3
+  - gameObject: {fileID: 8352726983488604909, guid: b4652443798338041b3d58b160bf71cf, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 0.7191011, y: 1}
+      m_UniformBool: 1
+      m_XRotationBool: 0
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: rocks
+  - gameObject: {fileID: 4556644920290055981, guid: e6220f58b4e49f74aacdd22125b3e581, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 0.6629213, y: 1}
+      m_UniformBool: 1
+      m_XRotationBool: 0
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: rocks2
+  - gameObject: {fileID: 4670123898368043668, guid: 0fe8a962478c3534aab26c64a259ac17, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 0.49438202, y: 1}
+      m_UniformBool: 1
+      m_XRotationBool: 0
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: rocks3
+  - gameObject: {fileID: 4446182066534647842, guid: cd458d56e4ca5ce408858013eb558a88, type: 3}
+    settings:
+      m_Strength: 50
+      m_RotationRangeMin: {x: 0, y: 0, z: 0}
+      m_RotationRangeMax: {x: 0, y: 0, z: 0}
+      m_ScaleRangeMin: {x: 1, y: 1, z: 1}
+      m_ScaleRangeMax: {x: 1, y: 1, z: 1}
+      m_UniformScale: {x: 0.60674155, y: 1}
+      m_UniformBool: 1
+      m_XRotationBool: 0
+      m_YRotationBool: 0
+      m_ZRotationBool: 0
+      m_XScaleBool: 0
+      m_YScaleBool: 0
+      m_ZScaleBool: 0
+    name: rocks4
