@@ -14,7 +14,6 @@ public class Character : MonoBehaviour, ICharacter
     public IMovement Movement => _movement;
     public IGarbageBag Bag => _garbageCollector.Bag;
 
-
     private void Update()
     {
         _animation.PlayMovement(_movement.Velocity);
