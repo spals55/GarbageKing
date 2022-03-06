@@ -1,35 +1,70 @@
-﻿using PixupGames.Infrastracture.Services;
+﻿using DG.Tweening;
+using PixupGames.Infrastracture.Services;
+using System;
 using System.Collections.Generic;
+using Unity.Collections;
+using UnityEditor;
 using UnityEngine;
 
 namespace PixupGames.Infrastracture.Game
 {
-    public class Region : MonoBehaviour, IRegion
+    public class Region : MonoBehaviour, IRegion, IUnlockable
     {
-        [SerializeField] private int _id;
-        [SerializeField] private List<BuyZone> _buyZones;
+        private const float UnlockDuration = 0.6f;
+
+        [SerializeField] private string _guid;
+        [SerializeField] private List<UnlockZone> _unlockZone;
+        [SerializeField] private ParticleSystem _unlockEffect;
 
         private IDataPersistence _persistence;
 
-        public int Id => _id;
+        public string GUID => _guid;
+
+        private void OnValidate()
+        {
+#if UNITY_EDITOR
+            if (string.IsNullOrEmpty(_guid))
+            {
+                _guid = Guid.NewGuid().ToString();
+                EditorUtility.SetDirty(gameObject);
+            }
+#endif
+        }
+
+#if UNITY_EDITOR
+        [ContextMenu("Regenerate Region GUID")]
+        public void RegenerateGUID()
+        {
+            _guid = Guid.NewGuid().ToString();
+            EditorUtility.SetDirty(gameObject);
+        }
+#endif
 
         public void Init(IDataPersistence persistence)
         {
             _persistence = persistence;
         }
 
-        public void Unlock()
+        public void Unlock(bool animate)
         {
-            UnlockCommodity();
+            gameObject.SetActive(true);
+
+            if (animate)
+            {
+                UnlockZones();
+                //_unlockEffect.Play();
+                transform.localScale = Vector3.zero;
+                transform.DOScale(1, UnlockDuration);
+            }
         }
 
-        private void UnlockCommodity()
+        private void UnlockZones()
         {
-            foreach (var buyZone in _buyZones)
+            foreach (var buyZone in _unlockZone)
             {
-                if(buyZone.Id == 1337)
+                if(buyZone.GUID == "Lala")
                 {
-                    buyZone.UnlockCommodity(false);
+                    buyZone.Unlock(false);
                 }
             }
         }

@@ -6,6 +6,7 @@ public class Trash : MonoBehaviour, ITrash
 {
     [SerializeField] private TrashType _type;
     [SerializeField] private int _weight;
+    [SerializeField] private Collider _collider;
 
     public TrashType Type => _type;
 
@@ -13,9 +14,13 @@ public class Trash : MonoBehaviour, ITrash
 
     public bool CanCollect { get; private set; } = true;
 
-    public void Collect() => CanCollect = false;
-
     public void Hide() => gameObject.SetActive(false);
+
+    public void Collect()
+    {
+        CanCollect = false;
+        _collider.enabled = false;
+    }
 
     public void Show()
     {
@@ -25,7 +30,7 @@ public class Trash : MonoBehaviour, ITrash
 
     public void Release()
     {
-        CanCollect = false;
         Hide();
+        gameObject.SetActive(false);
     }
 }

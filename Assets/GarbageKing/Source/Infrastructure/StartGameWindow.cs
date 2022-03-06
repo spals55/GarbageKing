@@ -6,7 +6,7 @@ namespace PixupGames.Infrastracture.Game
     {
         public void Hide()
         {
-            throw new System.NotImplementedException();
+            gameObject.SetActive(false);
         }
 
         public void Show()

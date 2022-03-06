@@ -283,6 +283,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _collider: {fileID: 4053706405524460071}
+  _scaleWhenEntered: 0
+  _scaleDuration: 0
+  _scaleEndValue: 0
+  _scaleDefaultValue: 0
 --- !u!1 &4097540422019759325
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +441,8 @@ MonoBehaviour:
   _offset: {x: -0.3, y: -0.3, z: 0.3}
   _countStack: {x: 3, y: 3, z: 3}
   _stackContainer: {fileID: 2114235354318392368}
+  _jumpPower: 1
+  _jumpDuraction: 1
 --- !u!65 &4725402133322815915
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -901,7 +907,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &4886009219826861622
 Transform:
   m_ObjectHideFlags: 0
@@ -910,8 +916,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9127615627025011733}
   m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -0.46, y: 0.61, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.48, y: 0.61, z: -1}
+  m_LocalScale: {x: 1.4458984, y: 1.2333984, z: 1}
   m_Children: []
   m_Father: {fileID: 2114235354318392368}
   m_RootOrder: 0
@@ -960,7 +966,7 @@ SpriteRenderer:
   m_Color: {r: 0, g: 0.89411765, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
-  m_DrawMode: 2
+  m_DrawMode: 0
   m_Size: {x: 5, y: 5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0

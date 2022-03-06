@@ -1,3 +1,4 @@
+using PixupGames.Core;
 using PixupGames.Infrastracture.Game;
 using PixupGames.Infrastracture.Services;
 using System.Collections;
@@ -8,20 +9,33 @@ public class UnityGameEngine : MonoBehaviour, IGameEngine
 {
     [SerializeField] private int _targetFrameRate = 60;
     [SerializeField] private Viewport _viewport;
+    [SerializeField] private MainCamera _camera;
 
-    private IDataPersistence _dataProvider;
+    private IGame _game;
 
     private void Awake()
     {
         Application.targetFrameRate = _targetFrameRate;
     }
 
-    public void Init(IDataPersistence dataProvider)
+    private void Start()
     {
-        _dataProvider = dataProvider;
+        _game.Run();
+    }
+
+    private void FixedUpdate()
+    {
+        _game.FixedTick(Time.time);
+    }
+
+    public void Init(IGame game)
+    {
+        _game = game;
     }
 
     public IViewport GetViewport() => _viewport;
+
+    public ICamera Camera => _camera;
 
     public IInputDevice GetInputDevice()
     {
@@ -32,6 +46,6 @@ public class UnityGameEngine : MonoBehaviour, IGameEngine
 
     private void OnApplicationQuit()
     {
-        _dataProvider.Save();
+        _game.Save();
     }
 }

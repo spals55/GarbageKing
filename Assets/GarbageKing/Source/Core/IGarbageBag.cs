@@ -10,5 +10,5 @@ public interface IGarbageBag
 
     bool CanAdd(int weight);
     void Add(ITrash trash);
-    ITrash Get();
+    ITrash GetTrash();
 }

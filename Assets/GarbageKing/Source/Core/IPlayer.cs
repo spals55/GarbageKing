@@ -1,10 +1,8 @@
-﻿using PixupGames.Infrastracture.Game;
+﻿using PixupGames.Contracts;
+using PixupGames.Infrastracture.Game;
 using PixupGames.Infrastracture.Services;
 
-public interface IPlayer : ICameraTarget
+public interface IPlayer : IFixedUpdateLoop
 {
-    public IWallet Wallet { get; }
-    ICharacter Character { get; }
-
-    void Init(IInputDevice inputDevice, IPlayGameWindow playWindow, IWallet wallet);
+    void SetControlledHero(IHero controlledHero);
 }

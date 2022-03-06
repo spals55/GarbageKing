@@ -1,4 +1,6 @@
-﻿using TMPro;
+﻿using PixupGames.Contracts;
+using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -6,34 +8,59 @@ namespace PixupGames.Infrastracture.Game
 {
     public class PlayGameWindow : MonoBehaviour, IPlayGameWindow
     {
+        [SerializeField] private CanvasGroup _canvasGroup;
         [SerializeField] private TMP_Text _moneyLabel;
         [SerializeField] private TMP_Text _capacityLabel;
         [SerializeField] private Image _fill;
 
-        public void Hide()
+        private IWallet _wallet;
+        private IGarbageBag _gargabeBag;
+
+        public void Init(IWallet wallet, IGarbageBag garbageBag)
         {
-            throw new System.NotImplementedException();
+            _wallet = wallet;
+            _gargabeBag = garbageBag;
+
+            UpdateGarbageCapacity();
+            UpdateBalance();
+
+            _wallet.BalanceChanged += OnBalanceChanged;
+            _gargabeBag.WeightChanged += OnGarbageBagWeightChanged;
         }
 
-        public void RenderMoney(int money)
+        public void Show() => _canvasGroup.Open();
+
+        public void Hide() => _canvasGroup.Close();
+
+        private void OnGarbageBagWeightChanged()
         {
-            _moneyLabel.text = money.ToString();
+            UpdateGarbageCapacity();
         }
 
-        public void ChangeCapacity(int capacity, int maxCapacity)
+        private void OnBalanceChanged()
         {
-            if (capacity >= maxCapacity)
+            UpdateBalance();
+        }
+
+        private void UpdateGarbageCapacity()
+        {
+            if (_gargabeBag.Weight >= _gargabeBag.MaxWeight)
                 _capacityLabel.text = "MAX";
             else
-               _capacityLabel.text = capacity.ToString();
+                _capacityLabel.text = _gargabeBag.Weight.ToString();
 
-
-            _fill.fillAmount = capacity / (float)maxCapacity;
+            _fill.fillAmount = _gargabeBag.Weight / (float)_gargabeBag.MaxWeight;
         }
 
-        public void Show()
+        private void UpdateBalance()
         {
-            throw new System.NotImplementedException();
+            _moneyLabel.text = _wallet.Money.ToString();
+        }
+
+        private void OnDestroy()
+        {
+            _wallet.BalanceChanged -= OnBalanceChanged;
+            _gargabeBag.WeightChanged -= OnGarbageBagWeightChanged;
         }
     }
 }

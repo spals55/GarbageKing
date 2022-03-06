@@ -110,3 +110,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _type: 3
   _weight: 5
+  _collider: {fileID: 6570234682363473677}

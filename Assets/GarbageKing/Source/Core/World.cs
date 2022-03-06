@@ -1,35 +1,39 @@
+using PixupGames.Contracts;
 using PixupGames.Infrastracture.Game;
 using PixupGames.Infrastracture.Services;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class World : MonoBehaviour, IWorld
+namespace PixupGames.Core
 {
-    [SerializeField] private MainCamera _camera;
-    [SerializeField] private Player _player;
-    [SerializeField] private List<Region> _regions;
-
-    private IAssetsFactory _assetsFactory;
-    private IDataPersistence _dataPersistence;
-
-    public void Init(IAssetsFactory assetsFactory, IDataPersistence dataPersistence)
+    public class World : IWorld
     {
-        _assetsFactory = assetsFactory;
-        _dataPersistence = dataPersistence;
-    }
+        private const string HeroPath = "World/Hero";
 
-    public IPlayer CreatePlayer() => _player;
+        private List<Region> _regions;
 
-    public ICamera CreateCamera() => _camera;
-
-    public void UnlockRegion(int id)
-    {
-        foreach (var region in _regions)
+        public World(List<Region> regions)
         {
-            if (region.Id == id)
+            _regions = regions;
+        }
+
+        public IHero CreateHero(Vector3 position)
+        {
+            Hero prefab = Resources.Load<Hero>(HeroPath);
+            IHero hero = Object.Instantiate(prefab, position, Quaternion.identity);
+
+            return hero;
+        }
+
+        public void UnlockRegion(string guid)
+        {
+            foreach (var region in _regions)
             {
-                region.Unlock();
+                if (region.GUID == guid)
+                {
+                    region.Unlock(false);
+                }
             }
         }
     }

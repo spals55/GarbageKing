@@ -1,8 +1,10 @@
-﻿namespace PixupGames.Infrastracture.Game
+﻿using PixupGames.Contracts;
+using PixupGames.Infrastracture.Services;
+
+namespace PixupGames.Infrastracture.Game
 {
     public interface IPlayGameWindow : IWindow
     {
-        void ChangeCapacity(int capacity, int maxCapacity);
-        void RenderMoney(int money);
+        void Init(IWallet wallet, IGarbageBag garbageBag);
     }
 }

@@ -2,44 +2,68 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace PixupGames.Persitence.Models
+namespace PixupGames.Persistence.Models
 {
     [System.Serializable]
     public class Data
     {
         public World World;
-        public Character Character;
 
-        public Data(World world, Character character)
+        public Data(World world)
         {
             World = world;
-            Character = character;
         }
     }
 
     [System.Serializable]
     public class World
     {
+        public MainCamera Camera;
+        public Hero Hero;
         public List<Region> Regions;
 
-        public World(List<Region> regions)
+        public World(List<Region> regions, MainCamera camera, Hero hero)
         {
             Regions = regions;
+            Hero = hero;
+            Camera = camera;
         }
     }
 
     [System.Serializable]
-    public class Character
+    public class MainCamera
     {
-        public int Money;
+        public Vector3 LastPosition;
+
+        public MainCamera(Vector3 lastPosition)
+        {
+            LastPosition = lastPosition;
+        }
+    }
+
+    [System.Serializable]
+    public class Hero
+    {
+        public Wallet Wallet;
         public Bag Bag;
         public Vector3 LastPosition;
 
-        public Character(int money, Bag bag, Vector3 lastPosition)
+        public Hero(Wallet wallet, Bag bag, Vector3 lastPosition)
         {
             Bag = bag;
-            Money = money;
+            Wallet = wallet;
             LastPosition = lastPosition;
+        }
+    }
+
+    [System.Serializable]
+    public class Wallet
+    {
+        public int Money;
+
+        public Wallet(int money)
+        {
+            Money = money;
         }
     }
 
@@ -52,12 +76,12 @@ namespace PixupGames.Persitence.Models
     [System.Serializable]
     public class Region
     {
-        public int Id;
+        public string GUID;
         public bool IsOpen;
 
-        public Region(int id, bool isOpen)
+        public Region(string guid, bool isOpen)
         {
-            Id = id;
+            GUID = guid;
             IsOpen = isOpen;
         }
     }

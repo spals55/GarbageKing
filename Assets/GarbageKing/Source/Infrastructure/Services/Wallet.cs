@@ -1,7 +1,9 @@
-﻿using System;
+﻿using PixupGames.Contracts;
+using PixupGames.Infrastracture.Services;
+using System;
 using UnityEngine;
 
-namespace PixupGames.Infrastracture.Services
+namespace PixupGames.Core
 {
     public class Wallet : IWallet
     {

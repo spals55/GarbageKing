@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class GarbageBag : MonoBehaviour, IGarbageBag
 {
-    [SerializeField] private TrashPool _pool;
+    private const string CapacityShapeName = "Key 1";
+
     [SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
     [SerializeField] private int _maxWeight = 100;
 
-    private const string CapacityShapeName = "Key 1";
-
-    private Queue<ITrash> _trash = new Queue<ITrash>();
+    private Queue<ITrash> _trash;
     private int _currentCapacity;
+    private TrashPool _pool;
 
     public event Action WeightChanged;
 
@@ -20,6 +20,12 @@ public class GarbageBag : MonoBehaviour, IGarbageBag
     public int MaxWeight => _maxWeight;
 
     public int Weight => _currentCapacity;
+
+    private void Awake()
+    {
+        _pool = FindObjectOfType<TrashPool>();
+        _trash = new Queue<ITrash>();
+    }
 
     public bool CanAdd(int weight) =>
         _currentCapacity + weight <= _maxWeight;
@@ -33,7 +39,7 @@ public class GarbageBag : MonoBehaviour, IGarbageBag
         _trash.Enqueue(trash);
     }
 
-    public ITrash Get()
+    public ITrash GetTrash()
     {
         ITrash trash = _trash.Dequeue();
         _currentCapacity -= trash.Weight;

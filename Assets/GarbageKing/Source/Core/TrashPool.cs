@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,11 @@ public class TrashPool : MonoBehaviour
     private void Awake()
     {
         _trash = FindObjectsOfType<Trash>().ToList();
+
+        foreach (var item in _trash)
+        {
+            item.gameObject.SetActive(false);
+        }
     }
 
     public ITrash Get(TrashType type, Vector3 position)
@@ -24,6 +30,6 @@ public class TrashPool : MonoBehaviour
             }
         }
 
-        return null;
+        throw new NullReferenceException("No trash in pool");
     }
 }

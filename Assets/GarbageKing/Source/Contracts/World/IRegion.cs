@@ -1,6 +1,6 @@
 ﻿public interface IRegion
 {
-    int Id { get; }
+    string GUID { get; }
 
-    void Unlock();
+    void Unlock(bool animate);
 }

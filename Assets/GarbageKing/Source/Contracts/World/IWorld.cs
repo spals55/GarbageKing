@@ -1,10 +1,10 @@
-﻿using PixupGames.Infrastracture.Game;
+﻿using PixupGames.Contracts;
+using PixupGames.Infrastracture.Game;
 using PixupGames.Infrastracture.Services;
+using UnityEngine;
 
 public interface IWorld
 {
-    void Init(IAssetsFactory assetsFactory, IDataPersistence dataPersistence);
-    IPlayer CreatePlayer();
-    ICamera CreateCamera();
-    void UnlockRegion(int id);
+    IHero CreateHero(Vector3 position);
+    void UnlockRegion(string guid);
 }

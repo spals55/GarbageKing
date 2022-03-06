@@ -1,7 +1,8 @@
 ﻿namespace PixupGames.Infrastracture.Game
 {
-    public interface IGame
+    public interface IGame : IFixedUpdateLoop
     {
         void Run();
+        void Save();
     }
 }

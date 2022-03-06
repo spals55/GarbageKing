@@ -1,3 +1,4 @@
+using PixupGames.Core;
 using PixupGames.Infrastracture.Services;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,18 +9,17 @@ namespace PixupGames.Infrastracture.Game
     {
         [SerializeField] private string _saveKey = "PixupDevelopment";
         [SerializeField] private UnityGameEngine _gameEngine;
-        [SerializeField] private World _world;
+        [SerializeField] private List<Region> _regions;
+
+        private Game _game;
 
         private void Awake()
         {
             var dataPersistence = new DataPersistence(_saveKey);
-            var assetsFactory = new AssetsFactory();
+            var world = new World(_regions);
 
-            _gameEngine.Init(dataPersistence);
-            _world.Init(assetsFactory, dataPersistence);
-
-            var game = new Game(dataPersistence, _world, _gameEngine, assetsFactory);
-            game.Run();
+            _game = new Game(dataPersistence, world, _gameEngine);
+            _gameEngine.Init(_game);
         }
     }
 }

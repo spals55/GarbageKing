@@ -1,4 +1,4 @@
-﻿using PixupGames.Persitence.Models;
+﻿using PixupGames.Persistence.Models;
 
 namespace PixupGames.Infrastracture.Services
 {

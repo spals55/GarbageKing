@@ -1,10 +1,11 @@
 using DG.Tweening;
+using PixupGames.Contracts;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashRecycler : Commodity, ITrashRecycler
+public class TrashRecycler : MonoBehaviour, ITrashRecycler, IUnlockable
 {
     [SerializeField] private Timer _timer;
     [SerializeField] private int _trashToCreateBlock;
@@ -14,20 +15,20 @@ public class TrashRecycler : Commodity, ITrashRecycler
     [SerializeField] private DropTrigger _dropTrigger;
     [SerializeField] private Transform _trashContainer;
 
-    private Queue<ITrash> _trash = new Queue<ITrash>();
+    private Queue<ITrash> _trash;
     private Coroutine _tryCollectTrash;
     private int _currentBlockSize;
+
+    private void Awake()
+    {
+        _trash = new Queue<ITrash>();
+    }
 
     private void OnEnable()
     {
         _timer.Completed += OnTimerCompleted;
         _dropTrigger.Entered += OnDropTriggerEntered;
         _dropTrigger.Exit += OnDropTriggerExit;
-    }
-
-    private void OnTimerCompleted()
-    {
-        CreateBlock();
     }
 
     private void OnDisable()
@@ -42,22 +43,28 @@ public class TrashRecycler : Commodity, ITrashRecycler
         StartCoroutine(RecyclingProcess());
     }
 
-    public override void Show(bool animate)
+    public void Unlock(bool animate)
     {
         _skin.Show(animate);
+        transform.parent = null;
     }
 
-    private void OnDropTriggerEntered(ICharacter character)
+    private void OnDropTriggerEntered(IHero hero)
     {
         if (_tryCollectTrash != null)
             StopCoroutine(_tryCollectTrash);
 
-        _tryCollectTrash = StartCoroutine(TryCollectTrash(character.Bag));
+        _tryCollectTrash = StartCoroutine(TryCollectTrash(hero.Bag));
     }
 
-    private void OnDropTriggerExit(ICharacter character)
+    private void OnDropTriggerExit(IHero hero)
     {
         StopCoroutine(_tryCollectTrash);
+    }
+
+    private void OnTimerCompleted()
+    {
+        CreateBlock();
     }
 
     private IEnumerator TryCollectTrash(IGarbageBag bag)
@@ -66,7 +73,7 @@ public class TrashRecycler : Commodity, ITrashRecycler
         {
             if (bag.HasTrash)
             {
-                var trash = bag.Get();
+                var trash = bag.GetTrash();
                 trash.transform.DOScale(Vector3.zero, 4f);
                 trash.transform.DOJump(_trashContainer.transform.position, 4f, 1, 1.5f)
                     .OnComplete(() =>
@@ -96,7 +103,7 @@ public class TrashRecycler : Commodity, ITrashRecycler
             {
                 _currentBlockSize = 0;
                 _timer.Begin(Duration);
-                yield return new WaitForSeconds(Duration);
+                yield return Yielder.WaitForSeconds(Duration);
             }
 
             yield return null;
@@ -105,7 +112,7 @@ public class TrashRecycler : Commodity, ITrashRecycler
 
     private void CreateBlock()
     {
-        _skin.ShakeBox(2.5f);
+        _skin.ShakeBox();
 
         ITrashBlock block = Instantiate(_trashBlockTemplate, transform.position, Quaternion.identity);
         _conveyor.Add(block);

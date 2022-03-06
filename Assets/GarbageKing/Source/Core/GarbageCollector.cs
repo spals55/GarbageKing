@@ -58,7 +58,7 @@ public class GarbageCollector : MonoBehaviour
 
     private void SuckNearestTresh()
     {
-        var nearestTrash = FindNearestTrash();
+        ITrash nearestTrash = FindNearestTrash();
 
         if (nearestTrash != null)
         {
