@@ -17,7 +17,6 @@ public class UnlockZone : Zone
     private Coroutine _tryBuyCoroutine;
     private IUnlockable _unlockable;
 
-#if UNITY_EDITOR
     private void OnValidate()
     {
         _totalCostLabel.text = _totalCost.ToString();
@@ -31,7 +30,6 @@ public class UnlockZone : Zone
             _unlockableBehavior = null;
         }
     }
-#endif
 
     private void OnEnable()
     {

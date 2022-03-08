@@ -12,33 +12,17 @@ namespace PixupGames.Infrastracture.Game
     {
         private const float UnlockDuration = 0.6f;
 
-        [SerializeField] private string _guid;
         [SerializeField] private List<UnlockZone> _unlockZone;
         [SerializeField] private ParticleSystem _unlockEffect;
 
         private IDataPersistence _persistence;
 
-        public string GUID => _guid;
+        public string Name { get; private set; }
 
         private void OnValidate()
         {
-#if UNITY_EDITOR
-            if (string.IsNullOrEmpty(_guid))
-            {
-                _guid = Guid.NewGuid().ToString();
-                EditorUtility.SetDirty(gameObject);
-            }
-#endif
+            Name = gameObject.name;
         }
-
-#if UNITY_EDITOR
-        [ContextMenu("Regenerate Region GUID")]
-        public void RegenerateGUID()
-        {
-            _guid = Guid.NewGuid().ToString();
-            EditorUtility.SetDirty(gameObject);
-        }
-#endif
 
         public void Init(IDataPersistence persistence)
         {

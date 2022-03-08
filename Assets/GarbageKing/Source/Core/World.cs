@@ -26,11 +26,11 @@ namespace PixupGames.Core
             return hero;
         }
 
-        public void UnlockRegion(string guid)
+        public void UnlockRegion(string name)
         {
             foreach (var region in _regions)
             {
-                if (region.GUID == guid)
+                if (region.Name == name)
                 {
                     region.Unlock(false);
                 }
