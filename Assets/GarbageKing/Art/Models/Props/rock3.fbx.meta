@@ -1,0 +1,1566 @@
+fileFormatVersion: 2
+guid: fa31d08f30c2a6f4f8fb4242127042e2
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: 505825938913757919
+    second: Rock_Medium_Stone_05|Prop_Bone_Horn_Tusk_01|Take 001|BaseLayer
+  - first:
+      74: -3628891213572984360
+    second: Rock_Medium_Stone_05|Prop_Bone_Horn_Tusk_02|Take 001|BaseLayer
+  - first:
+      74: -1856832452959306996
+    second: Rock_Medium_Stone_05|Prop_Bone_Horn_Tusk_03|Take 001|BaseLayer
+  - first:
+      74: -8579622471017611190
+    second: Rock_Medium_Stone_05|Prop_Bone_Horn_Tusk_Rope_Tied_01|Take 001|BaseLayer
+  - first:
+      74: 6051403669746989388
+    second: Rock_Medium_Stone_05|Prop_Building_Canopy_Canvas_01|Take 001|BaseLayer
+  - first:
+      74: -7082845240168406723
+    second: Rock_Medium_Stone_05|Prop_Building_Canopy_Canvas_02|Take 001|BaseLayer
+  - first:
+      74: -904631084373525155
+    second: Rock_Medium_Stone_05|Prop_Building_Canopy_Canvas_03|Take 001|BaseLayer
+  - first:
+      74: -8611849177684338187
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_01|Take
+      001|BaseLayer
+  - first:
+      74: 5360541772531539679
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_02|Take
+      001|BaseLayer
+  - first:
+      74: 704139396535518504
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_03|Take
+      001|BaseLayer
+  - first:
+      74: -108160225018147687
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_04|Take
+      001|BaseLayer
+  - first:
+      74: -3646694564452011491
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_05|Take
+      001|BaseLayer
+  - first:
+      74: -6127071421814012309
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_06|Take
+      001|BaseLayer
+  - first:
+      74: -2496834360202475308
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_07|Take
+      001|BaseLayer
+  - first:
+      74: 7848353688816915244
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_08|Take
+      001|BaseLayer
+  - first:
+      74: 508563128778842994
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_09|Take
+      001|BaseLayer
+  - first:
+      74: -6954241908265203049
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_10|Take
+      001|BaseLayer
+  - first:
+      74: -3620462903668656448
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_11|Take
+      001|BaseLayer
+  - first:
+      74: 1485350071227913835
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_12|Take
+      001|BaseLayer
+  - first:
+      74: 6671396893540187973
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_13|Take
+      001|BaseLayer
+  - first:
+      74: -7917050803816165869
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_Large_01|Take
+      001|Bas
+  - first:
+      74: -4153102805410212825
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_Large_02|Take
+      001|Bas
+  - first:
+      74: -143533429746418969
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Adornment_Large_03|Take
+      001|Bas
+  - first:
+      74: 8339990718425718447
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Divider_01|Take
+      001|BaseLayer
+  - first:
+      74: 6662213458575178272
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Divider_02|Take
+      001|BaseLayer
+  - first:
+      74: -3487782693771836293
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Gate_Divider_01|Take
+      001|BaseLa
+  - first:
+      74: 1250020388931052544
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Outcrop_01|Take
+      001|BaseLayer
+  - first:
+      74: -6158104367984254756
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Outcrop_02|Take
+      001|BaseLayer
+  - first:
+      74: 3495146311756216983
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Tower_Base_01|Take
+      001|BaseLaye
+  - first:
+      74: -2372056364812754120
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Tower_Simple_01|Take
+      001|BaseLa
+  - first:
+      74: -5802383459004804057
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Tower_Top_01|Take
+      001|BaseLayer
+  - first:
+      74: -5998782681084379831
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Tower_Window_01|Take
+      001|BaseLa
+  - first:
+      74: -5916777395100067788
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Wall_Simple_01|Take
+      001|BaseLay
+  - first:
+      74: -7944633023451731441
+    second: Rock_Medium_Stone_05|Prop_Building_Dark_Fantasy_Fort_Wall_Window_01|Take
+      001|BaseLay
+  - first:
+      74: -1599724156252627567
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Base_Floor_Roof_Block_01|Take
+      001|BaseLay
+  - first:
+      74: 3124696977121157987
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Base_Roof_Dome_01|Take 001|BaseLayer
+  - first:
+      74: 852855718750337731
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Base_Wall_Block_01|Take 001|BaseLayer
+  - first:
+      74: 6657278812399062983
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Entrance_Base_01|Take 001|BaseLayer
+  - first:
+      74: -2586721118553597492
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Facade_Arch_01|Take 001|BaseLayer
+  - first:
+      74: 5897231143348850982
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Facade_Column_01|Take 001|BaseLayer
+  - first:
+      74: 655036562024510200
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Facade_Ornamental_Block_Corner_01|Take
+      00
+  - first:
+      74: 1258419856585243932
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Free_Standing_Arches_01|Take
+      001|BaseLaye
+  - first:
+      74: -7072369920705766998
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Ornamental_Block_01|Take 001|BaseLayer
+  - first:
+      74: -1112931679964060892
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Ornamental_Block_Corner_01|Take
+      001|BaseL
+  - first:
+      74: -2872037315071324985
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Ornamental_Block_Corner_02|Take
+      001|BaseL
+  - first:
+      74: 1550355854186550207
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Ornamental_Block_Corner_03|Take
+      001|BaseL
+  - first:
+      74: 6648116657686543744
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Ornamental_Block_Corner_04|Take
+      001|BaseL
+  - first:
+      74: 1680453608571266101
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Ornamental_Facade_Block_01|Take
+      001|BaseL
+  - first:
+      74: -5665106988347743727
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Ornamental_Facade_Block_02|Take
+      001|BaseL
+  - first:
+      74: 9047380914058655786
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Ornamental_Facade_Block_03|Take
+      001|BaseL
+  - first:
+      74: -4993897471822737668
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Ornamental_Facade_Block_04|Take
+      001|BaseL
+  - first:
+      74: 1687139613855386730
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Ornamental_Facade_Block_05|Take
+      001|BaseL
+  - first:
+      74: 1059858930076822081
+    second: Rock_Medium_Stone_05|Prop_Building_Eastern_Ornamental_Facade_Block_06|Take
+      001|BaseL
+  - first:
+      74: 483154665507392275
+    second: Rock_Medium_Stone_05|Prop_Building_Fantasy_Peak_Roof_Shingles_01|Take
+      001|BaseLayer
+  - first:
+      74: 9047112220137264365
+    second: Rock_Medium_Stone_05|Prop_Building_Fantasy_Peak_Roof_Shingles_02|Take
+      001|BaseLayer
+  - first:
+      74: 2622353341995855345
+    second: Rock_Medium_Stone_05|Prop_Building_Fantasy_Peak_Roof_Shingles_03|Take
+      001|BaseLayer
+  - first:
+      74: 1528059799925456939
+    second: Rock_Medium_Stone_05|Prop_Building_Heavy_Stone_Door_Arch_01|Take 001|BaseLayer
+  - first:
+      74: 1217382037797223062
+    second: Rock_Medium_Stone_05|Prop_Building_Heavy_Stone_Door_Fixed_01|Take 001|BaseLayer
+  - first:
+      74: 7071298087233143136
+    second: Rock_Medium_Stone_05|Prop_Building_Heavy_Stone_Door_Separate_01|Take
+      001|BaseLayer
+  - first:
+      74: 4024006912332784503
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Beam_Roof_Attachment_01|Take
+      001|Bas
+  - first:
+      74: 7128476582996725511
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Chimney_01|Take 001|BaseLayer
+  - first:
+      74: 7177558309756172060
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Collar_Base_Attachment_01|Take
+      001|B
+  - first:
+      74: -8253865028122201320
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Collar_Base_Attachment_02|Take
+      001|B
+  - first:
+      74: -843727706732212416
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Collar_Base_Attachment_03|Take
+      001|B
+  - first:
+      74: 5709142421390118787
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Collar_Base_Attachment_04|Take
+      001|B
+  - first:
+      74: -5747102494150238448
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Collar_Base_Attachment_05|Take
+      001|B
+  - first:
+      74: 8252425945634335480
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Collar_Base_Attachment_06|Take
+      001|B
+  - first:
+      74: 2715514678144891810
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Collar_Base_Attachment_07|Take
+      001|B
+  - first:
+      74: 7924766872432909150
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Collar_Base_Attachment_08|Take
+      001|B
+  - first:
+      74: -1025078309729102099
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Collar_Base_Attachment_09|Take
+      001|B
+  - first:
+      74: -12749644190786759
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Collar_Round_Roof_Attachment_01|Take
+  - first:
+      74: 4139710642943539237
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Collar_Square_Roof_Attachment_01|Tak
+  - first:
+      74: -8463267100707279032
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Plated_Sheet_Angled_01|Take
+      001|Base
+  - first:
+      74: 6943514494196949461
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Plated_Sheet_Jaw_01|Take
+      001|BaseLay
+  - first:
+      74: -7426569726160001771
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Plated_Sheet_Loose_01|Take
+      001|BaseL
+  - first:
+      74: 4279520954304704239
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Plated_Sheet_Loose_02|Take
+      001|BaseL
+  - first:
+      74: -935284803896591067
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Plated_Sheet_Loose_03|Take
+      001|BaseL
+  - first:
+      74: 2684583143290096164
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Plated_Sheet_Loose_04|Take
+      001|BaseL
+  - first:
+      74: -8308328618823550138
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Plated_Sheet_Skull_01|Take
+      001|BaseL
+  - first:
+      74: -6369110590779112105
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Plated_Sheet_Tooth_Tusk_01|Take
+      001|
+  - first:
+      74: -4192884149807315851
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Plated_Sheet_Tooth_Tusk_02|Take
+      001|
+  - first:
+      74: -9123547563994334840
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Plated_Sheet_Top_01|Take
+      001|BaseLay
+  - first:
+      74: 4943904014272895020
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Plated_Sheet_Wall_Tile_01|Take
+      001|B
+  - first:
+      74: 3855154712626219516
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Plated_Sheet_Wall_Tile_02|Take
+      001|B
+  - first:
+      74: 5299130429227948799
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Plated_Sheet_Wall_Tile_03|Take
+      001|B
+  - first:
+      74: -5803339067299003547
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Spike_01|Take 001|BaseLayer
+  - first:
+      74: 5383212811172682206
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Spike_02|Take 001|BaseLayer
+  - first:
+      74: -3762345728301225734
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Spike_03|Take 001|BaseLayer
+  - first:
+      74: 1119376501024059630
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Metal_Spike_04|Take 001|BaseLayer
+  - first:
+      74: 4749720999577001816
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Timber_Support_Beam_01|Take
+      001|BaseLayer
+  - first:
+      74: 3502267794330157284
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Timber_Support_Beam_Metal_Base_01|Take
+      001
+  - first:
+      74: -6791791697910559579
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Tribal_Roof_Cloth_Bone_Flat_01|Take
+      001|Ba
+  - first:
+      74: 990659214194603163
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Tribal_Roof_Cloth_Bone_Peaked_01|Take
+      001|
+  - first:
+      74: 4022211879151564455
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Tribal_Roof_Cloth_Timber_Peaked_01|Take
+      00
+  - first:
+      74: -3652475781718357487
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Tribal_Roof_Cloth_Timber_Peaked_02|Take
+      00
+  - first:
+      74: -2108247446030620101
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Tribal_Roof_Cloth_Timber_Peaked_03|Take
+      00
+  - first:
+      74: 5535605350459288627
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Tribal_Timber_Tower_Base_Support_Beam_01|T
+  - first:
+      74: -7764453269023716313
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Tribal_Timber_Tower_Middle_01|Take
+      001|Bas
+  - first:
+      74: -6021509293475749841
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Tribal_Timber_Tower_Top_01|Take
+      001|BaseLa
+  - first:
+      74: -8556010868535151908
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Tribal_Timber_Tower_Top_02|Take
+      001|BaseLa
+  - first:
+      74: 686240737508380393
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Tribal_Tower_Base_01|Take 001|BaseLayer
+  - first:
+      74: 7141485957623685234
+    second: Rock_Medium_Stone_05|Prop_Building_Savage_Tribal_Tusk_Cloth_Timber_Chimney_01|Take
+      0
+  - first:
+      74: -877961956128235991
+    second: Rock_Medium_Stone_05|Prop_Cloth_Scrap_Flag_Hanging_01|Take 001|BaseLayer
+  - first:
+      74: 3753843632521228365
+    second: Rock_Medium_Stone_05|Prop_Cloth_Scrap_Flag_Hanging_02|Take 001|BaseLayer
+  - first:
+      74: -6086335027885436856
+    second: Rock_Medium_Stone_05|Prop_Fantasy_Candle_01|Take 001|BaseLayer
+  - first:
+      74: -3891315377724190433
+    second: Rock_Medium_Stone_05|Prop_Fantasy_Ornament_Shield_Plaque_01|Take 001|BaseLayer
+  - first:
+      74: -5076180072531301513
+    second: Rock_Medium_Stone_05|Prop_Fantasy_Ornament_Shield_Plaque_02|Take 001|BaseLayer
+  - first:
+      74: -8421568992187410480
+    second: Rock_Medium_Stone_05|Prop_Fantasy_Ornament_Shield_Plaque_03|Take 001|BaseLayer
+  - first:
+      74: 5072614574916392140
+    second: Rock_Medium_Stone_05|Prop_Fantasy_Ornament_Shield_Plaque_Emblem_01|Take
+      001|BaseLaye
+  - first:
+      74: -8615133446977046904
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Altar_Platform_01|Take 001|BaseLayer
+  - first:
+      74: -4058761578257412862
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Alter_Arch_Gold_Gem_01|Take 001|BaseLayer
+  - first:
+      74: 5361087465134373892
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Band_Ornament_Gold_Gem_01|Take
+      001|BaseLayer
+  - first:
+      74: -3045149912383887308
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Bridge_01|Take 001|BaseLayer
+  - first:
+      74: 7809410064999065073
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Fire_Pit_Cauldron_Gold_01|Take
+      001|BaseLayer
+  - first:
+      74: 6153799744293467301
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Hanging_Ornament_Gold_Gem_01|Take
+      001|BaseLa
+  - first:
+      74: 929552719616025007
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Medal_Gold_Gem_01|Take 001|BaseLayer
+  - first:
+      74: 6477774714582640458
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Chevron_Plaque_Gold_Gem_01|Take
+      001
+  - first:
+      74: -1456007698348460318
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Chevron_Plaque_Small_Gold_01|Take
+      0
+  - first:
+      74: 2789120314030674429
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Feathers_Plaque_Gold_Gem_01|Take
+      00
+  - first:
+      74: 2969863849981200936
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Half_Sun_Gold_Gem_01|Take
+      001|BaseL
+  - first:
+      74: -26179139063465805
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Half_Sun_Spikes_Gold_01|Take
+      001|Ba
+  - first:
+      74: -8685826483983931276
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_01|Take
+      001|
+  - first:
+      74: 941189847977517014
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_02|Take
+      001|
+  - first:
+      74: 291358163149373659
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_03|Take
+      001|
+  - first:
+      74: 5403060485449549410
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_04|Take
+      001|
+  - first:
+      74: -3627608610881165102
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_05|Take
+      001|
+  - first:
+      74: -1605621647602332476
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_06|Take
+      001|
+  - first:
+      74: -7058696203272472367
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_07|Take
+      001|
+  - first:
+      74: -796281296927266273
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_08|Take
+      001|
+  - first:
+      74: -3619734895246636243
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_09|Take
+      001|
+  - first:
+      74: -6464374324549082718
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_10|Take
+      001|
+  - first:
+      74: -6159620956828023613
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_11|Take
+      001|
+  - first:
+      74: -6401061079282253979
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_12|Take
+      001|
+  - first:
+      74: 1099166936390372651
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_13|Take
+      001|
+  - first:
+      74: 7888610838708478277
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_14|Take
+      001|
+  - first:
+      74: -6438705639397633337
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_15|Take
+      001|
+  - first:
+      74: 9019027125258774355
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_16|Take
+      001|
+  - first:
+      74: 7251448927742752506
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_17|Take
+      001|
+  - first:
+      74: 1144104096164024846
+    second: 'Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_Gem_01|Take '
+  - first:
+      74: 7080382639226860854
+    second: 'Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_Gem_02|Take '
+  - first:
+      74: -7312541314014757615
+    second: 'Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_Gem_03|Take '
+  - first:
+      74: 183635084846214553
+    second: 'Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_Gem_04|Take '
+  - first:
+      74: 7601892976032034780
+    second: 'Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_Gem_05|Take '
+  - first:
+      74: 472692610088282848
+    second: 'Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_Gem_06|Take '
+  - first:
+      74: -4737598447229744677
+    second: 'Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Icon_Plaque_Small_Gold_Gem_07|Take '
+  - first:
+      74: -3819482595090307628
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Leaf_Plaque_Small_Gold_01|Take
+      001|
+  - first:
+      74: -6447933357186347085
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Shield_Plaque_Gold_Gem_01|Take
+      001|
+  - first:
+      74: 4796947637211741686
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Shield_Plaque_Gold_Gem_02|Take
+      001|
+  - first:
+      74: 529246418309205538
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Shield_Plaque_Gold_Gem_03|Take
+      001|
+  - first:
+      74: 7806090623777434325
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Snake_Plaque_Gold_Gem_01|Take
+      001|B
+  - first:
+      74: -6119438639264563451
+    second: 'Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Snake_Wave_Plaque_Gold_Gem_01|Take '
+  - first:
+      74: 6108958257346388003
+    second: 'Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Snake_Wave_Plaque_Gold_Gem_02|Take '
+  - first:
+      74: -7740408930461997370
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Square_Wave_Gold_01|Take
+      001|BaseLa
+  - first:
+      74: 5040261330225836111
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Sun_Disc_Gold_Gem_01|Take
+      001|BaseL
+  - first:
+      74: 8071871518696796446
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Sun_Plaque_Gold_01|Take
+      001|BaseLay
+  - first:
+      74: 2663846440272840425
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Sun_Plaque_Gold_Gem_01|Take
+      001|Bas
+  - first:
+      74: 3216036540551007552
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Sun_Plaque_Gold_Gem_02|Take
+      001|Bas
+  - first:
+      74: -2706700287412837026
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Sun_Plaque_Gold_Gem_03|Take
+      001|Bas
+  - first:
+      74: 4761048510582733041
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Sun_Plaque_Small_Gold_01|Take
+      001|B
+  - first:
+      74: 230234061448793189
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Sun_Plaque_Small_Gold_02|Take
+      001|B
+  - first:
+      74: -5186026632999227308
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Sun_Plaque_Small_Gold_03|Take
+      001|B
+  - first:
+      74: -240022659903234719
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Sun_Plaque_Small_Gold_04|Take
+      001|B
+  - first:
+      74: 7760071171838516489
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Sun_Plaque_Small_Gold_Gem_01|Take
+      0
+  - first:
+      74: 8326101526749002076
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Sun_Plaque_Small_Gold_Gem_02|Take
+      0
+  - first:
+      74: -1601040927504882392
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Sun_Plaque_Small_Gold_Gem_03|Take
+      0
+  - first:
+      74: -8373818540862777482
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Ornament_Sun_Plaque_Small_Gold_Gem_04|Take
+      0
+  - first:
+      74: 6380734465551518963
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Pillar_Block_01|Take 001|BaseLayer
+  - first:
+      74: 851485986929511315
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Pillar_Block_02|Take 001|BaseLayer
+  - first:
+      74: -7672582283849983876
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Pillar_Block_03|Take 001|BaseLayer
+  - first:
+      74: 1552359070366014814
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Pillar_Block_Markings_01|Take
+      001|BaseLayer
+  - first:
+      74: 1259934815025414
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Pillar_Block_Markings_02|Take
+      001|BaseLayer
+  - first:
+      74: -3294860179992533782
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Pillar_Block_Markings_03|Take
+      001|BaseLayer
+  - first:
+      74: 626443676406766532
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Pillar_Block_Markings_04|Take
+      001|BaseLayer
+  - first:
+      74: 1884677713740479578
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Pillar_Column_Markings_01|Take
+      001|BaseLayer
+  - first:
+      74: -3222254987083537650
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Pillar_Column_Markings_02|Take
+      001|BaseLayer
+  - first:
+      74: -6996849382843853279
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Raised_Platform_01|Take 001|BaseLayer
+  - first:
+      74: -5857761101775519336
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Stairs_Stone_01|Take 001|BaseLayer
+  - first:
+      74: -4427443716646174851
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Stepping_Stone_01|Take 001|BaseLayer
+  - first:
+      74: -1123436327879447023
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Stepping_Stone_02|Take 001|BaseLayer
+  - first:
+      74: 5917747195169668542
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Stepping_Stone_03|Take 001|BaseLayer
+  - first:
+      74: -6145578757973819606
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Stepping_Stone_04|Take 001|BaseLayer
+  - first:
+      74: 8163184532617239005
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Stepping_Stone_05|Take 001|BaseLayer
+  - first:
+      74: -8314291132318507230
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Stepping_Stone_06|Take 001|BaseLayer
+  - first:
+      74: 7596589054344801230
+    second: Rock_Medium_Stone_05|Prop_Jungle_Temple_Stepping_Stone_07|Take 001|BaseLayer
+  - first:
+      74: -7229922013103064735
+    second: Rock_Medium_Stone_05|Prop_Lava_Pour_01|Take 001|BaseLayer
+  - first:
+      74: 7345255112462200502
+    second: Rock_Medium_Stone_05|Prop_Lava_Pour_02|Take 001|BaseLayer
+  - first:
+      74: -5118618495721799273
+    second: Rock_Medium_Stone_05|Prop_Obelisk_Stone_Large_01|Take 001|BaseLayer
+  - first:
+      74: 2281520544203900541
+    second: Rock_Medium_Stone_05|Prop_Rope_Timber_Peg_Tie_Down_01|Take 001|BaseLayer
+  - first:
+      74: -7631110055565348311
+    second: Rock_Medium_Stone_05|Prop_Savage_Tribal_Timber_Horns_Brazier_Fire_Pit_01|Take
+      001|Ba
+  - first:
+      74: -2538169902861365083
+    second: Rock_Medium_Stone_05|Prop_Statue_Arm_Volcanic_Stone_01|Take 001|BaseLayer
+  - first:
+      74: 9024095128772366946
+    second: Rock_Medium_Stone_05|Prop_Statue_Jackal_Face_01|Take 001|BaseLayer
+  - first:
+      74: 6564943473673140656
+    second: Rock_Medium_Stone_05|Prop_Statue_Panther_01|Take 001|BaseLayer
+  - first:
+      74: -673459510096847982
+    second: Rock_Medium_Stone_05|Prop_Statue_Snake_Head_Gems_01|Take 001|BaseLayer
+  - first:
+      74: 5415231250315545868
+    second: Rock_Medium_Stone_05|Prop_Statue_Sphinx_Large_01|Take 001|BaseLayer
+  - first:
+      74: 2840723645824982823
+    second: Rock_Medium_Stone_05|Prop_Tent_Entrance_Cloth_Hide_01|Take 001|BaseLayer
+  - first:
+      74: -1671659072787444076
+    second: Rock_Medium_Stone_05|Prop_Timber_Spear_Flag_Pole_01|Take 001|BaseLayer
+  - first:
+      74: 4318703637602023650
+    second: Rock_Medium_Stone_05|Prop_Timber_Spike_01|Take 001|BaseLayer
+  - first:
+      74: 4653129497173828323
+    second: Rock_Medium_Stone_05|Prop_Timber_Spike_02|Take 001|BaseLayer
+  - first:
+      74: -8032483270547611382
+    second: Rock_Medium_Stone_05|Prop_Triabal_Hanging_Charm_Ladder_01|Take 001|BaseLayer
+  - first:
+      74: 6992342022321543651
+    second: Rock_Medium_Stone_05|Prop_Vegetation_Jungle_Vine_Hanging_01|Take 001|BaseLayer
+  - first:
+      74: -2742284821003487413
+    second: Rock_Medium_Stone_05|Prop_Vegetation_Jungle_Vine_Hanging_02|Take 001|BaseLayer
+  - first:
+      74: -3137404377543933476
+    second: Rock_Medium_Stone_05|Prop_Vegetation_Jungle_Vine_Hanging_03|Take 001|BaseLayer
+  - first:
+      74: 5666369815250944871
+    second: Rock_Medium_Stone_05|Prop_Vegetation_Jungle_Vine_Hanging_04|Take 001|BaseLayer
+  - first:
+      74: -8375768831757497637
+    second: Rock_Medium_Stone_05|Prop_Vegetation_Jungle_Vine_Laying_01|Take 001|BaseLayer
+  - first:
+      74: 412307547642518306
+    second: Rock_Medium_Stone_05|Prop_Vegetation_Jungle_Vine_Outstretched_01|Take
+      001|BaseLayer
+  - first:
+      74: 8637626482960877535
+    second: Rock_Medium_Stone_05|Prop_Vegetation_Jungle_Vine_Wraped_01|Take 001|BaseLayer
+  - first:
+      74: -430594790229373147
+    second: Rock_Medium_Stone_05|Prop_Vegetation_Jungle_Vine_Wraped_02|Take 001|BaseLayer
+  - first:
+      74: -8267263569943500599
+    second: Rock_Medium_Stone_05|Prop_Vegetation_Jungle_Vine_Wraped_03|Take 001|BaseLayer
+  - first:
+      74: -9088094245710733040
+    second: Rock_Medium_Stone_05|Prop_Vegetation_Jungle_Vine_Wraped_04|Take 001|BaseLayer
+  - first:
+      74: -6316399094240673242
+    second: Rock_Medium_Stone_05|Prop_Vegetation_Jungle_Vine_Wraped_05|Take 001|BaseLayer
+  - first:
+      74: -2855994536270966360
+    second: Rock_Medium_Stone_05|Prop_Walkway_Timber_Simple_01|Take 001|BaseLayer
+  - first:
+      74: 4800556351994832289
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_01|Take 001|BaseLayer
+  - first:
+      74: -3924412575258981900
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_02|Take 001|BaseLayer
+  - first:
+      74: 3367004871175295099
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_03|Take 001|BaseLayer
+  - first:
+      74: 572467345809642375
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_04|Take 001|BaseLayer
+  - first:
+      74: 4938754212709349519
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_05|Take 001|BaseLayer
+  - first:
+      74: 7652020913410315101
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_06|Take 001|BaseLayer
+  - first:
+      74: 8482609067707832397
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_07|Take 001|BaseLayer
+  - first:
+      74: 3479317680828994421
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_08|Take 001|BaseLayer
+  - first:
+      74: -1986632574286287649
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_09|Take 001|BaseLayer
+  - first:
+      74: -6016457133708679275
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_10|Take 001|BaseLayer
+  - first:
+      74: 6849556503336412621
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_11|Take 001|BaseLayer
+  - first:
+      74: 4092028274856332519
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_12|Take 001|BaseLayer
+  - first:
+      74: -7568529084338839374
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_13|Take 001|BaseLayer
+  - first:
+      74: -7322457889733235107
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_14|Take 001|BaseLayer
+  - first:
+      74: -5529688265215906946
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_15|Take 001|BaseLayer
+  - first:
+      74: -5075662892342548010
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_16|Take 001|BaseLayer
+  - first:
+      74: 2540436386806721495
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_17|Take 001|BaseLayer
+  - first:
+      74: 5086352499283872308
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_18|Take 001|BaseLayer
+  - first:
+      74: -1430995968855000956
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_19|Take 001|BaseLayer
+  - first:
+      74: -8321412822644694145
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_20|Take 001|BaseLayer
+  - first:
+      74: -7562925890094045293
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_21|Take 001|BaseLayer
+  - first:
+      74: 6153141299902055929
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_22|Take 001|BaseLayer
+  - first:
+      74: 5132801632297892424
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_23|Take 001|BaseLayer
+  - first:
+      74: -106402500645067813
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_24|Take 001|BaseLayer
+  - first:
+      74: 3636205259422627009
+    second: Rock_Medium_Stone_05|Rock_Large_Canyon_Eroded_25|Take 001|BaseLayer
+  - first:
+      74: 3780332011340723114
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Moss_Grass_01|Take 001|BaseLayer
+  - first:
+      74: 8456947475472031846
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Moss_Grass_02|Take 001|BaseLayer
+  - first:
+      74: -7442849665480400254
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Moss_Grass_03|Take 001|BaseLayer
+  - first:
+      74: -4831637360481073305
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Moss_Grass_04|Take 001|BaseLayer
+  - first:
+      74: -6318613260831279444
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Moss_Grass_05|Take 001|BaseLayer
+  - first:
+      74: 8156993641633381870
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Moss_Grass_06|Take 001|BaseLayer
+  - first:
+      74: -5297816850436522570
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Moss_Grass_07|Take 001|BaseLayer
+  - first:
+      74: -9033488345136301257
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Moss_Grass_08|Take 001|BaseLayer
+  - first:
+      74: -3156019192362916923
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Moss_Grass_09|Take 001|BaseLayer
+  - first:
+      74: -1477772658081626914
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Moss_Grass_10|Take 001|BaseLayer
+  - first:
+      74: -4521401561281813532
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Moss_Grass_11|Take 001|BaseLayer
+  - first:
+      74: -8288962515980178902
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Moss_Grass_12|Take 001|BaseLayer
+  - first:
+      74: 7811573197705432766
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Moss_Grass_Cluster_01|Take
+      001|BaseLayer
+  - first:
+      74: 3648840562952414866
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Moss_Grass_Cluster_02|Take
+      001|BaseLayer
+  - first:
+      74: 6763046464946072036
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Stone_01|Take 001|BaseLayer
+  - first:
+      74: 7331893538934578615
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Stone_02|Take 001|BaseLayer
+  - first:
+      74: -901448417384878238
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Stone_03|Take 001|BaseLayer
+  - first:
+      74: -5412845295904895206
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Stone_04|Take 001|BaseLayer
+  - first:
+      74: -2072256531709196955
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Stone_05|Take 001|BaseLayer
+  - first:
+      74: -2137854891150993661
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Stone_06|Take 001|BaseLayer
+  - first:
+      74: 4107846293181685082
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Stone_07|Take 001|BaseLayer
+  - first:
+      74: -5174949158811928828
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Stone_08|Take 001|BaseLayer
+  - first:
+      74: 820354913854360760
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Stone_09|Take 001|BaseLayer
+  - first:
+      74: -8038513283491143403
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Stone_10|Take 001|BaseLayer
+  - first:
+      74: 9014827721726455597
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Stone_11|Take 001|BaseLayer
+  - first:
+      74: 809097739810476099
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Stone_12|Take 001|BaseLayer
+  - first:
+      74: 6532010354109987884
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Stone_Cluster_01|Take 001|BaseLayer
+  - first:
+      74: 3756842034750003922
+    second: Rock_Medium_Stone_05|Rock_Large_Mesa_Eroded_Stone_Cluster_02|Take 001|BaseLayer
+  - first:
+      74: -8096937421343552912
+    second: Rock_Medium_Stone_05|Rock_Large_Stone_01|Take 001|BaseLayer
+  - first:
+      74: -2318193963664986772
+    second: Rock_Medium_Stone_05|Rock_Large_Stone_02|Take 001|BaseLayer
+  - first:
+      74: -6654487420766968574
+    second: Rock_Medium_Stone_05|Rock_Large_Stone_03|Take 001|BaseLayer
+  - first:
+      74: 3799057864053624264
+    second: Rock_Medium_Stone_05|Rock_Large_Stone_04|Take 001|BaseLayer
+  - first:
+      74: -7184088915676425955
+    second: Rock_Medium_Stone_05|Rock_Large_Stone_05|Take 001|BaseLayer
+  - first:
+      74: -5567090607655820284
+    second: Rock_Medium_Stone_05|Rock_Large_Stone_Floating_Moss_Grass_01|Take 001|BaseLayer
+  - first:
+      74: 4036941756741467931
+    second: Rock_Medium_Stone_05|Rock_Large_Stone_Floating_Moss_Grass_02|Take 001|BaseLayer
+  - first:
+      74: 1048771105706367488
+    second: Rock_Medium_Stone_05|Rock_Large_Stone_Floating_Moss_Grass_03|Take 001|BaseLayer
+  - first:
+      74: -7553070701368013641
+    second: Rock_Medium_Stone_05|Rock_Large_Stone_Floating_Moss_Grass_04|Take 001|BaseLayer
+  - first:
+      74: -2208079107229109589
+    second: Rock_Medium_Stone_05|Rock_Large_Stone_Floating_Stone_01|Take 001|BaseLayer
+  - first:
+      74: 4383783301812888812
+    second: Rock_Medium_Stone_05|Rock_Large_Stone_Floating_Stone_02|Take 001|BaseLayer
+  - first:
+      74: 3639558316818472842
+    second: Rock_Medium_Stone_05|Rock_Large_Stone_Floating_Stone_03|Take 001|BaseLayer
+  - first:
+      74: -8567793479852890077
+    second: Rock_Medium_Stone_05|Rock_Large_Stone_Floating_Stone_04|Take 001|BaseLayer
+  - first:
+      74: 6776875885961663732
+    second: Rock_Medium_Stone_05|Rock_Medium_Canyon_Eroded_01|Take 001|BaseLayer
+  - first:
+      74: 8583965218782880019
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_01|Take 001|BaseLayer
+  - first:
+      74: 7090353735541361576
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_02|Take 001|BaseLayer
+  - first:
+      74: 6511747852516264783
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_03|Take 001|BaseLayer
+  - first:
+      74: -2311181508496365323
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_04|Take 001|BaseLayer
+  - first:
+      74: 1563611174264736026
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_05|Take 001|BaseLayer
+  - first:
+      74: 1411033997652176099
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_06|Take 001|BaseLayer
+  - first:
+      74: 1660995801208215094
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_07|Take 001|BaseLayer
+  - first:
+      74: 4261219610648987957
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_08|Take 001|BaseLayer
+  - first:
+      74: 3508568091340304970
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_09|Take 001|BaseLayer
+  - first:
+      74: 3197145306701779411
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_10|Take 001|BaseLayer
+  - first:
+      74: -5637038447472731603
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_Cluster_01|Take
+      001|BaseLaye
+  - first:
+      74: 1101463123599022532
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_Cluster_02|Take
+      001|BaseLaye
+  - first:
+      74: -5301176952670434288
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_Flat_01|Take
+      001|BaseLayer
+  - first:
+      74: -4209688300213627515
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_Flat_02|Take
+      001|BaseLayer
+  - first:
+      74: 3151181974498028584
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_Flat_03|Take
+      001|BaseLayer
+  - first:
+      74: 9006840171550838540
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_Flat_04|Take
+      001|BaseLayer
+  - first:
+      74: 1210674965067381590
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_Flat_05|Take
+      001|BaseLayer
+  - first:
+      74: -6001290025821891451
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Moss_Grass_Flat_06|Take
+      001|BaseLayer
+  - first:
+      74: -9036684999874361700
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_01|Take 001|BaseLayer
+  - first:
+      74: 217069563226249188
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_02|Take 001|BaseLayer
+  - first:
+      74: -1902376182011024118
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_03|Take 001|BaseLayer
+  - first:
+      74: 9154467771805806324
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_04|Take 001|BaseLayer
+  - first:
+      74: 5537874005647747518
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_05|Take 001|BaseLayer
+  - first:
+      74: 7973264305642238233
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_06|Take 001|BaseLayer
+  - first:
+      74: 5715167542344104041
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_07|Take 001|BaseLayer
+  - first:
+      74: -6674633049643146527
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_08|Take 001|BaseLayer
+  - first:
+      74: -6883994121364563117
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_09|Take 001|BaseLayer
+  - first:
+      74: -6680710243239041324
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_10|Take 001|BaseLayer
+  - first:
+      74: 6187220497633601600
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_Cluster_01|Take 001|BaseLayer
+  - first:
+      74: -7078086803043700754
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_Cluster_02|Take 001|BaseLayer
+  - first:
+      74: 6411474499710722619
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_Flat_01|Take 001|BaseLayer
+  - first:
+      74: 412786202080957895
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_Flat_02|Take 001|BaseLayer
+  - first:
+      74: 7395123309372628856
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_Flat_03|Take 001|BaseLayer
+  - first:
+      74: -8421963962105111145
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_Flat_04|Take 001|BaseLayer
+  - first:
+      74: -7268844402451271182
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_Flat_05|Take 001|BaseLayer
+  - first:
+      74: 7837878569438767889
+    second: Rock_Medium_Stone_05|Rock_Medium_Mesa_Eroded_Stone_Flat_06|Take 001|BaseLayer
+  - first:
+      74: -7101848251226511858
+    second: Rock_Medium_Stone_05|Rock_Medium_Stone_01|Take 001|BaseLayer
+  - first:
+      74: 1760797791067773746
+    second: Rock_Medium_Stone_05|Rock_Medium_Stone_02|Take 001|BaseLayer
+  - first:
+      74: -1663130835857043383
+    second: Rock_Medium_Stone_05|Rock_Medium_Stone_03|Take 001|BaseLayer
+  - first:
+      74: 4360280691942092299
+    second: Rock_Medium_Stone_05|Rock_Medium_Stone_04|Take 001|BaseLayer
+  - first:
+      74: 6421939937067156920
+    second: Rock_Medium_Stone_05|Rock_Medium_Stone_05|Take 001|BaseLayer
+  - first:
+      74: -5158028211584828346
+    second: Rock_Medium_Stone_05|Rock_Medium_Stone_06|Take 001|BaseLayer
+  - first:
+      74: -3430651670969627957
+    second: Rock_Medium_Stone_05|Rock_Shale_Outcrops_Large_01|Take 001|BaseLayer
+  - first:
+      74: 3718435006470232511
+    second: Rock_Medium_Stone_05|Rock_Shale_Outcrops_Large_02|Take 001|BaseLayer
+  - first:
+      74: 9121534191113556139
+    second: Rock_Medium_Stone_05|Rock_Shale_Outcrops_Large_03|Take 001|BaseLayer
+  - first:
+      74: 2511724672405166579
+    second: Rock_Medium_Stone_05|Rock_Small_Canyon_01|Take 001|BaseLayer
+  - first:
+      74: 413381300754808459
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_01|Take 001|BaseLayer
+  - first:
+      74: 2101344156959147943
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_02|Take 001|BaseLayer
+  - first:
+      74: -3252000056401952992
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_03|Take 001|BaseLayer
+  - first:
+      74: -6019116130835730053
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_04|Take 001|BaseLayer
+  - first:
+      74: -6261616894286538841
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_05|Take 001|BaseLayer
+  - first:
+      74: -6352514702849966196
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_06|Take 001|BaseLayer
+  - first:
+      74: -6440836890563231432
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_07|Take 001|BaseLayer
+  - first:
+      74: 2681137870983033447
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_08|Take 001|BaseLayer
+  - first:
+      74: -2449871282008305411
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_09|Take 001|BaseLayer
+  - first:
+      74: 5145429258268144302
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_10|Take 001|BaseLayer
+  - first:
+      74: -7255966010066227664
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_11|Take 001|BaseLayer
+  - first:
+      74: 6270367137401379725
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_12|Take 001|BaseLayer
+  - first:
+      74: 8840830553330205487
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_13|Take 001|BaseLayer
+  - first:
+      74: -4080215595684508297
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_14|Take 001|BaseLayer
+  - first:
+      74: -3449963676090041469
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_15|Take 001|BaseLayer
+  - first:
+      74: 1955076655249738274
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_16|Take 001|BaseLayer
+  - first:
+      74: 5909614041380233247
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_17|Take 001|BaseLayer
+  - first:
+      74: -1600831838788635685
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_18|Take 001|BaseLayer
+  - first:
+      74: 7076858584574692327
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_19|Take 001|BaseLayer
+  - first:
+      74: -2064556001189337582
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_Shard_01|Take
+      001|BaseLayer
+  - first:
+      74: -5311436792237460773
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_Shard_02|Take
+      001|BaseLayer
+  - first:
+      74: -3491941227993464430
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Moss_Grass_Shard_03|Take
+      001|BaseLayer
+  - first:
+      74: -4796331531213330401
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_01|Take 001|BaseLayer
+  - first:
+      74: 2970804706389178387
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_02|Take 001|BaseLayer
+  - first:
+      74: 2793344842055272164
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_03|Take 001|BaseLayer
+  - first:
+      74: -4038466976795544161
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_04|Take 001|BaseLayer
+  - first:
+      74: -4679293687796560237
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_05|Take 001|BaseLayer
+  - first:
+      74: 4972331553313733947
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_06|Take 001|BaseLayer
+  - first:
+      74: 98989993519806615
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_07|Take 001|BaseLayer
+  - first:
+      74: 4489249847500595903
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_08|Take 001|BaseLayer
+  - first:
+      74: -8577738563004047147
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_09|Take 001|BaseLayer
+  - first:
+      74: 1865100931985383782
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_10|Take 001|BaseLayer
+  - first:
+      74: 3715228247905867231
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_11|Take 001|BaseLayer
+  - first:
+      74: -8526522525219656842
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_12|Take 001|BaseLayer
+  - first:
+      74: -8641009931272519523
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_13|Take 001|BaseLayer
+  - first:
+      74: -3151918749433683092
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_14|Take 001|BaseLayer
+  - first:
+      74: -6214686248836690401
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_15|Take 001|BaseLayer
+  - first:
+      74: 2878370731936448559
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_16|Take 001|BaseLayer
+  - first:
+      74: 605667037796867100
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_17|Take 001|BaseLayer
+  - first:
+      74: 2021408741687164386
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_18|Take 001|BaseLayer
+  - first:
+      74: 2878924729839039204
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_19|Take 001|BaseLayer
+  - first:
+      74: 4850628131473992542
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_Shard_01|Take 001|BaseLayer
+  - first:
+      74: 4856307419126371920
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_Shard_02|Take 001|BaseLayer
+  - first:
+      74: -6121266104417603154
+    second: Rock_Medium_Stone_05|Rock_Small_Mesa_Eroded_Stone_Shard_03|Take 001|BaseLayer
+  - first:
+      74: -4011237797490060376
+    second: Rock_Medium_Stone_05|Rock_Volcanic_Large_01|Take 001|BaseLayer
+  - first:
+      74: 1930745739623291394
+    second: Rock_Medium_Stone_05|Rock_Volcanic_Large_02|Take 001|BaseLayer
+  - first:
+      74: 3235982786394151033
+    second: Rock_Medium_Stone_05|Rock_Volcanic_Large_03|Take 001|BaseLayer
+  - first:
+      74: 4617124011393768623
+    second: Rock_Medium_Stone_05|Rock_Volcanic_Large_04|Take 001|BaseLayer
+  - first:
+      74: -7658711689039692385
+    second: Rock_Medium_Stone_05|Rock_Volcanic_Small_01|Take 001|BaseLayer
+  - first:
+      74: -6495195339004566881
+    second: Rock_Medium_Stone_05|Terrain_Mountain_Range_Large_Stone_01|Take 001|BaseLayer
+  - first:
+      74: -7955086383696807714
+    second: Rock_Medium_Stone_05|Terrain_Rock_Corner_Scatter_01|Take 001|BaseLayer
+  - first:
+      74: -4248016046164282788
+    second: Rock_Medium_Stone_05|Terrain_Rock_Crater_Volcanic_01|Take 001|BaseLayer
+  - first:
+      74: -3192608307341032212
+    second: Rock_Medium_Stone_05|Terrain_Sand_Dune_Peak_01|Take 001|BaseLayer
+  - first:
+      74: -4653227182911710552
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Bush_Shrub_Geometric_01|Take
+      001|BaseLay
+  - first:
+      74: -795824281324874089
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Bush_Shrub_Geometric_02|Take
+      001|BaseLay
+  - first:
+      74: 4549371541458872084
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Bush_Shrub_Geometric_03|Take
+      001|BaseLay
+  - first:
+      74: -1265505643890957392
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Bush_Shrub_Geometric_04|Take
+      001|BaseLay
+  - first:
+      74: 5976275275205343587
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Palm_Leaf_01|Take 001|BaseLayer
+  - first:
+      74: 5350349652234877168
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Palm_Leaf_02|Take 001|BaseLayer
+  - first:
+      74: -934250250362234543
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Palm_Leaf_03|Take 001|BaseLayer
+  - first:
+      74: -2811743087197849604
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Plant_Creeper_Ivy_01|Take
+      001|BaseLayer
+  - first:
+      74: 2726552195539368077
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Plant_Creeper_Ivy_02|Take
+      001|BaseLayer
+  - first:
+      74: -1839877666430020404
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Plant_Creeper_Ivy_03|Take
+      001|BaseLayer
+  - first:
+      74: 1417846101421039176
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Plant_Creeper_Ivy_04|Take
+      001|BaseLayer
+  - first:
+      74: -6245744074951053141
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Reeds_01|Take 001|BaseLayer
+  - first:
+      74: -1328094634119229779
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Leaf_Bunch_01|Take 001|BaseLayer
+  - first:
+      74: 947138946370800621
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Leaf_Bunch_02|Take 001|BaseLayer
+  - first:
+      74: -5899542518667934713
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Leaf_Bunch_03|Take 001|BaseLayer
+  - first:
+      74: 6446147153103947760
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Leaf_Bunch_04|Take 001|BaseLayer
+  - first:
+      74: -1629266103527807494
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Leaf_Bunch_05|Take 001|BaseLayer
+  - first:
+      74: -7666724783435433939
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Leaf_Bunch_06|Take 001|BaseLayer
+  - first:
+      74: -8325732296251867750
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Leaf_Bunch_07|Take 001|BaseLayer
+  - first:
+      74: 1070119368514163802
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Leaf_Bunch_Shrub_01|Take
+      001|BaseLa
+  - first:
+      74: -6391939442575344455
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Trunk_01|Take 001|BaseLayer
+  - first:
+      74: 8705453941815602674
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Trunk_02|Take 001|BaseLayer
+  - first:
+      74: -8991563516909952253
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Trunk_03|Take 001|BaseLayer
+  - first:
+      74: -3994166005242169854
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Trunk_04|Take 001|BaseLayer
+  - first:
+      74: 8304132730395878304
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Trunk_05|Take 001|BaseLayer
+  - first:
+      74: 4955956083425713615
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Trunk_06|Take 001|BaseLayer
+  - first:
+      74: -3629154715230326055
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Trunk_07|Take 001|BaseLayer
+  - first:
+      74: -2602081875365441885
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Trunk_Palm_01|Take 001|BaseLayer
+  - first:
+      74: -1174886959796442594
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Trunk_Palm_02|Take 001|BaseLayer
+  - first:
+      74: -8596581856012618825
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Trunk_Palm_03|Take 001|BaseLayer
+  - first:
+      74: 3204722216598771171
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Trunk_Palm_04|Take 001|BaseLayer
+  - first:
+      74: -1083803294002706397
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tree_Trunk_Palm_05|Take 001|BaseLayer
+  - first:
+      74: 6529247963037228162
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tropical_Frond_Branch_01|Take
+      001|BaseLa
+  - first:
+      74: 1147688163332259056
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tropical_Leaf_01|Take 001|BaseLayer
+  - first:
+      74: -3080272653602794363
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tropical_Plant_01|Take 001|BaseLayer
+  - first:
+      74: -127643463709456347
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tropical_Plant_02|Take 001|BaseLayer
+  - first:
+      74: 8542336956663822646
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tropical_Plant_03|Take 001|BaseLayer
+  - first:
+      74: -6550555302934883067
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tropical_Plant_04|Take 001|BaseLayer
+  - first:
+      74: -6615502446047246671
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tropical_Plant_Fern_01|Take
+      001|BaseLaye
+  - first:
+      74: 1814861052614425644
+    second: Rock_Medium_Stone_05|Vegetation_Modular_New_Tropical_Plant_Flat_01|Take
+      001|BaseLaye
+  - first:
+      74: -6346929529173873467
+    second: Rock_Medium_Stone_05|Vegetation_New_Cactus_Geometric_01|Take 001|BaseLayer
+  - first:
+      74: -1191484590027385880
+    second: Rock_Medium_Stone_05|Vegetation_New_Cactus_Geometric_02|Take 001|BaseLayer
+  - first:
+      74: -2239102657266110925
+    second: Rock_Medium_Stone_05|Vegetation_New_Cactus_Geometric_03|Take 001|BaseLayer
+  - first:
+      74: -2279169238389666108
+    second: Rock_Medium_Stone_05|Vegetation_New_Flower_Blue_01|Take 001|BaseLayer
+  - first:
+      74: 618809444713800197
+    second: Rock_Medium_Stone_05|Vegetation_New_Flower_Blue_02|Take 001|BaseLayer
+  - first:
+      74: 1781174597993151323
+    second: Rock_Medium_Stone_05|Vegetation_New_Flower_Pink_01|Take 001|BaseLayer
+  - first:
+      74: 5050245738263577658
+    second: Rock_Medium_Stone_05|Vegetation_New_Flower_Pink_02|Take 001|BaseLayer
+  - first:
+      74: 4128795608326878371
+    second: Rock_Medium_Stone_05|Vegetation_New_Flower_Yellow_01|Take 001|BaseLayer
+  - first:
+      74: -1973407327176074335
+    second: Rock_Medium_Stone_05|Vegetation_New_Flower_Yellow_02|Take 001|BaseLayer
+  - first:
+      74: 3547921199008141510
+    second: Rock_Medium_Stone_05|Vegetation_New_Moss_Patch_01|Take 001|BaseLayer
+  - first:
+      74: -1549146695745796341
+    second: Rock_Medium_Stone_05|Vegetation_New_Moss_Patch_02|Take 001|BaseLayer
+  - first:
+      74: -1914478687714128425
+    second: Rock_Medium_Stone_05|Vegetation_New_Moss_Patch_03|Take 001|BaseLayer
+  - first:
+      74: -3473891906321293141
+    second: Rock_Medium_Stone_05|Vegetation_New_Moss_Patch_04|Take 001|BaseLayer
+  - first:
+      74: 4502308749052429600
+    second: Rock_Medium_Stone_05|Vegetation_New_Mushroom_Brown_01|Take 001|BaseLayer
+  - first:
+      74: -495250592558320356
+    second: Rock_Medium_Stone_05|Vegetation_New_Mushroom_Brown_02|Take 001|BaseLayer
+  - first:
+      74: -7486250415039363195
+    second: Rock_Medium_Stone_05|Vegetation_New_Mushroom_Brown_03|Take 001|BaseLayer
+  - first:
+      74: -1865621086749897283
+    second: Rock_Medium_Stone_05|Vegetation_New_Mushroom_Brown_04|Take 001|BaseLayer
+  - first:
+      74: 1798406053553943367
+    second: Rock_Medium_Stone_05|Vegetation_New_Mushroom_Brown_05|Take 001|BaseLayer
+  - first:
+      74: 3285187477922700362
+    second: Rock_Medium_Stone_05|Vegetation_New_Mushroom_Brown_06|Take 001|BaseLayer
+  externalObjects: {}
+  materials:
+    materialImportMode: 2
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 2
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
