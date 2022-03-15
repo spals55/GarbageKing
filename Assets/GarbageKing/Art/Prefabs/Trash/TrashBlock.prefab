@@ -172,7 +172,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2198742235159983658}
   - component: {fileID: -2302525279824434019}
-  - component: {fileID: -2678692586825968721}
   m_Layer: 0
   m_Name: TrashBlock
   m_TagString: Untagged
@@ -209,19 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0fb4a1d0e1f82b8448cb4469b80e56b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!65 &-2678692586825968721
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1569593278484688016}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.6094604, y: 0.6133251, z: 0.6711514}
-  m_Center: {x: 0.02059701, y: 0.30376393, z: -0.010890827}
 --- !u!1 &6808735563066225366
 GameObject:
   m_ObjectHideFlags: 0

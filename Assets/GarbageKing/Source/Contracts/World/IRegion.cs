@@ -2,5 +2,5 @@
 {
     string Name { get; }
 
-    void Unlock(bool animate);
+    void Show(bool animate);
 }

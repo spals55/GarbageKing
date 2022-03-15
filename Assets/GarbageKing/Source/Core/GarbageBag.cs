@@ -9,9 +9,8 @@ public class GarbageBag : MonoBehaviour, IGarbageBag
     [SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
     [SerializeField] private int _maxWeight = 100;
 
-    private Queue<ITrash> _trash;
     private int _currentCapacity;
-    private TrashPool _pool;
+    private Queue<ITrash> _trash = new Queue<ITrash>();
 
     public event Action WeightChanged;
 
@@ -21,18 +20,15 @@ public class GarbageBag : MonoBehaviour, IGarbageBag
 
     public int Weight => _currentCapacity;
 
-    private void Awake()
-    {
-        _pool = FindObjectOfType<TrashPool>();
-        _trash = new Queue<ITrash>();
-    }
-
     public bool CanAdd(int weight) =>
         _currentCapacity + weight <= _maxWeight;
 
     public void Add(ITrash trash)
     {
         trash.Hide();
+        trash.transform.parent = transform;
+        trash.transform.localPosition = Vector3.zero;
+
         _currentCapacity += trash.Weight;
         ChangeWeight(_currentCapacity);
 
@@ -42,10 +38,11 @@ public class GarbageBag : MonoBehaviour, IGarbageBag
     public ITrash GetTrash()
     {
         ITrash trash = _trash.Dequeue();
+        trash.Show();
         _currentCapacity -= trash.Weight;
         ChangeWeight(_currentCapacity);
 
-        return _pool.Get(trash.Type, transform.position);
+        return trash;
     }
 
     private void ChangeWeight(int currentCapacity)

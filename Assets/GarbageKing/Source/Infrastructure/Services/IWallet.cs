@@ -1,4 +1,5 @@
 ﻿using System;
+using UnityEngine;
 
 namespace PixupGames.Contracts
 {
@@ -7,6 +8,7 @@ namespace PixupGames.Contracts
         event Action BalanceChanged;
         int Money { get; }
         int MaxMoney { get; }
+        Transform MoneySpawnPoint { get; }
 
         void Spend(int amount);
         void Add(int amount);

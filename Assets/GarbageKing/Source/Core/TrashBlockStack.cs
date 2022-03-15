@@ -24,10 +24,16 @@ public class TrashBlockStack : MonoBehaviour, ITrashBlockStack
     public void Add(ITrashBlock block)
     {
         Vector3 endPosition = CalculateAddEndPosition(_stackContainer.transform, block.transform);
-        block.transform.DOPunchScale(Vector3.one * 0.3f, 1f);
+        Vector3 endRotation = Vector3.zero;
+
+        block.transform.DOComplete(true);
         block.transform.parent = _stackContainer;
+
+        block.transform.DOPunchScale(Vector3.one * 0.3f, 1f);
+        block.transform.DOLocalRotate(endRotation, 1);
         block.transform.DOLocalJump(endPosition, _jumpPower, 1, _jumpDuraction);
 
+        _transforms.Add(block.transform);
         _trashBlocks.Push(block);
     }
 
@@ -35,11 +41,12 @@ public class TrashBlockStack : MonoBehaviour, ITrashBlockStack
     {
         var block = _trashBlocks.Pop();
 
-        block.transform.DOComplete(true);
+        DOTween.CompleteAll();
         block.transform.parent = null;
 
-        //int removedIndex = _transforms.IndexOf(block.transform);
-        //_transforms.RemoveAt(removedIndex);
+        int removedIndex = _transforms.IndexOf(block.transform);
+        _transforms.RemoveAt(removedIndex);
+        RecalculatePosition();
 
         return block;
     }

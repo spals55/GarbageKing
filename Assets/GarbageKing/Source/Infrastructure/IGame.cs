@@ -3,6 +3,6 @@
     public interface IGame : IFixedUpdateLoop
     {
         void Run();
-        void Save();
+        void End();
     }
 }

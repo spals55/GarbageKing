@@ -1,4 +1,4 @@
-﻿internal interface ITrashRecycler
+﻿public interface ITrashRecycler
 {
 
 }

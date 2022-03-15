@@ -32,7 +32,7 @@ namespace PixupGames.Core
             {
                 if (region.Name == name)
                 {
-                    region.Unlock(false);
+                    region.Show(false);
                 }
             }
         }

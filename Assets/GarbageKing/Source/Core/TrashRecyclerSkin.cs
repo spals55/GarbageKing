@@ -13,15 +13,4 @@ public class TrashRecyclerSkin : MonoBehaviour
     {
         _box.DOShakeScale(_shakeDuration, _shakeStrenght);
     }
-
-    public void Show(bool animate)
-    {
-        gameObject.SetActive(true);
-
-        if (animate)
-        {
-            transform.localScale = Vector3.zero;
-            transform.DOScale(1f, 1f);
-        }
-    }
 }

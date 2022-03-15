@@ -31,7 +31,7 @@ Transform:
   m_Children:
   - {fileID: 2538475726826805791}
   m_Father: {fileID: 2538475727021367770}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2538475725993953872
 MonoBehaviour:
@@ -45,16 +45,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765495aa367ac9849b192520071fd14d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _power: 12
-  _distance: 4
-  _radius: 359.6
-  _angle: 135.08
   _mouth: {fileID: 2538475726826805791}
   _bag: {fileID: 2538475725993953902}
-  _trashLayer:
-    serializedVersion: 2
-    m_Bits: 64
-  _suckEffect: {fileID: 4568163313264017258}
+  _retractionEffect: {fileID: 4568163313264017258}
+  _settings:
+    _retractionSpeed: 12
+    _scaleSpeed: 6
+    _distance: 4
+    _radius: 360
+    _angle: 135
+    _layerMask:
+      serializedVersion: 2
+      m_Bits: 64
 --- !u!114 &2538475725993953902
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -67,7 +69,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15ee92ee61929d24eb7717f311b81e8b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _pool: {fileID: 0}
   _skinnedMeshRenderer: {fileID: 1917038264891210199}
   _maxWeight: 100
 --- !u!1 &2538475726184582019
@@ -130,7 +131,7 @@ Transform:
   m_Children:
   - {fileID: 7290334067377272650}
   m_Father: {fileID: 2538475727021367770}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2538475726796774384
 GameObject:
@@ -227,6 +228,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
+  - {fileID: 483605923986895687}
   - {fileID: 2538475726239833245}
   - {fileID: 2538475725993953903}
   m_Father: {fileID: 0}
@@ -295,8 +297,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _movement: {fileID: 7394984493538198081}
   _animation: {fileID: 9139069985844512486}
-  _resourcesStack: {fileID: 8879096873489529558}
+  _hand: {fileID: 8879096873489529558}
   _garbageCollector: {fileID: 2538475725993953872}
+  _wallet: {fileID: 7797087045244688289}
 --- !u!114 &8879096873489529558
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -309,7 +312,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b157c00c549f840b006d11bad5dc08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _offsetY: -15
+  _offsetY: -0.3
   _container: {fileID: 8949912926441705017}
   _animationDuration: 0.4
 --- !u!114 &7394984493538198081
@@ -325,8 +328,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rigidbody: {fileID: 3178569855517345951}
-  _speed: 5
-  _rotationSpeed: 10
+  _speed: 8
+  _rotationSpeed: 8
+  _gravity: 0.5
 --- !u!114 &9139069985844512486
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1430,7 +1434,7 @@ GameObject:
   - component: {fileID: 4568163313264017258}
   - component: {fileID: 2311475039670128340}
   m_Layer: 0
-  m_Name: SuckEffect
+  m_Name: RetractionEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6222,6 +6226,49 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!1 &8929582478514513831
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 483605923986895687}
+  - component: {fileID: 7797087045244688289}
+  m_Layer: 0
+  m_Name: Wallet
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &483605923986895687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929582478514513831}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 2538475727021367770}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7797087045244688289
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8929582478514513831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14e625778c591be4db12292f9dfa0636, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8949912926441705016
 GameObject:
   m_ObjectHideFlags: 0
@@ -6383,14 +6430,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6e512151b1e3dd949aecc6f71c03f0b0, type: 3}
---- !u!4 &6277446807038330414 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 8369802081104691538, guid: 6e512151b1e3dd949aecc6f71c03f0b0, type: 3}
-  m_PrefabInstance: {fileID: 2538475726709720956}
-  m_PrefabAsset: {fileID: 0}
 --- !u!137 &1917038264891210199 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 4152541079232052907, guid: 6e512151b1e3dd949aecc6f71c03f0b0, type: 3}
+  m_PrefabInstance: {fileID: 2538475726709720956}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6277446807038330414 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8369802081104691538, guid: 6e512151b1e3dd949aecc6f71c03f0b0, type: 3}
   m_PrefabInstance: {fileID: 2538475726709720956}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2538475727030385289

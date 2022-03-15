@@ -1,4 +1,5 @@
-﻿using PixupGames.Contracts;
+﻿using DG.Tweening;
+using PixupGames.Contracts;
 using PixupGames.Core;
 using PixupGames.Infrastracture.Services;
 using System;
@@ -23,7 +24,9 @@ namespace PixupGames.Infrastracture.Game
             _viewport = _gameEngine.GetViewport();
 
             _player = new Player(_gameEngine.GetInputDevice());
+            _player.ControlledHeroDead += OnHeroDead;
         }
+
 
         public void FixedTick(float time)
         {
@@ -39,17 +42,21 @@ namespace PixupGames.Infrastracture.Game
             UnlockRegions();
         }
 
-        public void Save() => _dataPersistence.Save();
+        public void End()
+        {
+            _player.ControlledHeroDead -= OnHeroDead;
+
+            _dataPersistence.Save();
+        }
 
         private void Initialize()
         {
             ICamera camera = _gameEngine.Camera;
             IHero hero = _world.CreateHero(_dataPersistence.Data.World.Hero.LastPosition);
-            IWallet wallet = new Wallet(2500);
+            hero.Wallet.Add(5000);
 
-            hero.Init(wallet);
             camera.SetTarget(hero);
-            _player.SetControlledHero(hero);
+            _player.ControlledHero = hero;
             _viewport.GetPlayGameWindow().Init(hero.Wallet, hero.Bag);
         }
 
@@ -62,6 +69,17 @@ namespace PixupGames.Infrastracture.Game
                     _world.UnlockRegion(region.GUID);
                 }
             }
+        }
+
+        private void OnHeroDead()
+        {
+             RespawnHero();
+        }
+
+        private void RespawnHero()
+        {
+            _player.ControlledHero.transform.position = _dataPersistence.Data.World.Hero.LastPosition;
+            _player.ControlledHero.transform.DOShakeScale(1);
         }
     }
 }

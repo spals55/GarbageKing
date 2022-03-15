@@ -1,34 +1,23 @@
 using DG.Tweening;
 using PixupGames.Contracts;
-using PixupGames.Infrastracture.Services;
-using System;
+using PixupGames.Infrastracture.Game;
 using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class UnlockZone : Zone
+public class BuyZone : Zone
 {
     [SerializeField] private int _totalCost = 100;
     [SerializeField] private TMP_Text _totalCostLabel;
-    [SerializeField] private MonoBehaviour _unlockableBehavior;
-    [SerializeField] private UnlockZoneTrigger _trigger;
- 
+    [SerializeField] private Unlocker _unlocker;
+    [SerializeField] private BuyZoneTrigger _trigger;
+
+    private ObjectPool _objectPool;
     private Coroutine _tryBuyCoroutine;
-    private IUnlockable _unlockable;
 
-    private void OnValidate()
+    private void Awake()
     {
-        _totalCostLabel.text = _totalCost.ToString();
-
-        if (_unlockableBehavior is IUnlockable)
-        {
-            _unlockable = _unlockableBehavior as IUnlockable;
-        }
-        else
-        {
-            _unlockableBehavior = null;
-        }
+        _objectPool = FindObjectOfType<ObjectPool>();
     }
 
     private void OnEnable()
@@ -72,12 +61,10 @@ public class UnlockZone : Zone
 
                 multiplierCoefficient = Mathf.Clamp(multiplierCoefficient, 1, wallet.Money);
 
-                wallet.Spend(multiplierCoefficient);
-                _totalCost -= multiplierCoefficient;
-                _totalCostLabel.text = _totalCost.ToString();
+                GetMoney(wallet, multiplierCoefficient);
 
                 if (_totalCost < 1)
-                    Unlock(true);
+                    Buy(true);
             }
 
             iteration++;
@@ -85,12 +72,36 @@ public class UnlockZone : Zone
         }
     }
 
-    public override void Unlock(bool animate)
+    public override void Buy(bool animate)
     {
         if (_tryBuyCoroutine != null)
             StopCoroutine(_tryBuyCoroutine);
 
-        _unlockable.Unlock(animate);
+        _unlocker.Unlock(animate);
+        _unlocker.transform.parent = null;
+
         Hide();
+    }
+
+    private void GetMoney(IWallet wallet, int multiplierCoefficient)
+    {
+        wallet.Spend(multiplierCoefficient);
+        _totalCost -= multiplierCoefficient;
+        _totalCostLabel.text = _totalCost.ToString();
+
+        MoneyTransfer(wallet.MoneySpawnPoint.position, _unlocker.transform.position);
+    }
+
+    private void MoneyTransfer(Vector3 from, Vector3 to)
+    {
+        var money = _objectPool.Get(from);
+        money.transform.DOScale(Vector3.zero, 1.5f);
+        money.transform.DORotate(new Vector3(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)), 1f);
+        money.transform.DOJump(new Vector3(to.x + Random.Range(-3, 3), to.y, to.z + Random.Range(-3, 3)), 4f, 1, 1f)
+            .OnComplete(() =>
+            {
+                money.gameObject.SetActive(false);
+                money.transform.DOComplete(true);
+            });
     }
 }

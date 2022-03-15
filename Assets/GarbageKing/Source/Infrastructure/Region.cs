@@ -8,12 +8,9 @@ using UnityEngine;
 
 namespace PixupGames.Infrastracture.Game
 {
-    public class Region : MonoBehaviour, IRegion, IUnlockable
+    public class Region : MonoBehaviour, IRegion
     {
-        private const float UnlockDuration = 0.6f;
-
-        [SerializeField] private List<UnlockZone> _unlockZone;
-        [SerializeField] private ParticleSystem _unlockEffect;
+        [SerializeField] private List<BuyZone> _unlockZone;
 
         private IDataPersistence _persistence;
 
@@ -29,26 +26,19 @@ namespace PixupGames.Infrastracture.Game
             _persistence = persistence;
         }
 
-        public void Unlock(bool animate)
+        public void Show(bool animate)
         {
             gameObject.SetActive(true);
-
-            if (animate)
-            {
-                UnlockZones();
-                //_unlockEffect.Play();
-                transform.localScale = Vector3.zero;
-                transform.DOScale(1, UnlockDuration);
-            }
+            ShowZones();
         }
 
-        private void UnlockZones()
+        private void ShowZones()
         {
             foreach (var buyZone in _unlockZone)
             {
                 if(buyZone.GUID == "Lala")
                 {
-                    buyZone.Unlock(false);
+                    buyZone.Buy(false);
                 }
             }
         }

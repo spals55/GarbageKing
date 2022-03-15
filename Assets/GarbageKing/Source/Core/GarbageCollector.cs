@@ -1,17 +1,12 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GarbageCollector : MonoBehaviour
 {
-    [SerializeField] private int _power = 10;
-    [SerializeField] private float _distance = 10;
-    [SerializeField] private float _radius = 40;
-    [SerializeField] private float _angle = 180;
     [SerializeField] private Transform _mouth;
     [SerializeField] private GarbageBag _bag;
-    [SerializeField] private LayerMask _trashLayer;
-    [SerializeField] private ParticleSystem _suckEffect;
+    [SerializeField] private ParticleSystem _retractionEffect;
+    [SerializeField] private GarbageCollectorSettings _settings;
 
     private bool _work = true;
 
@@ -21,7 +16,7 @@ public class GarbageCollector : MonoBehaviour
     {
         if (_work)
         {
-            SuckNearestTresh();
+            RetractionNearestTrash();
         }
     }
 
@@ -31,18 +26,18 @@ public class GarbageCollector : MonoBehaviour
 
     private ITrash FindNearestTrash()
     {
-        Collider[] trashInView = Physics.OverlapSphere(_mouth.position, _radius, _trashLayer);
+        Collider[] trashInView = Physics.OverlapSphere(_mouth.position, _settings.Radius, _settings.LayerMask);
 
         for (int i = 0; i < trashInView.Length; i++)
         {
             Transform target = trashInView[i].transform;
             Vector3 directionToTarget = (target.position - _mouth.transform.position).normalized;
 
-            if (Vector3.Angle(_mouth.transform.forward, directionToTarget) < _angle / 2)
+            if (Vector3.Angle(_mouth.transform.forward, directionToTarget) < _settings.Angle / 2)
             {
                 float distanceToTarget = Vector3.Distance(_mouth.transform.position, target.transform.position);
 
-                if (distanceToTarget < _distance)
+                if (distanceToTarget < _settings.Distance)
                 {
                     if (trashInView[i].TryGetComponent(out ITrash trash))
                     {
@@ -56,32 +51,33 @@ public class GarbageCollector : MonoBehaviour
         return null;
     }
 
-    private void SuckNearestTresh()
+    private void RetractionNearestTrash()
     {
         ITrash nearestTrash = FindNearestTrash();
 
         if (nearestTrash != null)
-        {
-            StartCoroutine(Suck(nearestTrash));
-        }
+            StartCoroutine(Retraction(nearestTrash));
     }
 
-    private IEnumerator Suck(ITrash trash)
+    private IEnumerator Retraction(ITrash trash)
     {
         trash.Collect();
-        _suckEffect.Play();
+        _retractionEffect.Play();
 
         while (trash.transform.position != _mouth.transform.position)
         {
-            trash.transform.position = Vector3.MoveTowards(trash.transform.position, _mouth.transform.position, _power * Time.deltaTime);
-            trash.transform.localScale = Vector3.MoveTowards(trash.transform.localScale, Vector3.zero, _power / 2 * Time.deltaTime);
+            trash.transform.position = Vector3.MoveTowards(trash.transform.position,
+                _mouth.transform.position, _settings.RetractionSpeed * Time.deltaTime);
+
+            trash.transform.localScale = Vector3.MoveTowards(trash.transform.localScale,
+                Vector3.zero, _settings.ScaleSpeed * Time.deltaTime);
 
             yield return null;
         }
 
         Taptic.Selection();
 
-        _suckEffect.Stop();
+        _retractionEffect.Stop();
         _bag.Add(trash);
     }
 
@@ -95,11 +91,11 @@ public class GarbageCollector : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Vector3 lineA = DirectionFromAngle(-_angle / 2, false);
-        Vector3 lineB = DirectionFromAngle(_angle / 2, false);
+        Vector3 lineA = DirectionFromAngle(-_settings.Angle / 2, false);
+        Vector3 lineB = DirectionFromAngle(_settings.Angle / 2, false);
 
         Gizmos.color = Color.black;
-        Gizmos.DrawLine(_mouth.transform.position, _mouth.transform.position + lineA * _distance);
-        Gizmos.DrawLine(_mouth.transform.position, _mouth.transform.position + lineB * _distance);
+        Gizmos.DrawLine(_mouth.transform.position, _mouth.transform.position + lineA * _settings.Distance);
+        Gizmos.DrawLine(_mouth.transform.position, _mouth.transform.position + lineB * _settings.Distance);
     }
 }

@@ -5,10 +5,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashRecycler : MonoBehaviour, ITrashRecycler, IUnlockable
+public class TrashRecycler : MonoBehaviour, ITrashRecycler
 {
     [SerializeField] private Timer _timer;
-    [SerializeField] private int _trashToCreateBlock;
+    [SerializeField] private int _trashWeightToCreateBlock;
     [SerializeField] private TrashBlock _trashBlockTemplate;
     [SerializeField] private TrashConveyor _conveyor;
     [SerializeField] private TrashRecyclerSkin _skin;
@@ -41,12 +41,6 @@ public class TrashRecycler : MonoBehaviour, ITrashRecycler, IUnlockable
     private void Start()
     {
         StartCoroutine(RecyclingProcess());
-    }
-
-    public void Unlock(bool animate)
-    {
-        _skin.Show(animate);
-        transform.parent = null;
     }
 
     private void OnDropTriggerEntered(IHero hero)
@@ -99,9 +93,9 @@ public class TrashRecycler : MonoBehaviour, ITrashRecycler, IUnlockable
             var trash = _trash.Dequeue();
             _currentBlockSize += trash.Weight;
             
-            if (_currentBlockSize > _trashToCreateBlock)
+            if (_currentBlockSize >= _trashWeightToCreateBlock)
             {
-                _currentBlockSize = 0;
+                _currentBlockSize -= _trashWeightToCreateBlock; 
                 _timer.Begin(Duration);
                 yield return Yielder.WaitForSeconds(Duration);
             }

@@ -46,6 +46,6 @@ public class UnityGameEngine : MonoBehaviour, IGameEngine
 
     private void OnApplicationQuit()
     {
-        _game.Save();
+        _game.End();
     }
 }

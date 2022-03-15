@@ -6,6 +6,7 @@ public class HeroMovement : MonoBehaviour, IMovement
     [SerializeField] private Rigidbody _rigidbody;
     [SerializeField] private float _speed = 10f;
     [SerializeField] private float _rotationSpeed = 10f;
+    [SerializeField] private float _gravity = 0.5f;
 
     public float Velocity => _rigidbody.velocity.magnitude;
 
@@ -20,6 +21,8 @@ public class HeroMovement : MonoBehaviour, IMovement
     public void Move(Vector3 direction)
     {
         MoveRotation(direction);
+
+        direction.y -= _gravity;
         _rigidbody.velocity = direction * _speed;
     }
 

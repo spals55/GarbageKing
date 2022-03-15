@@ -4,7 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroResourcesStack : MonoBehaviour
+public class Hand : MonoBehaviour, IHand
 {
     [SerializeField] private float _offsetY;
     [SerializeField] private Transform _container;
@@ -20,7 +20,6 @@ public class HeroResourcesStack : MonoBehaviour
     {
         Vector3 endPosition = CalculateAddEndPosition(_container, stackable.transform);
         Vector3 endRotation = Vector3.zero;
-        Vector3 defaultScale = stackable.transform.localScale;
 
         stackable.transform.DOComplete(true);
         stackable.transform.parent = _container;
@@ -40,7 +39,6 @@ public class HeroResourcesStack : MonoBehaviour
             throw new NullReferenceException("No blocks in stack");
 
         var block = _blocksStack.Pop();
-
         block.transform.DOComplete(true);
         block.transform.parent = null;
 
@@ -62,7 +60,7 @@ public class HeroResourcesStack : MonoBehaviour
         else if (container.childCount != 0)
         {
             Transform topStackable = FindTopStackable(container);
-            Vector3 topPosition = new Vector3(0, topStackable.localPosition.y + topStackable.localScale.y / 2, 0);
+            var topPosition = new Vector3(0, topStackable.localPosition.y + topStackable.localScale.y / 2, 0);
 
             endPosition += topPosition;
         }

@@ -2,7 +2,7 @@
 {
     public string GUID { get; }
 
-    void Unlock(bool animate);
+    void Buy(bool animate);
     public void Hide();
     public void Show();
 }

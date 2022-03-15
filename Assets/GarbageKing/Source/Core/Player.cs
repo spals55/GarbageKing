@@ -20,9 +20,22 @@ public class Player : IPlayer, IFixedUpdateLoop
         _direction = new Vector3();
     }
 
-    public void SetControlledHero(IHero controlledHero)
+    public event Action ControlledHeroDead;
+
+    public IHero ControlledHero
     {
-        _controlledHero = controlledHero;
+        get
+        {
+            if (_controlledHero == null)
+                throw new NullReferenceException("Set Controlled Hero");
+
+            return _controlledHero;
+        }
+        set
+        {
+            _controlledHero = value;
+            _controlledHero.Dead += (() => ControlledHeroDead?.Invoke());
+        }
     }
 
     public void FixedTick(float time)
@@ -32,7 +45,7 @@ public class Player : IPlayer, IFixedUpdateLoop
             _direction.x = _inputDevice.Axis.x;
             _direction.z = _inputDevice.Axis.y;
 
-            _controlledHero.Move(_direction);
+            ControlledHero.Move(_direction);
         }
     }
 }

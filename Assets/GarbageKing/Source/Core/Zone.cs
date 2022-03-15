@@ -36,5 +36,5 @@ public abstract class Zone : MonoBehaviour, IZone
 
     public void Show() => gameObject.SetActive(true);
 
-    public abstract void Unlock(bool animate);
+    public abstract void Buy(bool animate);
 }

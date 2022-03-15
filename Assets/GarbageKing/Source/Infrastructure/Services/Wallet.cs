@@ -5,15 +5,11 @@ using UnityEngine;
 
 namespace PixupGames.Core
 {
-    public class Wallet : IWallet
+    public class Wallet : MonoBehaviour, IWallet
     {
-        public Wallet(int money)
-        {
-            Money = money;
-        }
-
         public int MaxMoney { get; private set; } = 9999;
         public int Money { get; private set; }
+        public Transform MoneySpawnPoint => transform;
 
         public event Action BalanceChanged;
 
