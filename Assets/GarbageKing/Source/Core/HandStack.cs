@@ -2,13 +2,16 @@ using DG.Tweening;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
-public class Hand : MonoBehaviour, IHand
+public class HandStack : MonoBehaviour, IHandStack
 {
     [SerializeField] private float _offsetY;
     [SerializeField] private Transform _container;
     [SerializeField] private float _animationDuration;
+    [SerializeField] private int _capacity = 7;
+    [SerializeField] private StackMaxIcon _stackMaxIcon;
 
     private Vector3 _lastTopPosition;
     private int _lastChildCount;
@@ -16,21 +19,31 @@ public class Hand : MonoBehaviour, IHand
     private Stack<ITrashBlock> _blocksStack = new Stack<ITrashBlock>();
     private List<Transform> _transforms = new List<Transform>();
 
-    public void Add(ITrashBlock stackable)
+    public bool IsFull => _blocksStack.Count >= _capacity;
+    public bool IsEmpty => _blocksStack.Count == 0;
+
+    public event Action Changed;
+
+    public void Add(ITrashBlock block)
     {
-        Vector3 endPosition = CalculateAddEndPosition(_container, stackable.transform);
+        block.transform.DOComplete(true);
+        block.transform.parent = _container;
+
+        Vector3 endPosition = CalculateAddEndPosition(_container, block.transform);
         Vector3 endRotation = Vector3.zero;
 
-        stackable.transform.DOComplete(true);
-        stackable.transform.parent = _container;
+        block.transform.DOLocalRotate(endRotation, _animationDuration);
+        block.transform.DOLocalJump(endPosition, 2f, 1, _animationDuration)
+            .OnComplete(() => 
+            {
+                if (IsFull)
+                    _stackMaxIcon.Show(GetHeight());
+            });
 
-        stackable.transform.DOLocalMove(endPosition, _animationDuration);
-        stackable.transform.DOLocalRotate(endRotation, _animationDuration);
+        _transforms.Add(block.transform);
+        _blocksStack.Push(block);
 
-        stackable.transform.DOLocalJump(endPosition, 2f, 1, _animationDuration);
-
-        _transforms.Add(stackable.transform);
-        _blocksStack.Push(stackable);
+        Changed?.Invoke();
     }
 
     public ITrashBlock Get()
@@ -45,13 +58,24 @@ public class Hand : MonoBehaviour, IHand
         int removedIndex = _transforms.IndexOf(block.transform);
         _transforms.RemoveAt(removedIndex);
 
+        if (!IsFull)
+            _stackMaxIcon.Hide();
+
+        Changed?.Invoke();
+
         return block;
     }
 
     private Vector3 CalculateAddEndPosition(Transform container, Transform stackable)
     {
-        var stackableLocalScale = container.InverseTransformVector(stackable.lossyScale);
+        Vector3 stackableLocalScale = container.InverseTransformVector(stackable.lossyScale);
         var endPosition = new Vector3(0, stackableLocalScale.y / 2, 0);
+
+        if (container.childCount == 1)
+        {
+            _lastTopPosition = Vector3.zero;
+            _lastChildCount = 0;
+        }
 
         if (container.childCount > _lastChildCount)
         {
@@ -82,5 +106,16 @@ public class Hand : MonoBehaviour, IHand
                 topStackable = stackable;
 
         return topStackable;
+    }
+
+    private float GetHeight()
+    {
+        float positionY = 0f;
+
+        foreach (var item in _transforms)
+            if (item.position.y > positionY)
+                positionY = item.position.y;
+
+        return positionY;
     }
 }

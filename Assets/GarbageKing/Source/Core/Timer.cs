@@ -26,10 +26,7 @@ public class Timer : MonoBehaviour, ITimer
         if (_waitingComplete != null)
             StopCoroutine(_waitingComplete);
 
-        if (_fadeTweener.IsActive())
-            _fadeTweener.Kill();
-
-        _fadeTweener = _canvasGroup.DOFade(1, _fadeDuration);
+        Fade(1);
 
         _waitingComplete = StartCoroutine(WaitingComplete(seconds));
     }
@@ -37,6 +34,8 @@ public class Timer : MonoBehaviour, ITimer
     public void Stop()
     {
         StopCoroutine(_waitingComplete);
+
+        Fade(0);
     }
 
     private IEnumerator WaitingComplete(float seconds)
@@ -56,12 +55,17 @@ public class Timer : MonoBehaviour, ITimer
 
     private void Complete()
     {
-        if (_fadeTweener.IsActive())
-            _fadeTweener.Kill();
-
-        _fadeTweener = _canvasGroup.DOFade(0, _fadeDuration);
+        Fade(0);
 
         _fill.fillAmount = 0f;
         Completed?.Invoke();
+    }
+
+    private void Fade(float alpha)
+    {
+        if (_fadeTweener.IsActive())
+            _fadeTweener.Kill();
+
+        _fadeTweener = _canvasGroup.DOFade(alpha, _fadeDuration);
     }
 }

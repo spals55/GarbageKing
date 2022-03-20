@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class SettingsPanel : MonoBehaviour, IWindow
+public class SettingsPanel : MonoBehaviour, IPanel
 {
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private Button _settingsButton;

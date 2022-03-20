@@ -74,9 +74,6 @@ public class BuyZone : Zone
 
     public override void Buy(bool animate)
     {
-        if (_tryBuyCoroutine != null)
-            StopCoroutine(_tryBuyCoroutine);
-
         _unlocker.Unlock(animate);
         _unlocker.transform.parent = null;
 
@@ -89,19 +86,22 @@ public class BuyZone : Zone
         _totalCost -= multiplierCoefficient;
         _totalCostLabel.text = _totalCost.ToString();
 
-        MoneyTransfer(wallet.MoneySpawnPoint.position, _unlocker.transform.position);
+        MoneyTransfer(wallet.Container.position, _unlocker.transform.position);
     }
 
     private void MoneyTransfer(Vector3 from, Vector3 to)
     {
         var money = _objectPool.Get(from);
-        money.transform.DOScale(Vector3.zero, 1.5f);
         money.transform.DORotate(new Vector3(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)), 1f);
-        money.transform.DOJump(new Vector3(to.x + Random.Range(-3, 3), to.y, to.z + Random.Range(-3, 3)), 4f, 1, 1f)
+        money.transform.DOJump(new Vector3(to.x + Random.Range(-3, 3), to.y, to.z + Random.Range(-3, 3)), 5f, 1, 1.5f)
             .OnComplete(() =>
             {
-                money.gameObject.SetActive(false);
-                money.transform.DOComplete(true);
+                money.transform.DOScale(Vector3.zero, 0.2f)
+                .OnComplete(() =>
+                {
+                    money.DOComplete(true);
+                    money.gameObject.SetActive(false);
+                });
             });
     }
 }

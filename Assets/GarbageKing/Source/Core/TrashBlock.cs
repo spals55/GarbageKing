@@ -4,11 +4,11 @@ public class TrashBlock : MonoBehaviour, ITrashBlock
 {
     public void Release()
     {
-        throw new System.NotImplementedException();
+        gameObject.SetActive(false);
     }
 
     public void Hide()
     {
-        throw new System.NotImplementedException();
+        gameObject.SetActive(false);
     }
 }

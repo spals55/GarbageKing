@@ -6,8 +6,14 @@ namespace PixupGames.Contracts
 {
     public interface IHero : ICharacter, ICameraTarget
     {
+        IHeroAnimation Animation { get; }
         IMovement Movement { get; }
         IGarbageBag Bag { get; }
         IWallet Wallet { get; }
     }
+}
+
+public interface IHeroAnimation
+{
+
 }

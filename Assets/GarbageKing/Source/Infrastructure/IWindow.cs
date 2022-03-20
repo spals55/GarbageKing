@@ -2,7 +2,7 @@
 {
     public interface IWindow
     {
-        void Show();
-        void Hide();
+        void Open();
+        void Close();
     }
 }

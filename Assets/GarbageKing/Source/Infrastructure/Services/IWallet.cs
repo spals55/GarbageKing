@@ -8,7 +8,7 @@ namespace PixupGames.Contracts
         event Action BalanceChanged;
         int Money { get; }
         int MaxMoney { get; }
-        Transform MoneySpawnPoint { get; }
+        Transform Container { get; }
 
         void Spend(int amount);
         void Add(int amount);

@@ -11,7 +11,7 @@ public class TrashBlockStack : MonoBehaviour, ITrashBlockStack
     [SerializeField] private Vector3Int _countStack;
     [SerializeField] private Transform _stackContainer;
     [SerializeField] private float _jumpPower = 1f;
-    [SerializeField] private float _jumpDuraction = 1f;
+    [SerializeField] private float _jumpDuration = 1f;
 
     private List<Transform> _transforms = new List<Transform>();
     private Stack<ITrashBlock> _trashBlocks = new Stack<ITrashBlock>();
@@ -23,15 +23,15 @@ public class TrashBlockStack : MonoBehaviour, ITrashBlockStack
 
     public void Add(ITrashBlock block)
     {
-        Vector3 endPosition = CalculateAddEndPosition(_stackContainer.transform, block.transform);
-        Vector3 endRotation = Vector3.zero;
-
         block.transform.DOComplete(true);
         block.transform.parent = _stackContainer;
 
+        Vector3 endPosition = CalculateAddEndPosition(_stackContainer.transform, block.transform);
+        Vector3 endRotation = Vector3.zero;
+
         block.transform.DOPunchScale(Vector3.one * 0.3f, 1f);
-        block.transform.DOLocalRotate(endRotation, 1);
-        block.transform.DOLocalJump(endPosition, _jumpPower, 1, _jumpDuraction);
+        block.transform.DOLocalRotate(endRotation, 0.3f);
+        block.transform.DOLocalJump(endPosition, _jumpPower, 1, _jumpDuration);
 
         _transforms.Add(block.transform);
         _trashBlocks.Push(block);
@@ -41,7 +41,7 @@ public class TrashBlockStack : MonoBehaviour, ITrashBlockStack
     {
         var block = _trashBlocks.Pop();
 
-        DOTween.CompleteAll();
+        block.transform.DOComplete(true);
         block.transform.parent = null;
 
         int removedIndex = _transforms.IndexOf(block.transform);

@@ -58,7 +58,7 @@ public class Trigger<T> : MonoBehaviour
             Exit?.Invoke(triggeredObject);
 
             if (_scaleWhenEntered)
-                transform.DOScale(1, _scaleDuration);
+                transform.DOScale(_scaleDefaultValue, _scaleDuration);
         }
     }
 }

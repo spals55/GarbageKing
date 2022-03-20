@@ -5,35 +5,38 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrashRecycler : MonoBehaviour, ITrashRecycler
+public abstract class TrashRecycler : MonoBehaviour
 {
-    [SerializeField] private Timer _timer;
-    [SerializeField] private int _trashWeightToCreateBlock;
-    [SerializeField] private TrashBlock _trashBlockTemplate;
-    [SerializeField] private TrashConveyor _conveyor;
-    [SerializeField] private TrashRecyclerSkin _skin;
+    [SerializeField] protected int TrashWeightToCreateBlock;
+    [SerializeField] protected Timer Timer;
+    [SerializeField] protected TrashBlock TrashBlockTemplate;
+
+    [SerializeField] private float _delayBetweenTrashCollect;
     [SerializeField] private DropTrigger _dropTrigger;
     [SerializeField] private Transform _trashContainer;
 
-    private Queue<ITrash> _trash;
+    protected int CurrentBlocksWeight;
+    protected Queue<ITrash> TrashQueue;
+
     private Coroutine _tryCollectTrash;
-    private int _currentBlockSize;
+
+    protected bool CanCreateBlock => CurrentBlocksWeight >= TrashWeightToCreateBlock;
 
     private void Awake()
     {
-        _trash = new Queue<ITrash>();
+        TrashQueue = new Queue<ITrash>();
     }
 
     private void OnEnable()
     {
-        _timer.Completed += OnTimerCompleted;
+        Timer.Completed += OnTimerCompleted;
         _dropTrigger.Entered += OnDropTriggerEntered;
         _dropTrigger.Exit += OnDropTriggerExit;
     }
 
     private void OnDisable()
     {
-        _timer.Completed -= OnTimerCompleted;
+        Timer.Completed -= OnTimerCompleted;
         _dropTrigger.Entered -= OnDropTriggerEntered;
         _dropTrigger.Exit -= OnDropTriggerExit;
     }
@@ -42,6 +45,10 @@ public class TrashRecycler : MonoBehaviour, ITrashRecycler
     {
         StartCoroutine(RecyclingProcess());
     }
+
+    protected abstract void CreateBlock();
+
+    protected abstract IEnumerator RecyclingProcess();
 
     private void OnDropTriggerEntered(IHero hero)
     {
@@ -68,47 +75,19 @@ public class TrashRecycler : MonoBehaviour, ITrashRecycler
             if (bag.HasTrash)
             {
                 var trash = bag.GetTrash();
+
+                trash.transform.parent = transform;
                 trash.transform.DOScale(Vector3.zero, 4f);
                 trash.transform.DOJump(_trashContainer.transform.position, 4f, 1, 1.5f)
                     .OnComplete(() =>
                     {
                         trash.Release();
                         trash.transform.DOComplete(true);
-                        _trash.Enqueue(trash);
+                        TrashQueue.Enqueue(trash);
                     });               
             }
 
-            yield return Yielder.WaitForSeconds(0.3f);
+            yield return Yielder.WaitForSeconds(_delayBetweenTrashCollect);
         }
-    }
-
-    private IEnumerator RecyclingProcess()
-    {
-        const float Duration = 3f;
-
-        while (true)
-        {
-            yield return new WaitUntil(() => _trash.Count > 0);
-
-            var trash = _trash.Dequeue();
-            _currentBlockSize += trash.Weight;
-            
-            if (_currentBlockSize >= _trashWeightToCreateBlock)
-            {
-                _currentBlockSize -= _trashWeightToCreateBlock; 
-                _timer.Begin(Duration);
-                yield return Yielder.WaitForSeconds(Duration);
-            }
-
-            yield return null;
-        }
-    }
-
-    private void CreateBlock()
-    {
-        _skin.ShakeBox();
-
-        ITrashBlock block = Instantiate(_trashBlockTemplate, transform.position, Quaternion.identity);
-        _conveyor.Add(block);
     }
 }

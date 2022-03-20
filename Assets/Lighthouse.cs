@@ -8,7 +8,16 @@ using UnityEngine;
 public class Lighthouse : MonoBehaviour
 {
     [SerializeField] private LighthouseTrigger _trigger;
-    [SerializeField] private List<MeshRenderer> _meshRenderers;
+    [SerializeField] private MeshRenderer _meshRenderer;
+    [SerializeField] private Material _material;
+
+    private Material _oldMaterial;
+
+
+    private void Awake()
+    {
+        _oldMaterial = _meshRenderer.material;
+    }
 
     private void OnEnable()
     {
@@ -24,13 +33,11 @@ public class Lighthouse : MonoBehaviour
 
     private void OnEntered(IHero hero)
     {
-        foreach (var meshRender in _meshRenderers)
-            meshRender.enabled = false;
+        _meshRenderer.material = _material; 
     }
 
     private void OnExit(IHero hero)
     {
-        foreach (var meshRender in _meshRenderers)
-            meshRender.enabled = true;
+        _meshRenderer.material = _oldMaterial;
     }
 }

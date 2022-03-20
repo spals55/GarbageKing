@@ -35,8 +35,8 @@ namespace PixupGames.Infrastracture.Game
 
         public void Run()
         {
-            _viewport.GetStartGameWindow().Hide();
-            _viewport.GetPlayGameWindow().Show();
+            _viewport.GetStartGameWindow().Close();
+            _viewport.GetPlayGameWindow().Open();
 
             Initialize();
             UnlockRegions();
@@ -79,6 +79,7 @@ namespace PixupGames.Infrastracture.Game
         private void RespawnHero()
         {
             _player.ControlledHero.transform.position = _dataPersistence.Data.World.Hero.LastPosition;
+            _player.ControlledHero.transform.DOComplete(true);
             _player.ControlledHero.transform.DOShakeScale(1);
         }
     }

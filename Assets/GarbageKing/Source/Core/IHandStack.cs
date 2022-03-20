@@ -1,4 +1,4 @@
-﻿public interface IHand
+﻿public interface IHandStack
 {
     void Add(ITrashBlock stackable);
     ITrashBlock Get();

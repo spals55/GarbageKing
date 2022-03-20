@@ -10,13 +10,15 @@ namespace PixupGames.Core
     {
         [SerializeField] private HeroMovement _movement;
         [SerializeField] private HeroAnimation _animation;
-        [SerializeField] private Hand _hand;
+        [SerializeField] private HandStack _handStack;
         [SerializeField] private GarbageCollector _garbageCollector;
         [SerializeField] private Wallet _wallet;
 
         public IMovement Movement => _movement;
         public IGarbageBag Bag => _garbageCollector.Bag;
         public IWallet Wallet => _wallet;
+        public IHeroAnimation Animation => _animation;
+
 
         public event Action Dead;
 
@@ -32,7 +34,7 @@ namespace PixupGames.Core
 
         public ITrashBlock GetTrashBlock()
         {
-            return _hand.Get();
+            return _handStack.Get();
         }
 
         private void OnTriggerEnter(Collider other)
@@ -52,10 +54,10 @@ namespace PixupGames.Core
         {
             if (other.TryGetComponent(out ITrashBlockStack stack))
             {
-                if (stack.CanGet)
+                if (stack.CanGet && !_handStack.IsFull)
                 {
                      var block = stack.Get();
-                   _hand.Add(block);
+                   _handStack.Add(block);
                 }
             }
         }

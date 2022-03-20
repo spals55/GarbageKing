@@ -14,7 +14,3 @@ public class ObjectPool : MonoBehaviour
     }
 }
 
-public enum ObjectType
-{
-    Money,
-}

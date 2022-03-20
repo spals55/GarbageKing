@@ -28,9 +28,9 @@ namespace PixupGames.Infrastracture.Game
             _gargabeBag.WeightChanged += OnGarbageBagWeightChanged;
         }
 
-        public void Show() => _canvasGroup.Open();
+        public void Open() => _canvasGroup.Open();
 
-        public void Hide() => _canvasGroup.Close();
+        public void Close() => _canvasGroup.Close();
 
         private void OnGarbageBagWeightChanged()
         {

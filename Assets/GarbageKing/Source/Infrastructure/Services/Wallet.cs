@@ -9,7 +9,7 @@ namespace PixupGames.Core
     {
         public int MaxMoney { get; private set; } = 9999;
         public int Money { get; private set; }
-        public Transform MoneySpawnPoint => transform;
+        public Transform Container => transform;
 
         public event Action BalanceChanged;
 

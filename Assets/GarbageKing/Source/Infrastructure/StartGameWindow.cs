@@ -4,12 +4,12 @@ namespace PixupGames.Infrastracture.Game
 {
     public class StartGameWindow : MonoBehaviour, IStartGameWindow
     {
-        public void Hide()
+        public void Close()
         {
             gameObject.SetActive(false);
         }
 
-        public void Show()
+        public void Open()
         {
             return;
         }

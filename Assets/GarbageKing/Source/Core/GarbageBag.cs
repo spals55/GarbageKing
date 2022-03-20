@@ -8,6 +8,7 @@ public class GarbageBag : MonoBehaviour, IGarbageBag
 
     [SerializeField] private SkinnedMeshRenderer _skinnedMeshRenderer;
     [SerializeField] private int _maxWeight = 100;
+    [SerializeField] private ParticleSystem _fullEffect;
 
     private int _currentCapacity;
     private Queue<ITrash> _trash = new Queue<ITrash>();
@@ -33,6 +34,9 @@ public class GarbageBag : MonoBehaviour, IGarbageBag
         ChangeWeight(_currentCapacity);
 
         _trash.Enqueue(trash);
+
+        if (Weight >= _maxWeight)
+            _fullEffect.Play();
     }
 
     public ITrash GetTrash()

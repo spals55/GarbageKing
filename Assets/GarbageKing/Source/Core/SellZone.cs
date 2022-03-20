@@ -10,7 +10,6 @@ public class SellZone : MonoBehaviour
     [SerializeField] private Ship _ship;
     [SerializeField] private int _moneyCountForFullShip;
     [SerializeField] private MoneyStack _moneyStack;
-    [SerializeField] private ObjectPool _pool;
 
     private IHero _salesman;
     private Coroutine _trySellCoroutine;
