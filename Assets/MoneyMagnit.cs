@@ -20,7 +20,7 @@ public class MoneyMagnit : MonoBehaviour
         money.transform.DOLocalRotate(Vector3.zero, _attractDuration);
         money.transform.DOLocalMove(_wallet.Container.transform.position, _attractDuration).OnComplete(() =>
         {
-            money.transform.DOScale(0, _reduceDuration).OnComplete(() => money.gameObject.SetActive(false));
+            money.transform.DOScale(0, _reduceDuration).OnComplete(() => money.Hide());
         });
     }
 

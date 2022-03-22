@@ -12,12 +12,12 @@ public class BuyZone : Zone
     [SerializeField] private Unlocker _unlocker;
     [SerializeField] private BuyZoneTrigger _trigger;
 
-    private ObjectPool _objectPool;
+    private MoneyPool _objectPool;
     private Coroutine _tryBuyCoroutine;
 
     private void Awake()
     {
-        _objectPool = FindObjectOfType<ObjectPool>();
+        _objectPool = FindObjectOfType<MoneyPool>();
     }
 
     private void OnEnable()
@@ -91,7 +91,8 @@ public class BuyZone : Zone
 
     private void MoneyTransfer(Vector3 from, Vector3 to)
     {
-        var money = _objectPool.Get(from);
+        Money money = _objectPool.GetElement(from);
+
         money.transform.DORotate(new Vector3(Random.Range(0, 360), Random.Range(0, 360), Random.Range(0, 360)), 1f);
         money.transform.DOJump(new Vector3(to.x + Random.Range(-3, 3), to.y, to.z + Random.Range(-3, 3)), 5f, 1, 1.5f)
             .OnComplete(() =>
@@ -100,7 +101,7 @@ public class BuyZone : Zone
                 .OnComplete(() =>
                 {
                     money.DOComplete(true);
-                    money.gameObject.SetActive(false);
+                    money.Hide();
                 });
             });
     }

@@ -13,9 +13,14 @@ public class Ship : MonoBehaviour
     [SerializeField] private Transform _startPoint;
     [SerializeField] private MoneyStack _moneyStack;
     [SerializeField] private ParticleSystem _boughtEffect;
-    [SerializeField] private ObjectPool _pool;
 
+    private MoneyPool _pool;
     private ShipState _currentState;
+
+    private void Awake()
+    {
+        _pool = FindObjectOfType<MoneyPool>();
+    }
 
     public bool CanAdd => _trashBlockStack.IsFull == false 
         && _currentState == ShipState.Ready;
@@ -42,7 +47,7 @@ public class Ship : MonoBehaviour
         for (int i = 0; i < 10; i++)
         {
             await Task.Delay(100);
-            var money = _pool.Get(transform.position);
+            var money = _pool.GetElement(transform.position);
             _moneyStack.Add(money);
         }
     }
