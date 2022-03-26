@@ -10,6 +10,7 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private UnityGameEngine _gameEngine;
     [SerializeField] private World _world;
     [SerializeField] private Viewport _viewport;
+    [SerializeField] private Jetski _jetskit;
 
     private Game _game;
 
@@ -18,6 +19,7 @@ public class EntryPoint : MonoBehaviour
         var dataPersistence = new DataPersistence(_saveKey);
 
         _game = new Game(dataPersistence, _world, _gameEngine, _viewport);
+        _jetskit.Init(_gameEngine.GetInputDevice());
         _gameEngine.Init(_game);
     }
 }
