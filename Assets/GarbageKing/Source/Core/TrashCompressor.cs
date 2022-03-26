@@ -7,11 +7,18 @@ public class TrashCompressor : TrashRecycler
     [SerializeField] private TrashRecyclerSkin _skin;
     [SerializeField] private float _creatingBlockTime;
 
+    private TrashBlockPool _pool;
+
+    private void Awake()
+    {
+        _pool = FindObjectOfType<TrashBlockPool>();
+    }
+
     protected override void CreateBlock()
     {
         _skin.ShakeBox();
 
-        ITrashBlock block = Instantiate(TrashBlockTemplate, transform.position, Quaternion.identity);
+        ITrashBlock block = _pool.GetElement(transform.position);
        _conveyor.Add(block);
     }
 

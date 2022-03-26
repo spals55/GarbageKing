@@ -1,14 +1,11 @@
-﻿using UnityEngine;
+﻿using PixupGames.Infrastracture.Game;
+using UnityEngine;
 
-namespace PixupGames.Infrastracture.Game
+public class Viewport : MonoBehaviour, IViewport
 {
-    public class Viewport : MonoBehaviour, IViewport
-    {
-        [SerializeField] private StartGameWindow _startGameWindow;
-        [SerializeField] private PlayGameWindow _playGameWindow;
+    [SerializeField] private PlayGameWindow _playGameWindow;
+    [SerializeField] private StartGameWindow _startGameWindow;
 
-        public IPlayGameWindow GetPlayGameWindow() => _playGameWindow;
-
-        public IStartGameWindow GetStartGameWindow() => _startGameWindow;
-    }
+    public IPlayGameWindow GetPlayGameWindow() => _playGameWindow;
+    public IStartGameWindow GetStartGameWindow() => _startGameWindow;
 }

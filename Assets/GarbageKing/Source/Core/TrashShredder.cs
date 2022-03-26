@@ -3,16 +3,25 @@ using UnityEngine;
 
 public class TrashShredder : TrashRecycler
 {
-    [SerializeField] private TrashRecyclerSkin _skin;
+    [SerializeField] private TrashShredderSkin _skin;
     [SerializeField] private TrashBlockStack _stack;
     [SerializeField] private float _creatingBlockTime;
+
+    private TrashBlockPool _pool;
+
+    private void Awake()
+    {
+        _pool = FindObjectOfType<TrashBlockPool>();
+    }
 
     protected override void CreateBlock()
     {
         _skin.ShakeBox();
 
-        ITrashBlock block = Instantiate(TrashBlockTemplate, transform.position, Quaternion.identity);
+        ITrashBlock block = _pool.GetElement(transform.position);
         _stack.Add(block);
+
+        _skin.StopRotatingBlades();
     }
 
     protected override IEnumerator RecyclingProcess()
@@ -22,6 +31,7 @@ public class TrashShredder : TrashRecycler
             {
                 yield return new WaitUntil(() => TrashQueue.Count > 0);
 
+                _skin.StartRotatingBlades();
                 var trash = TrashQueue.Dequeue();
                 CurrentBlocksWeight += trash.Weight;
 

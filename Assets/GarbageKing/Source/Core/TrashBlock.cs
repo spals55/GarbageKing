@@ -1,14 +1,9 @@
 ﻿using UnityEngine;
 
-public class TrashBlock : MonoBehaviour, ITrashBlock
+public class TrashBlock : PoolElement, ITrashBlock
 {
-    public void Release()
+    protected override void ResetScale()
     {
-        gameObject.SetActive(false);
-    }
-
-    public void Hide()
-    {
-        gameObject.SetActive(false);
+        transform.localScale = Vector3.one;
     }
 }

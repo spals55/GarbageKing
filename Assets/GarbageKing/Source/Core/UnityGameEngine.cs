@@ -8,7 +8,6 @@ using UnityEngine;
 public class UnityGameEngine : MonoBehaviour, IGameEngine
 {
     [SerializeField] private int _targetFrameRate = 60;
-    [SerializeField] private Viewport _viewport;
     [SerializeField] private MainCamera _camera;
 
     private IGame _game;
@@ -32,10 +31,6 @@ public class UnityGameEngine : MonoBehaviour, IGameEngine
     {
         _game = game;
     }
-
-    public IViewport GetViewport() => _viewport;
-
-    public ICamera Camera => _camera;
 
     public IInputDevice GetInputDevice()
     {

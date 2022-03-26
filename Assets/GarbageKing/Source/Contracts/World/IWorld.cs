@@ -5,6 +5,9 @@ using UnityEngine;
 
 public interface IWorld
 {
-    IHero CreateHero(Vector3 position);
+    ICamera Camera { get; }
+
+    void RespawnHero(Vector3 position);
+    IHero SpawnHero(Vector3 position);
     void UnlockRegion(string guid);
 }

@@ -14,6 +14,6 @@ public class UnlockEffect : MonoBehaviour
         ulockParticle.Play();
 
         transform.localScale = Vector3.zero;
-        transform.DOScale(1, _settings.Duration).SetEase(Ease.OutBack);
+        transform.DOScale(1, _settings.Duration).SetEase(_settings.Ease);
     }
 }

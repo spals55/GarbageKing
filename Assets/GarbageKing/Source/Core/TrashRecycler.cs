@@ -16,16 +16,11 @@ public abstract class TrashRecycler : MonoBehaviour
     [SerializeField] private Transform _trashContainer;
 
     protected int CurrentBlocksWeight;
-    protected Queue<ITrash> TrashQueue;
+    protected Queue<ITrash> TrashQueue = new Queue<ITrash>();
 
     private Coroutine _tryCollectTrash;
 
     protected bool CanCreateBlock => CurrentBlocksWeight >= TrashWeightToCreateBlock;
-
-    private void Awake()
-    {
-        TrashQueue = new Queue<ITrash>();
-    }
 
     private void OnEnable()
     {
@@ -74,6 +69,7 @@ public abstract class TrashRecycler : MonoBehaviour
         {
             if (bag.HasTrash)
             {
+                Taptic.Selection();
                 var trash = bag.GetTrash();
 
                 trash.transform.parent = transform;

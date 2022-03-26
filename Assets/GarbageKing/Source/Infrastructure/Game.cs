@@ -14,19 +14,16 @@ namespace PixupGames.Infrastracture.Game
         private readonly IGameEngine _gameEngine;
         private readonly IViewport _viewport;
         private readonly IWorld _world;
-        private readonly IPlayer _player;
 
-        public Game(IDataPersistence dataPersistence, IWorld world, IGameEngine gameEngine)
+        private IPlayer _player;
+
+        public Game(IDataPersistence dataPersistence, IWorld world, IGameEngine gameEngine, IViewport viewport)
         {
             _world = world;
             _dataPersistence = dataPersistence;
             _gameEngine = gameEngine;
-            _viewport = _gameEngine.GetViewport();
-
-            _player = new Player(_gameEngine.GetInputDevice());
-            _player.ControlledHeroDead += OnHeroDead;
+            _viewport = viewport;
         }
-
 
         public void FixedTick(float time)
         {
@@ -38,7 +35,9 @@ namespace PixupGames.Infrastracture.Game
             _viewport.GetStartGameWindow().Close();
             _viewport.GetPlayGameWindow().Open();
 
-            Initialize();
+            IPlayer player = SetupPlayer();
+            SetupCamera(player.ControlledHero);
+
             UnlockRegions();
         }
 
@@ -49,38 +48,37 @@ namespace PixupGames.Infrastracture.Game
             _dataPersistence.Save();
         }
 
-        private void Initialize()
+        private IPlayer SetupPlayer()
         {
-            ICamera camera = _gameEngine.Camera;
-            IHero hero = _world.CreateHero(_dataPersistence.Data.World.Hero.LastPosition);
+            _player = new Player(_gameEngine.GetInputDevice());
+
+            IHero hero = _world.SpawnHero(_dataPersistence.Data.World.Hero.LastPosition);
             hero.Wallet.Add(5000);
 
-            camera.SetTarget(hero);
             _player.ControlledHero = hero;
             _viewport.GetPlayGameWindow().Init(hero.Wallet, hero.Bag);
+
+            _player.ControlledHeroDead += OnHeroDead;
+
+            return _player;
+        }
+
+        private void SetupCamera(ICameraTarget target)
+        {
+            ICamera camera = _world.Camera;
+            camera.SetTarget(target);
         }
 
         private void UnlockRegions()
         {
             foreach (var region in _dataPersistence.Data.World.Regions)
-            {
                 if (region.IsOpen)
-                {
                     _world.UnlockRegion(region.GUID);
-                }
-            }
         }
 
         private void OnHeroDead()
         {
-             RespawnHero();
-        }
-
-        private void RespawnHero()
-        {
-            _player.ControlledHero.transform.position = _dataPersistence.Data.World.Hero.LastPosition;
-            _player.ControlledHero.transform.DOComplete(true);
-            _player.ControlledHero.transform.DOShakeScale(1);
+            _world.RespawnHero(_dataPersistence.Data.World.Hero.LastPosition);
         }
     }
 }

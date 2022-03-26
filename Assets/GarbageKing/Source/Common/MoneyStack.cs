@@ -24,12 +24,12 @@ public class MoneyStack : MonoBehaviour
     public void Add(Money block)
     {
         Vector3 endPosition = CalculateAddEndPosition(_stackContainer.transform, block.transform);
-        Vector3 endRotation = new Vector3(-90, 0, 0);
+        Vector3 endRotation = Vector3.zero;
 
         block.transform.DOComplete(true);
         block.transform.parent = _stackContainer;
 
-        block.transform.DOLocalRotate(endRotation, 1);
+        block.transform.DOLocalRotate(endRotation, 0.2f);
         block.transform.DOLocalJump(endPosition, _jumpPower, 1, _jumpDuration);
 
         _transforms.Add(block.transform);

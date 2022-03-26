@@ -1,5 +1,5 @@
 ﻿public interface ITrashBlock : IBlock
 {
-    void Release();
+    void Show();
     void Hide();
 }

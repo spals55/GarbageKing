@@ -13,8 +13,10 @@ public abstract class PoolElement : MonoBehaviour
     public void Hide()
     {
         gameObject.SetActive(false);
-        transform.localScale = Vector3.one;
+        ResetScale();
         CanUse = true;
     }
+
+    protected abstract void ResetScale();
 }
 

@@ -18,6 +18,7 @@ public class BuyZone : Zone
     private void Awake()
     {
         _objectPool = FindObjectOfType<MoneyPool>();
+        _totalCostLabel.text = _totalCost.ToString();
     }
 
     private void OnEnable()

@@ -12,7 +12,7 @@ public class Ship : MonoBehaviour
     [SerializeField] private Transform _reloadPoint;
     [SerializeField] private Transform _startPoint;
     [SerializeField] private MoneyStack _moneyStack;
-    [SerializeField] private ParticleSystem _boughtEffect;
+    [SerializeField] private ParticleSystem[] _boughtEffects;
 
     private MoneyPool _pool;
     private ShipState _currentState;
@@ -35,7 +35,8 @@ public class Ship : MonoBehaviour
 
     private async void EndShipment()
     {
-        _boughtEffect.Play();
+        foreach (var boughtEffect in _boughtEffects)
+            boughtEffect.Play();
 
         await Pay();
 
@@ -44,7 +45,7 @@ public class Ship : MonoBehaviour
 
     private async Task Pay()
     {
-        for (int i = 0; i < 10; i++)
+        for (int i = 0; i < 20; i++)
         {
             await Task.Delay(100);
             var money = _pool.GetElement(transform.position);
