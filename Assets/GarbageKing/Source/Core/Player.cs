@@ -5,12 +5,14 @@ using System;
 using PixupGames.Infrastracture.Services;
 using PixupGames.Infrastracture.Game;
 using PixupGames.Contracts;
+using PixupGames.Core;
 
 public class Player : IPlayer, IFixedUpdateLoop
 {
     private readonly IInputDevice _inputDevice;
 
     private IHero _controlledHero;
+    private IControlled _controlled;
     private Vector3 _direction;
 
     public Player(IInputDevice inputDevice)
@@ -20,7 +22,10 @@ public class Player : IPlayer, IFixedUpdateLoop
         _direction = new Vector3();
     }
 
-    public event Action ControlledHeroDead;
+    ~Player()
+    {
+        _controlledHero.SatVehicle -= OnHeroSetVehicle;
+    }
 
     public IHero ControlledHero
     {
@@ -34,9 +39,13 @@ public class Player : IPlayer, IFixedUpdateLoop
         set
         {
             _controlledHero = value;
+            _controlled = _controlledHero;
             _controlledHero.Dead += (() => ControlledHeroDead?.Invoke());
+            _controlledHero.SatVehicle += OnHeroSetVehicle;
         }
     }
+
+    public event Action ControlledHeroDead;
 
     public void FixedTick(float time)
     {
@@ -45,7 +54,12 @@ public class Player : IPlayer, IFixedUpdateLoop
             _direction.x = _inputDevice.Axis.x;
             _direction.z = _inputDevice.Axis.y;
 
-            ControlledHero.Move(_direction);
+            _controlled.Move(_direction);
         }
+    }
+
+    private void OnHeroSetVehicle(IVehicle vehicle)
+    {
+        _controlled = vehicle;
     }
 }

@@ -10,7 +10,7 @@ public class GarbageCollector : MonoBehaviour
 
     private bool _work = true;
 
-    public IGarbageBag Bag => _bag;
+    public GarbageBag Bag => _bag;
 
     private void FixedUpdate()
     {
@@ -24,8 +24,14 @@ public class GarbageCollector : MonoBehaviour
 
     public void Disable() => _work = false;
 
+    public void ChangeBag(GarbageBag bag)
+    {
+        _bag = bag;
+    }
+
     private ITrash FindNearestTrash()
     {
+
         Collider[] trashInView = Physics.OverlapSphere(_mouth.position, _settings.Radius, _settings.LayerMask);
 
         for (int i = 0; i < trashInView.Length; i++)

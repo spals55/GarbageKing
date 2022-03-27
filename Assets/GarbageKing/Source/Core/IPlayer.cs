@@ -5,6 +5,6 @@ using System;
 
 public interface IPlayer : IFixedUpdateLoop
 {
-    event Action ControlledHeroDead;
     public IHero ControlledHero { get; set; }
+    event Action ControlledHeroDead;
 }

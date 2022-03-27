@@ -1,29 +1,23 @@
+using PixupGames.Contracts;
+using PixupGames.Core;
 using SimpleInputNamespace;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Jetski : MonoBehaviour
+public class Jetski : Vehicle
 {
     [SerializeField] private JetskiMovement _movement;
+    [SerializeField] private GarbageCollector _garbageCollector;
 
-    private IInputDevice _inputDevice;
-    private Vector3 _direction;
-
-    public void Init(IInputDevice inputDevice)
+    public override void Enter(IHero hero)
     {
-        _inputDevice = inputDevice;
-        _direction = new Vector3();
+        hero.GarbageCollector.Disable();
+        _garbageCollector.ChangeBag(hero.Bag);
     }
 
-    private void FixedUpdate()
+    public override void Move(Vector3 direction)
     {
-        if (_inputDevice.Axis.magnitude > Constants.Math.Epsilon)
-        {
-            _direction.x = _inputDevice.Axis.x;
-            _direction.z = _inputDevice.Axis.y;
-
-            _movement.Move(_direction);
-        }
+        _movement.Move(direction);
     }
 }

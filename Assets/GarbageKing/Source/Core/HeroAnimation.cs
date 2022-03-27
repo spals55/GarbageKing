@@ -7,6 +7,7 @@ using UnityEngine;
 public class HeroAnimation : MonoBehaviour, IHeroAnimation
 {
     private const string Speed = nameof(Speed);
+    private const string JetskiDrive = nameof(JetskiDrive);
 
     [SerializeField] private Animator _animator;
     [SerializeField] private HandStack _handStack;
@@ -32,5 +33,10 @@ public class HeroAnimation : MonoBehaviour, IHeroAnimation
     public void PlayMovement(float velocity)
     {
         _animator.SetFloat(Speed, velocity);
+    }
+
+    public void PlayJetskiDrive(bool play)
+    {
+        _animator.SetBool(JetskiDrive, play);
     }
 }

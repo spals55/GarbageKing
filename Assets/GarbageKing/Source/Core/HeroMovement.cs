@@ -26,6 +26,11 @@ public class HeroMovement : MonoBehaviour, IMovement
         _rigidbody.velocity = direction * _speed;
     }
 
+    public void SetKinematic(bool isKinematic)
+    {
+        _rigidbody.isKinematic = isKinematic;
+    }
+
     private void MoveRotation(Vector3 direction)
     {
         var rotation = Quaternion.LookRotation(direction, Vector3.up);

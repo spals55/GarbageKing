@@ -14,17 +14,32 @@ namespace PixupGames.Core
         [SerializeField] private GarbageCollector _garbageCollector;
         [SerializeField] private Wallet _wallet;
 
+        public GarbageBag Bag => _garbageCollector.Bag;
+        public GarbageCollector GarbageCollector => _garbageCollector;
         public IMovement Movement => _movement;
-        public IGarbageBag Bag => _garbageCollector.Bag;
         public IWallet Wallet => _wallet;
         public IHeroAnimation Animation => _animation;
 
 
         public event Action Dead;
+        public event Action<IVehicle> SatVehicle;
 
         private void Update()
         {
             _animation.PlayMovement(_movement.Velocity);
+        }
+
+        public void SitDownIn(IVehicle vehicle)
+        {
+            var placeOffsetY = 0.22f;
+            
+            transform.transform.parent = vehicle.transform;
+            transform.localPosition = new Vector3(0, placeOffsetY, 0);
+            transform.rotation = vehicle.transform.rotation;
+            _movement.SetKinematic(true);
+            _animation.PlayJetskiDrive(true);
+
+            SatVehicle?.Invoke(vehicle);
         }
 
         public void Move(Vector3 direction)

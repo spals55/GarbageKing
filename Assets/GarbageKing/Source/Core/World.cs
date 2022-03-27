@@ -14,6 +14,7 @@ namespace PixupGames.Core
         [SerializeField] private MainCamera _camera;
         [SerializeField] private Hero _heroTemplate;
         [SerializeField] private List<Region> _regions;
+        [SerializeField] private Jetski _jetski;
 
         private IHero _hero;
 
@@ -34,6 +35,7 @@ namespace PixupGames.Core
             _hero.transform.DOComplete(true);
             _hero.transform.DOShakeScale(1);
         }
+
 
         public void UnlockRegion(string name)
         {

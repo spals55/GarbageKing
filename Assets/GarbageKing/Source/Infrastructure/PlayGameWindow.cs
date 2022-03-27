@@ -1,4 +1,5 @@
 ﻿using PixupGames.Contracts;
+using SimpleInputNamespace;
 using System;
 using TMPro;
 using UnityEngine;
@@ -12,6 +13,7 @@ namespace PixupGames.Infrastracture.Game
         [SerializeField] private TMP_Text _moneyLabel;
         [SerializeField] private TMP_Text _capacityLabel;
         [SerializeField] private Image _fill;
+        [SerializeField] private Joystick _joystick;
 
         private IWallet _wallet;
         private IGarbageBag _gargabeBag;
@@ -26,6 +28,18 @@ namespace PixupGames.Infrastracture.Game
 
             _wallet.BalanceChanged += OnBalanceChanged;
             _gargabeBag.WeightChanged += OnGarbageBagWeightChanged;
+        }
+
+        public void DisableJoystick()
+        {
+            _joystick.enabled = false;
+            _joystick.gameObject.SetActive(false);
+        }
+
+        public void EnableJoystick()
+        {
+            _joystick.enabled = true;
+            _joystick.gameObject.SetActive(true);
         }
 
         public void Open() => _canvasGroup.Open();
