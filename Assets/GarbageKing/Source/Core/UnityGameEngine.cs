@@ -8,7 +8,6 @@ using UnityEngine;
 public class UnityGameEngine : MonoBehaviour, IGameEngine
 {
     [SerializeField] private int _targetFrameRate = 60;
-    [SerializeField] private MainCamera _camera;
 
     private IGame _game;
 

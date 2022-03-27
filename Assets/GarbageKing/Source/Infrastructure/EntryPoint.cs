@@ -10,7 +10,6 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private UnityGameEngine _gameEngine;
     [SerializeField] private World _world;
     [SerializeField] private Viewport _viewport;
-    [SerializeField] private Jetski _jetski;
 
     private Game _game;
 
