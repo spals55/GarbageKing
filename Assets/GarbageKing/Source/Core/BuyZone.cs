@@ -19,6 +19,9 @@ public class BuyZone : Zone
     {
         _objectPool = FindObjectOfType<MoneyPool>();
         _totalCostLabel.text = _totalCost.ToString();
+
+        if (PlayerPrefs.HasKey(GUID))
+            Buy(false, false);
     }
 
     private void OnEnable()
@@ -65,7 +68,7 @@ public class BuyZone : Zone
                 GetMoney(wallet, multiplierCoefficient);
 
                 if (_totalCost < 1)
-                    Buy(true);
+                    Buy(true, true);
             }
 
             iteration++;
@@ -73,10 +76,15 @@ public class BuyZone : Zone
         }
     }
 
-    public override void Buy(bool animate)
+    public override void Buy(bool animate, bool save)
     {
         _unlocker.Unlock(animate);
         _unlocker.transform.parent = null;
+
+        if (save)
+           PlayerPrefs.SetString(GUID, GUID);
+
+        Analytics.SendOpenRegion(GUID);
 
         Hide();
     }

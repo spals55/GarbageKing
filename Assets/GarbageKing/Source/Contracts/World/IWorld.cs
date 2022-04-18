@@ -9,5 +9,4 @@ public interface IWorld
 
     void RespawnHero(Vector3 position);
     IHero SpawnHero(Vector3 position);
-    void UnlockRegion(string guid);
 }

@@ -9,6 +9,6 @@ public interface IGarbageBag
     event Action WeightChanged;
 
     bool CanAdd(int weight);
-    void Add(ITrash trash);
-    ITrash GetTrash();
+    void Add(Trash trash);
+    Trash GetTrash();
 }

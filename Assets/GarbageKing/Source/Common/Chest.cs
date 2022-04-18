@@ -5,14 +5,28 @@ using DG.Tweening;
 using PixupGames.Contracts;
 using System.Threading.Tasks;
 
-public class Chest : MonoBehaviour, IChest
+public class Chest : GUIDSaveObject, IChest
 {
     [SerializeField] private Transform _lid;
     [SerializeField] private List<Money> _dollars;
 
+    private bool _isOpen;
+
+    private void Awake()
+    {
+        if (PlayerPrefs.HasKey(GUID))
+        {
+            Open();
+
+            foreach (var dollar in _dollars)
+                Destroy(dollar.gameObject);
+        }
+    }
+
     public void Open()
     {
         _lid.transform.DOLocalRotate(new Vector3(-90, 0, 0), 1f);
+        _isOpen = true;
     }
 
     public void Close()
@@ -24,9 +38,12 @@ public class Chest : MonoBehaviour, IChest
     {
         if (other.TryGetComponent(out IHero hero))
         {
+            if (_isOpen) 
+                return;
+
             Open();
 
-            await Task.Delay(500);
+            await Task.Delay(800);
 
             if (_dollars.Count > 0)
             {
@@ -37,6 +54,7 @@ public class Chest : MonoBehaviour, IChest
                     hero.Wallet.Add(dollar.Amount);
                 }
 
+                PlayerPrefs.SetString(GUID, GUID);
                 _dollars.Clear();
             }
         }

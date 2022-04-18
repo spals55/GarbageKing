@@ -8,26 +8,28 @@ public class SettingsPanel : MonoBehaviour, IPanel
 {
     [SerializeField] private CanvasGroup _canvasGroup;
     [SerializeField] private Button _settingsButton;
-    [SerializeField] private Button _restartGameButton;
+    [SerializeField] private Button _exitSettingsButton;
 
     private void OnEnable()
     {
-        _settingsButton.onClick.AddListener(OnSettingsButtonClick);
-        _restartGameButton.onClick.AddListener(OnRestartGameButtonClick);
-    }
+        _settingsButton.onClick.AddListener(OnSettingsButtonClicked);
+        _exitSettingsButton.onClick.AddListener(OnExitSettingsButtonClicked);
 
-    private void OnRestartGameButtonClick()
-    {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void OnDisable()
     {
-        _settingsButton.onClick.RemoveListener(OnSettingsButtonClick);
-        _restartGameButton.onClick.RemoveListener(OnRestartGameButtonClick);
+        _settingsButton.onClick.RemoveListener(OnSettingsButtonClicked);
+        _exitSettingsButton.onClick.RemoveListener(OnExitSettingsButtonClicked);
+
     }
 
-    private void OnSettingsButtonClick()
+    private void OnExitSettingsButtonClicked()
+    {
+        Hide();
+    }
+
+    private void OnSettingsButtonClicked()
     {
         Show();
     }

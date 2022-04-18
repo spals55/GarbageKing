@@ -10,14 +10,13 @@ public class EntryPoint : MonoBehaviour
     [SerializeField] private UnityGameEngine _gameEngine;
     [SerializeField] private World _world;
     [SerializeField] private Viewport _viewport;
+    [SerializeField] private Shop _shop;
 
     private Game _game;
 
     private void Awake()
     {
-        var dataPersistence = new DataPersistence(_saveKey);
-
-        _game = new Game(dataPersistence, _world, _gameEngine, _viewport);
+        _game = new Game(_world, _gameEngine, _viewport, _shop);
         _gameEngine.Init(_game);
     }
 }

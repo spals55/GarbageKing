@@ -10,13 +10,12 @@ public abstract class TrashRecycler : MonoBehaviour
     [SerializeField] protected int TrashWeightToCreateBlock;
     [SerializeField] protected Timer Timer;
     [SerializeField] protected TrashBlock TrashBlockTemplate;
-
     [SerializeField] private float _delayBetweenTrashCollect;
     [SerializeField] private DropTrigger _dropTrigger;
     [SerializeField] private Transform _trashContainer;
 
     protected int CurrentBlocksWeight;
-    protected Queue<ITrash> TrashQueue = new Queue<ITrash>();
+    protected Queue<Trash> TrashQueue = new Queue<Trash>();
 
     private Coroutine _tryCollectTrash;
 
@@ -45,19 +44,10 @@ public abstract class TrashRecycler : MonoBehaviour
 
     protected abstract IEnumerator RecyclingProcess();
 
-    private void OnDropTriggerEntered(IHero hero)
-    {
-        if (_tryCollectTrash != null)
-            StopCoroutine(_tryCollectTrash);
-
-        _tryCollectTrash = StartCoroutine(TryCollectTrash(hero.Bag));
-    }
-
     private void OnDropTriggerExit(IHero hero)
     {
         StopCoroutine(_tryCollectTrash);
     }
-
     private void OnTimerCompleted()
     {
         CreateBlock();
@@ -85,5 +75,13 @@ public abstract class TrashRecycler : MonoBehaviour
 
             yield return Yielder.WaitForSeconds(_delayBetweenTrashCollect);
         }
+    }
+
+    private void OnDropTriggerEntered(IHero hero)
+    {
+        if (_tryCollectTrash != null)
+            StopCoroutine(_tryCollectTrash);
+
+        _tryCollectTrash = StartCoroutine(TryCollectTrash(hero.Bag));
     }
 }

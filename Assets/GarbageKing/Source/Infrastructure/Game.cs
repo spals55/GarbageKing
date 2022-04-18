@@ -10,19 +10,19 @@ namespace PixupGames.Infrastracture.Game
 {
     public class Game : IGame
     {
-        private readonly IDataPersistence _dataPersistence;
         private readonly IGameEngine _gameEngine;
         private readonly IViewport _viewport;
         private readonly IWorld _world;
+        private readonly Shop _shop;
 
         private IPlayer _player;
 
-        public Game(IDataPersistence dataPersistence, IWorld world, IGameEngine gameEngine, IViewport viewport)
+        public Game(IWorld world, IGameEngine gameEngine, IViewport viewport, Shop shop)
         {
             _world = world;
-            _dataPersistence = dataPersistence;
             _gameEngine = gameEngine;
             _viewport = viewport;
+            _shop = shop;
         }
 
         public void FixedTick(float time)
@@ -32,28 +32,30 @@ namespace PixupGames.Infrastracture.Game
 
         public void Run()
         {
-            _viewport.GetStartGameWindow().Close();
             _viewport.GetPlayGameWindow().Open();
+            Analytics.SendStartLevel();
 
             IPlayer player = SetupPlayer();
             SetupCamera(player.ControlledHero);
-
-            UnlockRegions();
         }
 
         public void End()
         {
             _player.ControlledHeroDead -= OnHeroDead;
-
-            _dataPersistence.Save();
         }
 
         private IPlayer SetupPlayer()
         {
             _player = new Player(_gameEngine.GetInputDevice());
 
-            IHero hero = _world.SpawnHero(_dataPersistence.Data.World.Hero.LastPosition);
-            hero.Wallet.Add(5000);
+            IHero hero = _world.SpawnHero(new Vector3(9.8f, -2.39f, 24.2f));
+
+            if (PlayerPrefs.HasKey("Money"))
+                hero.Wallet.Add(PlayerPrefs.GetInt("Money"));
+            else
+                hero.Wallet.Add(1000);
+
+            _shop.Init(hero);
 
             _player.ControlledHero = hero;
             _viewport.GetPlayGameWindow().Init(hero.Wallet, hero.Bag);
@@ -69,16 +71,9 @@ namespace PixupGames.Infrastracture.Game
             camera.SetTarget(target);
         }
 
-        private void UnlockRegions()
-        {
-            foreach (var region in _dataPersistence.Data.World.Regions)
-                if (region.IsOpen)
-                    _world.UnlockRegion(region.GUID);
-        }
-
         private void OnHeroDead()
         {
-            _world.RespawnHero(_dataPersistence.Data.World.Hero.LastPosition);
+            _world.RespawnHero(new Vector3(9.8f, -2.39f, 24.2f));
         }
     }
 }

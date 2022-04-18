@@ -25,6 +25,7 @@ public class Player : IPlayer, IFixedUpdateLoop
     ~Player()
     {
         _controlledHero.SatVehicle -= OnHeroSetVehicle;
+        _controlledHero.GotOutVehicle -= OnHeroGotOutVehicle;
     }
 
     public IHero ControlledHero
@@ -42,6 +43,7 @@ public class Player : IPlayer, IFixedUpdateLoop
             _controlled = _controlledHero;
             _controlledHero.Dead += (() => ControlledHeroDead?.Invoke());
             _controlledHero.SatVehicle += OnHeroSetVehicle;
+            _controlledHero.GotOutVehicle += OnHeroGotOutVehicle;
         }
     }
 
@@ -61,5 +63,10 @@ public class Player : IPlayer, IFixedUpdateLoop
     private void OnHeroSetVehicle(IVehicle vehicle)
     {
         _controlled = vehicle;
+    }
+
+    private void OnHeroGotOutVehicle()
+    {
+        _controlled = _controlledHero;
     }
 }

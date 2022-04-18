@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trash : MonoBehaviour, ITrash
+public class Trash : GUIDSaveObject
 {
     [SerializeField] private TrashType _type;
     [SerializeField] private int _weight;
@@ -14,12 +14,21 @@ public class Trash : MonoBehaviour, ITrash
 
     public bool CanCollect { get; private set; } = true;
 
+    private void Awake()
+    {
+        if (PlayerPrefs.HasKey(GUID))
+        {
+            Hide();
+        }
+    }
+
     public void Hide() => gameObject.SetActive(false);
 
     public void Collect()
     {
         CanCollect = false;
         _collider.enabled = false;
+        PlayerPrefs.SetString(GUID, GUID);
     }
 
     public void Show()

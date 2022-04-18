@@ -20,6 +20,7 @@ namespace PixupGames.Core
 
             Money += amount;
             BalanceChanged?.Invoke();
+            PlayerPrefs.SetInt("Money", Money);
         }
 
         public void Spend(int amount)
@@ -29,6 +30,7 @@ namespace PixupGames.Core
 
             Money -= amount;
             BalanceChanged?.Invoke();
+            PlayerPrefs.SetInt("Money", Money);
         }
     }
 }

@@ -11,7 +11,7 @@ public class GarbageBag : MonoBehaviour, IGarbageBag
     [SerializeField] private ParticleSystem _fullEffect;
 
     private int _currentCapacity;
-    private Queue<ITrash> _trash = new Queue<ITrash>();
+    private Queue<Trash> _trash = new Queue<Trash>();
 
     public event Action WeightChanged;
 
@@ -24,7 +24,7 @@ public class GarbageBag : MonoBehaviour, IGarbageBag
     public bool CanAdd(int weight) =>
         _currentCapacity + weight <= _maxWeight;
 
-    public void Add(ITrash trash)
+    public void Add(Trash trash)
     {
         trash.Hide();
         trash.transform.parent = transform;
@@ -39,9 +39,15 @@ public class GarbageBag : MonoBehaviour, IGarbageBag
             _fullEffect.Play();
     }
 
-    public ITrash GetTrash()
+    public void ChangeCapacity(int newCapacity)
     {
-        ITrash trash = _trash.Dequeue();
+        _maxWeight = newCapacity;
+        WeightChanged?.Invoke();
+    }
+
+    public Trash GetTrash()
+    {
+        Trash trash = _trash.Dequeue();
         trash.Show();
         _currentCapacity -= trash.Weight;
         ChangeWeight(_currentCapacity);

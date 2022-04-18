@@ -66,6 +66,11 @@ public class HandStack : MonoBehaviour, IHandStack
         return block;
     }
 
+    public void ChangeCapacity(int newCapacity)
+    {
+        _capacity = newCapacity;
+    }
+
     private Vector3 CalculateAddEndPosition(Transform container, Transform stackable)
     {
         Vector3 stackableLocalScale = container.InverseTransformVector(stackable.lossyScale);

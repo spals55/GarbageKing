@@ -46,6 +46,23 @@ namespace PixupGames.Infrastracture.Game
 
         public void Close() => _canvasGroup.Close();
 
+
+        private void UpdateGarbageCapacity()
+        {
+            if (_gargabeBag.Weight >= _gargabeBag.MaxWeight)
+                _capacityLabel.text = "MAX";
+            else
+                _capacityLabel.text = $"{_gargabeBag.Weight} / {_gargabeBag.MaxWeight}";
+
+            _fill.fillAmount = _gargabeBag.Weight / (float)_gargabeBag.MaxWeight;
+        }
+
+        private void UpdateBalance()
+        {
+            _moneyLabel.text = _wallet.Money.ToString();
+            _fill.fillAmount = _gargabeBag.Weight / (float)_gargabeBag.MaxWeight;
+        }
+
         private void OnGarbageBagWeightChanged()
         {
             UpdateGarbageCapacity();
@@ -54,21 +71,6 @@ namespace PixupGames.Infrastracture.Game
         private void OnBalanceChanged()
         {
             UpdateBalance();
-        }
-
-        private void UpdateGarbageCapacity()
-        {
-            if (_gargabeBag.Weight >= _gargabeBag.MaxWeight)
-                _capacityLabel.text = "MAX";
-            else
-                _capacityLabel.text = _gargabeBag.Weight.ToString();
-
-            _fill.fillAmount = _gargabeBag.Weight / (float)_gargabeBag.MaxWeight;
-        }
-
-        private void UpdateBalance()
-        {
-            _moneyLabel.text = _wallet.Money.ToString();
         }
 
         private void OnDestroy()

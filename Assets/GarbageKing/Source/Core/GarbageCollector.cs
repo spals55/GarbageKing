@@ -29,7 +29,7 @@ public class GarbageCollector : MonoBehaviour
         _bag = bag;
     }
 
-    private ITrash FindNearestTrash()
+    private Trash FindNearestTrash()
     {
 
         Collider[] trashInView = Physics.OverlapSphere(_mouth.position, _settings.Radius, _settings.LayerMask);
@@ -45,7 +45,7 @@ public class GarbageCollector : MonoBehaviour
 
                 if (distanceToTarget < _settings.Distance)
                 {
-                    if (trashInView[i].TryGetComponent(out ITrash trash))
+                    if (trashInView[i].TryGetComponent(out Trash trash))
                     {
                         if (trash.CanCollect && _bag.CanAdd(trash.Weight))
                             return trash;
@@ -59,13 +59,13 @@ public class GarbageCollector : MonoBehaviour
 
     private void RetractionNearestTrash()
     {
-        ITrash nearestTrash = FindNearestTrash();
+        Trash nearestTrash = FindNearestTrash();
 
         if (nearestTrash != null)
             StartCoroutine(Retraction(nearestTrash));
     }
 
-    private IEnumerator Retraction(ITrash trash)
+    private IEnumerator Retraction(Trash trash)
     {
         trash.Collect();
         _retractionEffect.Play();

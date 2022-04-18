@@ -14,6 +14,7 @@ namespace PixupGames.Core
         [SerializeField] private GarbageCollector _garbageCollector;
         [SerializeField] private Wallet _wallet;
 
+        public HandStack HandStack => _handStack;
         public GarbageBag Bag => _garbageCollector.Bag;
         public GarbageCollector GarbageCollector => _garbageCollector;
         public IMovement Movement => _movement;
@@ -23,6 +24,7 @@ namespace PixupGames.Core
 
         public event Action Dead;
         public event Action<IVehicle> SatVehicle;
+        public event Action GotOutVehicle;
 
         private void Update()
         {
@@ -40,6 +42,16 @@ namespace PixupGames.Core
             _animation.PlayJetskiDrive(true);
 
             SatVehicle?.Invoke(vehicle);
+        }
+
+        public void ExitVehicle(Vector3 position)
+        {
+            transform.transform.parent = null;
+            transform.position = position;
+            _movement.SetKinematic(false);
+            _animation.PlayJetskiDrive(false);
+
+            GotOutVehicle?.Invoke();
         }
 
         public void Move(Vector3 direction)
